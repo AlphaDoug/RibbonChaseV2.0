@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: a8f5c8aa325f80b4ea4a0543808f9a98
+timeCreated: 1478959862
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ying:Eagle
+    100004: ying:Eagle_joint_base
+    100006: ying:joint11
+    100008: ying:joint13
+    100010: ying:joint15
+    100012: ying:joint3
+    100014: ying:joint4
+    100016: ying:joint6
+    100018: ying:joint7
+    100020: ying:joint8
+    100022: ying:joint9
+    100024: ying:leg1
+    100026: ying:leg2
+    100028: ying:tail
+    100030: ying:Wing1
+    100032: ying:Wing2
+    400000: //RootNode
+    400002: ying:Eagle
+    400004: ying:Eagle_joint_base
+    400006: ying:joint11
+    400008: ying:joint13
+    400010: ying:joint15
+    400012: ying:joint3
+    400014: ying:joint4
+    400016: ying:joint6
+    400018: ying:joint7
+    400020: ying:joint8
+    400022: ying:joint9
+    400024: ying:leg1
+    400026: ying:leg2
+    400028: ying:tail
+    400030: ying:Wing1
+    400032: ying:Wing2
+    4300000: ying:Eagle
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: ying:Eagle
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ying:Eagle
+        weight: 1
+      - path: ying:Eagle_joint_base
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint8
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint9
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint9/ying:leg1
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint9/ying:leg1/ying:joint13
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint9/ying:leg2
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint9/ying:leg2/ying:joint15
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint9/ying:tail
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:joint11
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:Wing1
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:Wing1/ying:joint3
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:Wing1/ying:joint3/ying:joint4
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:Wing2
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:Wing2/ying:joint6
+        weight: 1
+      - path: ying:Eagle_joint_base/ying:Wing2/ying:joint6/ying:joint7
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
