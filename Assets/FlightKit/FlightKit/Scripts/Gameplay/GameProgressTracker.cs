@@ -169,7 +169,7 @@ namespace FlightKit
            
             if (_numPickupsCollected == 0)
             {
-                ShowPickupCounter();
+                //ShowPickupCounter();
             }
            // Debug.Log(_numPickupsCollected);
             _numPickupsCollected++;

@@ -27,6 +27,7 @@ namespace FlightKit
             {
                
                 gravityController.enabled = true;
+                joyController.enabled = false;
                 //if (GameControllerVR.AirPlaneController == 0)
                 //{                                   
                 //    if (gravityController)
@@ -77,6 +78,7 @@ namespace FlightKit
             }
             else
             {
+                gravityController.enabled = false;
                 joyController.enabled=true;
                 joyStick.SetActive(true);
             }         

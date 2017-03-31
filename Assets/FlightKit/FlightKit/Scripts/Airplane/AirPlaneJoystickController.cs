@@ -63,13 +63,12 @@ namespace FlightKit
         void OnEnable()
         {
             EasyJoystick.On_JoystickMove += On_JoystickMove;
-            EasyJoystick.On_JoystickMoveEnd += On_JoystickMoveEnd;
-            
+            EasyJoystick.On_JoystickMoveEnd += On_JoystickMoveEnd;            
         }
 
         void On_JoystickMove(MovingJoystick move)
         {
-            ClearLRR();
+             ClearLRR();
              pitch = -(ControlsPrefs.IsInversePitch ? -1f : 1f) * move.joystickAxis.y;
              yaw = move.joystickAxis.x;       
         }
@@ -86,7 +85,6 @@ namespace FlightKit
         }
         void FixedUpdate()
         {
-
             if (!isAccelation)
             {
                 Mathf.Clamp(_airplane.MaxSpeed -= 1f,200,100);
@@ -112,11 +110,7 @@ namespace FlightKit
 #if UNITY_ANDROID
             rotateClamp = rightRotateClamp != 0 ? rightRotateClamp : leftRotateClamp;
             float roll = ControlsPrefs.IsRollEnabled ? rotateClamp : 0;
-
 #endif
-
-
-
             bool airBrakes = CrossPlatformInputManager.GetButton("Brakes");
             // auto throttle up, or down if braking.
             float throttle = airBrakes ? -1 : 1;

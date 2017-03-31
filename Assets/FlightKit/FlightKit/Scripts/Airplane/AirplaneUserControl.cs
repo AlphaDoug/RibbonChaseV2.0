@@ -86,12 +86,9 @@ namespace FlightKit
 #if UNITY_ANDROID
             rotateClamp = rightRotateClamp != 0 ? rightRotateClamp : leftRotateClamp;
             float roll = ControlsPrefs.IsRollEnabled ? rotateClamp : 0;
-            float yaw = Input.acceleration.x;
-            float pitch = (ControlsPrefs.IsInversePitch ? -1f : 1f) * (Input.acceleration.y);
+            float yaw = Input.acceleration.x*1.5f;
+            float pitch = (ControlsPrefs.IsInversePitch ? -1f : 1f) * (Input.acceleration.y*1.5f);
 #endif
-
-
-
             bool airBrakes = CrossPlatformInputManager.GetButton("Brakes");
             // auto throttle up, or down if braking.
             float throttle = airBrakes ? -1 : 1;

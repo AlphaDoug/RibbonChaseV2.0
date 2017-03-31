@@ -59,7 +59,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
         [TooltipAttribute("How much drag should increase with speed.")]
         [SerializeField]
-        private float m_DragIncreaseFactor = 0.001f; // How much drag should increase with speed.
+        public float m_DragIncreaseFactor = 0.001f; // How much drag should increase with speed.
 
         [TooltipAttribute("Maximum speed possible to achieve with this ariplane.")]
         [SerializeField]
