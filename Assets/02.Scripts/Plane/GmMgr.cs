@@ -14,8 +14,11 @@ public class GmMgr : MonoBehaviour {
     {
         float pos = Random.Range(300.0f, 500.0f);
         PhotonNetwork.Instantiate("PlaneBundle",
-                                   new Vector3(pos, 20.0f, pos),
+                                   new Vector3(300, 20.0f, 300),
                                    Quaternion.identity, 0);
+        PhotonNetwork.Instantiate("Starting Components_AI",
+                                  new Vector3(pos, 50.0f, pos),
+                                  Quaternion.identity, 0);
         //PhotonNetwork.Instantiate("UICanvas",
         //                          new Vector3(pos, 20.0f, pos),
         //                          Quaternion.identity, 0);

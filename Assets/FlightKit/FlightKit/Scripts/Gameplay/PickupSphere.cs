@@ -115,7 +115,7 @@ namespace FlightKit
 
             if (collider.gameObject.CompareTag(Tags.PlayerAI))
             {
-
+                Debug.Log("sssssssssssssssssssss"); 
                 _activated = true;
                 if (OnCollectEventAI != null)
                 {
@@ -132,7 +132,7 @@ namespace FlightKit
                 }
                 //从全局数组中移除被收集的光球
                 RemoveCollectedPickup();// Self destroy after delay (can't destroy this GO completely, since that would break boids)
-                DestroyNow();
+                DestroyNowAI();
                 //按照困难度选择选择下一个目标光球
                 
                 Invoke("ChooseNextTarget", 0.5f);
@@ -140,7 +140,8 @@ namespace FlightKit
             }
 			if (collider.gameObject.CompareTag(Tags.Player))
 			{
-				_activated = true;
+                Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                _activated = true;
                 Debug.Log("玩家吃球");
 
                 if (GameObject.Find("AirplaneAI") != null)
@@ -273,7 +274,16 @@ namespace FlightKit
            
 			_isDestroyed = true;
 		}
+        private void DestroyNowAI()
+        {
+           
+            GetComponent<SphereCollider>().enabled = false;
+            DestroyObject(sphere);
+            DestroyObject(ring1);
+            DestroyObject(ring2);
 
+            _isDestroyed = true;
+        }
         private void RemoveCollectedPickup()
         {
             string indexTemp = gameObject.name.ToString().Substring(8, 2);

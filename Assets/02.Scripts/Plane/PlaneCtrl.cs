@@ -19,14 +19,15 @@ namespace FlightKit
             rbody = GetComponent<Rigidbody>();
             tr = GetComponent<Transform>();
             pv = GetComponent<PhotonView>();
+
             //设置传输数据类型
             pv.synchronization = ViewSynchronization.UnreliableOnChange;
             //将PhotonView组件的Observed属性设置为TankMove脚本
             pv.ObservedComponents[0] = this;
+
             if (pv.isMine)
             {
                 GetComponent<AirPlaneJoystickController>().enabled = true;
-
             }
             else
             {
@@ -36,6 +37,7 @@ namespace FlightKit
             currPos = tr.position;
             currRot = tr.rotation;
         }
+        
         void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             //传递本地飞机的位置和旋转信息
@@ -53,7 +55,7 @@ namespace FlightKit
         // Update is called once per frame
         void Update()
         {
-            //如果不是本地玩家，返回
+            //如果不是本地玩家
             if (!pv.isMine)
             {
                 //将远程玩家的坦克平滑移动到目标位置

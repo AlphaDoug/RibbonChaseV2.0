@@ -45,14 +45,28 @@ public class PlaneDamage : MonoBehaviour
     void OnTriggerEnter(Collider coll)
     {
         //根据tag判断碰撞是否为炮弹
-        if (coll.tag == "CANNON")
+        if (coll.tag == "CANNON" && currHp > 0)
         {
-            
+            currHp -= 20;
+            //当前生命百分比=（当前生命值）/（初始生命值）
+            hpBar.fillAmount = (float)currHp / (float)initHp;
+            //根据生命值大小更改生命值条图像颜色
+            if (hpBar.fillAmount <= 0.4f)
+            {
+                hpBar.color = Color.red;
+            }
+            else if (hpBar.fillAmount <= 0.6f)
+            {
+                hpBar.color = Color.yellow;
+            }
+            if (currHp <= 0)
+            {
                 SaveKillCount(coll.GetComponent<Cannon>().playerId);
                 StartCoroutine(this.ExplotionTank());
-            
+            }
         }
     }
+
     //生成爆炸效果并处理坦克复活
     IEnumerator ExplotionTank()
     {
@@ -86,7 +100,7 @@ public class PlaneDamage : MonoBehaviour
     void SaveKillCount(int firePlayerID)
     {
         //获取所有标签为TANK的坦克并保存到数组
-        GameObject[] tanks = GameObject.FindGameObjectsWithTag("TANK");
+        GameObject[] tanks = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject tank in tanks)
         {
             var planeDamage = tank.GetComponent<PlaneDamage>();

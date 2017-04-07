@@ -102,9 +102,9 @@ GameObject:
   - component: {fileID: 8549049}
   - component: {fileID: 8549048}
   - component: {fileID: 8549047}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock06
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -185,9 +185,9 @@ GameObject:
   - component: {fileID: 41658038}
   - component: {fileID: 41658037}
   - component: {fileID: 41658036}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -257,47 +257,247 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41658034}
   m_Mesh: {fileID: 4300002, guid: de21c6818614f445f88918e28fc903bb, type: 3}
---- !u!1001 &68942588
+--- !u!1001 &92688621
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 471392, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+    - target: {fileID: 447214, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201792, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210276, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207134, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182780, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 185288, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 198018, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 151622, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 107264, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237649626543210, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084504020373448, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841467411404252, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 108256, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951945067591798, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 166932, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762902960199450, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826710449179558, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 108744, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962844183349746, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 119590, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 178754, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 195092, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494578943649438, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671235359343440, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441786791512776, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 116480, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_TagString
+      value: PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 107264, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826710449179558, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962844183349746, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 108744, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494578943649438, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671235359343440, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 198018, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237649626543210, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 151622, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 185288, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 178754, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 116480, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 108256, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 119590, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084504020373448, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762902960199450, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 166932, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841467411404252, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441786791512776, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951945067591798, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 195092, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 182780, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246258, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200604, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238004, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f00b6d42e39772d4cbc31e1423fe25ea, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &98837391
 GameObject:
@@ -310,9 +510,9 @@ GameObject:
   - component: {fileID: 98837395}
   - component: {fileID: 98837394}
   - component: {fileID: 98837393}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -393,9 +593,9 @@ GameObject:
   - component: {fileID: 104448852}
   - component: {fileID: 104448851}
   - component: {fileID: 104448850}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -563,6 +763,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82614452841395104, guid: 0017edf5d3f97c14d97a8c7adcb1ec1f,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0017edf5d3f97c14d97a8c7adcb1ec1f, type: 2}
   m_IsPrefabParent: 0
@@ -577,9 +782,9 @@ GameObject:
   - component: {fileID: 162172343}
   - component: {fileID: 162172342}
   - component: {fileID: 162172341}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -660,9 +865,9 @@ GameObject:
   - component: {fileID: 171122931}
   - component: {fileID: 171122930}
   - component: {fileID: 171122929}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -743,9 +948,9 @@ GameObject:
   - component: {fileID: 172354491}
   - component: {fileID: 172354490}
   - component: {fileID: 172354489}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -826,9 +1031,9 @@ GameObject:
   - component: {fileID: 176434042}
   - component: {fileID: 176434041}
   - component: {fileID: 176434040}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain04
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -909,9 +1114,9 @@ GameObject:
   - component: {fileID: 216114345}
   - component: {fileID: 216114344}
   - component: {fileID: 216114343}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -992,9 +1197,9 @@ GameObject:
   - component: {fileID: 216608197}
   - component: {fileID: 216608196}
   - component: {fileID: 216608195}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1064,6 +1269,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216608193}
   m_Mesh: {fileID: 4300004, guid: 265ba915d8d5b4aa2bb0c5e8e2c6cc9c, type: 3}
+--- !u!1001 &254125413
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2108
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.028342484
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.81230825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.01104313
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.5824347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576977901890764, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853162391382948, guid: 4eff8ba649517094bb46ed2bcc83c9b4,
+        type: 2}
+      propertyPath: viewIdField
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853162391382948, guid: 4eff8ba649517094bb46ed2bcc83c9b4,
+        type: 2}
+      propertyPath: instantiationId
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114319468886985016, guid: 4eff8ba649517094bb46ed2bcc83c9b4,
+        type: 2}
+      propertyPath: viewIdField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114319468886985016, guid: 4eff8ba649517094bb46ed2bcc83c9b4,
+        type: 2}
+      propertyPath: instantiationId
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913490400057606, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4eff8ba649517094bb46ed2bcc83c9b4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &323969656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,9 +1346,9 @@ GameObject:
   - component: {fileID: 323969660}
   - component: {fileID: 323969659}
   - component: {fileID: 323969658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1261,9 +1532,9 @@ GameObject:
   - component: {fileID: 329448203}
   - component: {fileID: 329448202}
   - component: {fileID: 329448201}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1344,9 +1615,9 @@ GameObject:
   - component: {fileID: 388323598}
   - component: {fileID: 388323597}
   - component: {fileID: 388323596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1427,9 +1698,9 @@ GameObject:
   - component: {fileID: 400532842}
   - component: {fileID: 400532841}
   - component: {fileID: 400532840}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1510,9 +1781,9 @@ GameObject:
   - component: {fileID: 415290994}
   - component: {fileID: 415290993}
   - component: {fileID: 415290992}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Island06
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1593,9 +1864,9 @@ GameObject:
   - component: {fileID: 428187003}
   - component: {fileID: 428187002}
   - component: {fileID: 428187001}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Island07
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1674,13 +1945,13 @@ GameObject:
   m_Component:
   - component: {fileID: 429236805}
   - component: {fileID: 429236806}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lens Flare
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &429236805
 Transform:
   m_ObjectHideFlags: 0
@@ -1718,7 +1989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 524325605}
   - component: {fileID: 524325606}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BoundsSensor1
   m_TagString: LevelBounds
   m_Icon: {fileID: 0}
@@ -1761,9 +2032,9 @@ GameObject:
   - component: {fileID: 530594163}
   - component: {fileID: 530594162}
   - component: {fileID: 530594161}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1841,9 +2112,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 531785020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rocks
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1868,102 +2139,6 @@ Transform:
   m_Father: {fileID: 709359059}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &560927025
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 375
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 137.47311
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 333
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 224745672177991028, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224745672177991028, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114368168862561998, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: viewIdField
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114368168862561998, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: instantiationId
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114499042393166944, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: viewIdField
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114499042393166944, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: instantiationId
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114818728502788720, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: viewIdField
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114818728502788720, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: instantiationId
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114168328094247456, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: viewIdField
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114168328094247456, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
-        type: 2}
-      propertyPath: instantiationId
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1059895444280970, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &583234761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,9 +2150,9 @@ GameObject:
   - component: {fileID: 583234765}
   - component: {fileID: 583234764}
   - component: {fileID: 583234763}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2058,9 +2233,9 @@ GameObject:
   - component: {fileID: 586205494}
   - component: {fileID: 586205493}
   - component: {fileID: 586205492}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2138,9 +2313,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 587436253}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rings
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2179,9 +2354,9 @@ GameObject:
   - component: {fileID: 613402972}
   - component: {fileID: 613402971}
   - component: {fileID: 613402970}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Island05
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2262,9 +2437,9 @@ GameObject:
   - component: {fileID: 672759731}
   - component: {fileID: 672759730}
   - component: {fileID: 672759729}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Island01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2342,9 +2517,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 683510700}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bounds
-  m_TagString: LevelBounds
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2371,13 +2546,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 709359059}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Level
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &709359059
 Transform:
   m_ObjectHideFlags: 0
@@ -2409,9 +2584,9 @@ GameObject:
   - component: {fileID: 770980034}
   - component: {fileID: 770980033}
   - component: {fileID: 770980032}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain04
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2492,9 +2667,9 @@ GameObject:
   - component: {fileID: 859980649}
   - component: {fileID: 859980648}
   - component: {fileID: 859980647}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2575,9 +2750,9 @@ GameObject:
   - component: {fileID: 905906344}
   - component: {fileID: 905906343}
   - component: {fileID: 905906342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2658,9 +2833,9 @@ GameObject:
   - component: {fileID: 1010335233}
   - component: {fileID: 1010335232}
   - component: {fileID: 1010335231}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2741,9 +2916,9 @@ GameObject:
   - component: {fileID: 1054036411}
   - component: {fileID: 1054036410}
   - component: {fileID: 1054036409}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain04
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2813,6 +2988,92 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1054036407}
   m_Mesh: {fileID: 4300000, guid: bd7de1b3efd5e47eb8eb12192b77277b, type: 3}
+--- !u!1001 &1082091317
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 137.47311
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936923275589054, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114309193515407136, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: viewIdField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114309193515407136, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: instantiationId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114818728502788720, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: viewIdField
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114818728502788720, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: instantiationId
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114368168862561998, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: viewIdField
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114368168862561998, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: instantiationId
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114141490779337606, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: viewIdField
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114141490779337606, guid: 4dbec3b6aef559c4e9c102e3e5619ce9,
+        type: 2}
+      propertyPath: instantiationId
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059895444280970, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4dbec3b6aef559c4e9c102e3e5619ce9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1194253475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,9 +3085,9 @@ GameObject:
   - component: {fileID: 1194253479}
   - component: {fileID: 1194253478}
   - component: {fileID: 1194253477}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock07
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2907,9 +3168,9 @@ GameObject:
   - component: {fileID: 1195227081}
   - component: {fileID: 1195227080}
   - component: {fileID: 1195227079}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2979,6 +3240,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195227077}
   m_Mesh: {fileID: 4300004, guid: 265ba915d8d5b4aa2bb0c5e8e2c6cc9c, type: 3}
+--- !u!1 &1268495225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1268495227}
+  - component: {fileID: 1268495226}
+  m_Layer: 0
+  m_Name: Singleton of VirtualScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1268495226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1268495225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829ac6b46ba2c1c4a81ea415c3ca1a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualWidth: 1024
+  virtualHeight: 768
+--- !u!4 &1268495227
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1268495225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331970300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,9 +3293,9 @@ GameObject:
   - component: {fileID: 1331970304}
   - component: {fileID: 1331970303}
   - component: {fileID: 1331970302}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3073,9 +3376,9 @@ GameObject:
   - component: {fileID: 1400993946}
   - component: {fileID: 1400993945}
   - component: {fileID: 1400993944}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3156,9 +3459,9 @@ GameObject:
   - component: {fileID: 1439990399}
   - component: {fileID: 1439990398}
   - component: {fileID: 1439990397}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3236,9 +3539,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1469405949}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountains
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3280,9 +3583,9 @@ GameObject:
   - component: {fileID: 1504716179}
   - component: {fileID: 1504716178}
   - component: {fileID: 1504716177}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Island04
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3363,9 +3666,9 @@ GameObject:
   - component: {fileID: 1549829251}
   - component: {fileID: 1549829250}
   - component: {fileID: 1549829249}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3446,9 +3749,9 @@ GameObject:
   - component: {fileID: 1589174945}
   - component: {fileID: 1589174944}
   - component: {fileID: 1589174943}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3529,9 +3832,9 @@ GameObject:
   - component: {fileID: 1604799601}
   - component: {fileID: 1604799600}
   - component: {fileID: 1604799599}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3612,9 +3915,9 @@ GameObject:
   - component: {fileID: 1615188862}
   - component: {fileID: 1615188861}
   - component: {fileID: 1615188860}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3695,9 +3998,9 @@ GameObject:
   - component: {fileID: 1651768653}
   - component: {fileID: 1651768652}
   - component: {fileID: 1651768651}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain04
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3778,9 +4081,9 @@ GameObject:
   - component: {fileID: 1653067639}
   - component: {fileID: 1653067638}
   - component: {fileID: 1653067637}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3861,9 +4164,9 @@ GameObject:
   - component: {fileID: 1661309201}
   - component: {fileID: 1661309200}
   - component: {fileID: 1661309199}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock05
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3933,6 +4236,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1661309197}
   m_Mesh: {fileID: 4300000, guid: b2e0ceab2b86743cc92f80b7ffa81814, type: 3}
+--- !u!1001 &1668650941
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 101.14579
+      objectReference: {fileID: 0}
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 51.829258
+      objectReference: {fileID: 0}
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 239.64787
+      objectReference: {fileID: 0}
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 415916, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c1d77a3cea5cc534a912f75f6601ec5b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1739745056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,9 +4289,9 @@ GameObject:
   - component: {fileID: 1739745060}
   - component: {fileID: 1739745059}
   - component: {fileID: 1739745058}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4027,9 +4372,9 @@ GameObject:
   - component: {fileID: 1751500562}
   - component: {fileID: 1751500561}
   - component: {fileID: 1751500560}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4110,9 +4455,9 @@ GameObject:
   - component: {fileID: 1827370479}
   - component: {fileID: 1827370478}
   - component: {fileID: 1827370477}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Island03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4190,9 +4535,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1893575551}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Islands
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4228,9 +4573,9 @@ GameObject:
   - component: {fileID: 1913044418}
   - component: {fileID: 1913044417}
   - component: {fileID: 1913044416}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Island02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4311,9 +4656,9 @@ GameObject:
   - component: {fileID: 1942615893}
   - component: {fileID: 1942615892}
   - component: {fileID: 1942615891}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4394,9 +4739,9 @@ GameObject:
   - component: {fileID: 1959986040}
   - component: {fileID: 1959986039}
   - component: {fileID: 1959986038}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mountain03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4477,9 +4822,9 @@ GameObject:
   - component: {fileID: 2063970994}
   - component: {fileID: 2063970993}
   - component: {fileID: 2063970992}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4557,9 +4902,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2066900405}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4598,9 +4943,9 @@ GameObject:
   - component: {fileID: 2124300364}
   - component: {fileID: 2124300363}
   - component: {fileID: 2124300362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock04
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
