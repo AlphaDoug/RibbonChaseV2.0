@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ControlsMenuController : MonoBehaviour
 {
-    public GameObject musicToggle;
     public GameObject soundToggle;
     public GameObject modelToggle;
     public GameObject gameController;
 
-    private Slider musicToggleSlider;
     private Slider soundToggleSlider;
     private Slider modelToggleSlider;
     private Dropdown dropDown;
@@ -24,8 +23,8 @@ public class ControlsMenuController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        dropDown = GameObject.Find("LanguageChoose").GetComponent<Dropdown>();
-        musicToggleSlider = musicToggle.GetComponent<Slider>();
+        //dropDown = GameObject.Find("LanguageChoose").GetComponent<Dropdown>();
+        //musicToggleSlider = musicToggle.GetComponent<Slider>();
         soundToggleSlider = soundToggle.GetComponent<Slider>();
         modelToggleSlider = modelToggle.GetComponent<Slider>();
         language = (int)Language.Chinese;
@@ -35,38 +34,7 @@ public class ControlsMenuController : MonoBehaviour
         {
             PlayerPrefs.SetInt("language", 0);
         }
-        if (PlayerPrefs.GetInt("language") == 0)
-        {
-            dropDown.ClearOptions();
-            Dropdown.OptionData chineseData = new Dropdown.OptionData();
-            chineseData.text = "中文";
-            dropDown.options.Add(chineseData);
-
-            Dropdown.OptionData englishData = new Dropdown.OptionData();
-            englishData.text = "English";
-            dropDown.options.Add(englishData);
-
-            dropDown.captionText.text = "中文";
-
-            //GameObject.Find("LanguageChoose").GetComponent<Dropdown>().captionText.text = "中文";
-            //GameObject.Find("LanguageChoose").GetComponent<Dropdown>().options[1].text = "中文";
-        }
-        if (PlayerPrefs.GetInt("language") == 1)
-        {
-            dropDown.ClearOptions();
-            
-            Dropdown.OptionData englishData = new Dropdown.OptionData();
-            englishData.text = "English";
-            dropDown.options.Add(englishData);
-
-            Dropdown.OptionData chineseData = new Dropdown.OptionData();
-            chineseData.text = "中文";
-            dropDown.options.Add(chineseData);
-
-            dropDown.captionText.text = "English";
-            //GameObject.Find("LanguageChoose").GetComponent<Dropdown>().captionText.text = "English";
-            //GameObject.Find("LanguageChoose").GetComponent<Dropdown>().options[1].text = "English";
-        }
+        
         if (PlayerPrefs.GetInt("AirPlaneController") == 0|| PlayerPrefs.GetInt("AirPlaneController") ==null)
         {
             modelToggleSlider.value= 0;
@@ -75,7 +43,7 @@ public class ControlsMenuController : MonoBehaviour
         {
             modelToggleSlider.value = 1;
         }
-        
+        soundToggleSlider.value = AudioListener.volume;
     }
 
     // Update is called once per frame
@@ -83,14 +51,7 @@ public class ControlsMenuController : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            if (musicToggleSlider.value < 0.5f)
-            {
-                musicToggleSlider.value = 0;
-            }
-            else
-            {
-                musicToggleSlider.value = 1;
-            }
+            
             if (soundToggleSlider.value < 0.5f)
             {
                 soundToggleSlider.value = 0;
@@ -107,7 +68,7 @@ public class ControlsMenuController : MonoBehaviour
             {
                 modelToggleSlider.value = 1;
             }
-            if (musicToggleSlider.value == 0)
+            if (soundToggleSlider.value == 0)
             {
                 AudioListener.volume = 0;
             }
@@ -123,27 +84,39 @@ public class ControlsMenuController : MonoBehaviour
             {
                 gameController.SendMessage("ChoseGravity");
             }
-            //切换语言，如果和之前存的值不同才改变
-            if (GameObject.FindGameObjectWithTag("Language").GetComponent<Text>().text == "English")
-            {
-                if (PlayerPrefs.GetInt("language") != 1)
-                {
+            ////切换语言，如果和之前存的值不同才改变
+            //if (GameObject.FindGameObjectWithTag("Language").GetComponent<Text>().text == "English")
+            //{
+            //    if (PlayerPrefs.GetInt("language") != 1)
+            //    {
 
-                    language = (int)Language.English;
-                    PlayerPrefs.SetInt("language", language);
-                    Application.LoadLevel(0);        
-                }              
-            }         
-            else
-            {
-                if (PlayerPrefs.GetInt("language") != 0)
-                {
-                    language = (int)Language.Chinese;
-                    PlayerPrefs.SetInt("language", language);
-                    Application.LoadLevel(0);    
-                }         
-            }
+            //        language = (int)Language.English;
+            //        PlayerPrefs.SetInt("language", language);
+            //        Application.LoadLevel(0);        
+            //    }              
+            //}         
+            //else
+            //{
+            //    if (PlayerPrefs.GetInt("language") != 0)
+            //    {
+            //        language = (int)Language.Chinese;
+            //        PlayerPrefs.SetInt("language", language);
+            //        Application.LoadLevel(0);    
+            //    }         
+            //}
         }
         
+    }
+    public void SetChinese()
+    {
+        language = (int)Language.Chinese;
+        PlayerPrefs.SetInt("language", language);
+        SceneManager.LoadScene(0);
+    }
+    public void SetEnglish()
+    {
+        language = (int)Language.English;
+        PlayerPrefs.SetInt("language", language);
+        SceneManager.LoadScene(0);
     }
 }

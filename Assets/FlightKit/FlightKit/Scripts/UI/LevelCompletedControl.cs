@@ -82,7 +82,7 @@ public class LevelCompletedControl : MonoBehaviour
             Invoke("ShowSecondStar", 1.5f);
             Invoke("ShowThirdStar", 2.2f);
         }
-        if (realTime < twoStarTime && realTime>threeStarTime)
+        else if (realTime < twoStarTime && realTime>threeStarTime)
         {
             Invoke("ShowFirstStar", 1f);
             Invoke("ShowSecondStar", 1.5f);         

@@ -14,13 +14,13 @@ PlayerSettings:
   productName: RibbonChase
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.9264706, g: 0.9264706, b: 0.9264706, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 0
-  m_SplashScreenOverlayOpacity: 0
+  m_SplashScreenOverlayOpacity: 0.1
   m_SplashScreenAnimation: 2
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1.7777778
@@ -38,10 +38,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: e656fe5a3ac4d6e449e5c168d17b840f, type: 3}
+  - logo: {fileID: 21300000, guid: ea9f93df9d1e5b14ab4d6e3eaf7729ea, type: 3}
     duration: 4
-  m_SplashScreenBackgroundLandscape: {fileID: 1, guid: 00000000000000000000000000000000,
-    type: 0}
+  m_SplashScreenBackgroundLandscape: {fileID: 0}
   m_SplashScreenBackgroundPortrait: {fileID: 0}
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -122,7 +121,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.PanDeng.RibbonChase
-  bundleVersion: 2.2.2.8
+  bundleVersion: 2.2.2.9
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -366,8 +365,7 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psp2UseDebugIl2cppLibs: 0
   psmSplashimage: {fileID: 0}
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: e7d9b04f140347e4b939e455751dd68f,
-    type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
   webGLMemorySize: 256
