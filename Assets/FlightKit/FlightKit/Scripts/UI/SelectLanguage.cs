@@ -2,25 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectLanguage : MonoBehaviour {
-    public GameObject[] Chinese;
-    public GameObject[] English;
+public class SelectLanguage : MonoBehaviour
+{
+    public List<GameObject> englishUI;
+    public List<GameObject> chineseUI;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         if (PlayerPrefs.GetInt("language") == 0)
         {
-            for (int i = 0; i < Chinese.Length; i++)
+            //中文
+            for (int i = 0; i < englishUI.Count; i++)
             {
-                Chinese[i].SetActive(true);
+                englishUI[i].SetActive(false);
+            }
+            for (int i = 0; i < chineseUI.Count; i++)
+            {
+                chineseUI[i].SetActive(true);
             }
         }
         else
         {
-            for (int i = 0; i < English.Length; i++)
+            //英文
+            for (int i = 0; i < englishUI.Count; i++)
             {
-                English[i].SetActive(true);
+                englishUI[i].SetActive(true);
+            }
+            for (int i = 0; i < chineseUI.Count; i++)
+            {
+                chineseUI[i].SetActive(false);
             }
         }
-	}
+    }
 	
 }
