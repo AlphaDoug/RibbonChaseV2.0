@@ -36,7 +36,6 @@ namespace FlightKit
         [SerializeField]
         private float m_TakeoffHeight = 20;            // the AI will fly straight and only pitch upwards until reaching this height
         private int pickUpsAmount;
-        private Transform m_Target;
         private Transform m_last_Target;
         private AeroplaneController m_AeroplaneController;  // The aeroplane controller that is used to move the plane
         private float m_RandomPerlin;                       // Used for generating random point on perlin noise so that the plane will wander off path slightly
@@ -69,7 +68,7 @@ namespace FlightKit
             m_RandomPerlin = 0f;
         }
 
-        private void Start()
+        void Start()
         {
             GamePickUpsAmount.aiDifficuty = aiDifficuty;
             GamePickUpsAmount.currentLevelPickUps = new List<GameObject>();
@@ -112,13 +111,13 @@ namespace FlightKit
         // fixed update is called in time with the physics system update
         private void Update()
         {
-            if (m_Target == null)
+            if (GamePickUpsAmount.aiCurrentTarget == null)
             {
                 Debug.Log("null");
                 return;
             }
             #region 自动躲避障碍物
-            if (m_Target.gameObject.tag == Tags.PickUp)
+            if (GamePickUpsAmount.aiCurrentTarget.gameObject.tag == Tags.PickUp)
             {
                 //向正前方发射射线
                 distanceTest = new Ray(transform.position, airPlaneFront.transform.position - airPlaneLast.transform.position);
@@ -128,7 +127,7 @@ namespace FlightKit
                 //如果前方300单位之内有障碍物，那么选择一个最佳方向
                 if (distanceTestHit.collider != null)
                 {
-                    m_last_Target = m_Target;
+                    m_last_Target = GamePickUpsAmount.aiCurrentTarget;
                     isRandomTarget = true;
                     ahead = Vector3.Normalize(airPlaneFront.transform.position - airPlaneLast.transform.position);
                     top = Vector3.Normalize(airPlaneTop.transform.position - transform.position);
@@ -159,20 +158,19 @@ namespace FlightKit
                             float minAngle = 1000f;
                             for (int j = 0; j < eightDirectionCan.Count; j++)
                             {
-                                angleEightDirectionCan[j] = Vector3.Angle(m_Target.position - transform.position, eightDirectionCan[j]);
+                                angleEightDirectionCan[j] = Vector3.Angle(GamePickUpsAmount.aiCurrentTarget.position - transform.position, eightDirectionCan[j]);
                                 if (angleEightDirectionCan[j] < minAngle)
                                 {
                                     angleEightDirectionCan[j] = minAngle;
                                     randomTarget.transform.position = transform.position + eightDirectionCan[j];
-                                    m_Target = randomTarget.transform;
-                                    GamePickUpsAmount.aiCurrentTarget = m_Target;
+                                    GamePickUpsAmount.aiCurrentTarget = randomTarget.transform;
                                 }
                             }
                         }
                     }
                 }
             }
-            if (m_Target.gameObject.tag == Tags.RandomTarget)
+            if (GamePickUpsAmount.aiCurrentTarget.gameObject.tag == Tags.RandomTarget)
             {
                 if (isRandomTarget)
                 {
@@ -185,7 +183,7 @@ namespace FlightKit
                 //Physics.Raycast(distanceTest, out distanceTestHit, 90000, 1 << LayerMask.NameToLayer("Obstacle"));
                 //if (distanceTestHit.collider == null)
                 //{
-                //    m_Target = m_last_Target;
+                //    GamePickUpsAmount.aiCurrentTarget = m_last_Target;
                 //    GamePickUpsAmount.aiCurrentTarget = m_last_Target;
                 //}
                 #endregion
@@ -194,10 +192,10 @@ namespace FlightKit
             #endregion
 
             #region AI自动飞行
-            if (m_Target != null)
+            if (GamePickUpsAmount.aiCurrentTarget != null)
             {
                 // make the plane wander from the path, useful for making the AI seem more human, less robotic.
-                Vector3 targetPos = m_Target.position +
+                Vector3 targetPos = GamePickUpsAmount.aiCurrentTarget.position +
                                     transform.right *
                                     (Mathf.PerlinNoise(Time.time * m_LateralWanderSpeed, m_RandomPerlin) * 2 - 1) *
                                     m_LateralWanderDistance;
@@ -268,8 +266,7 @@ namespace FlightKit
                 GamePickUpsAmount.currentCollectingPickUpIndex++;
             }
             Debug.Log("The AI next collecting sphere is: " + GamePickUpsAmount.currentCollectingPickUpIndex.ToString());
-            m_Target = GamePickUpsAmount.currentLevelPickUps[GamePickUpsAmount.currentCollectingPickUpIndex].transform;
-            GamePickUpsAmount.aiCurrentTarget = m_Target;
+            GamePickUpsAmount.aiCurrentTarget = GamePickUpsAmount.currentLevelPickUps[GamePickUpsAmount.currentCollectingPickUpIndex].transform;
         }
         /// <summary>
         /// 在正常模式下，AI选择下一个要收集的光球的策略
@@ -283,8 +280,7 @@ namespace FlightKit
                 GamePickUpsAmount.currentCollectingPickUpIndex = Random.Range(0, pickUpsAmount);
             }
             Debug.Log("The AI next collecting sphere is: " + GamePickUpsAmount.currentCollectingPickUpIndex.ToString());
-            m_Target = GamePickUpsAmount.currentLevelPickUps[GamePickUpsAmount.currentCollectingPickUpIndex].transform;
-            GamePickUpsAmount.aiCurrentTarget = m_Target;
+            GamePickUpsAmount.aiCurrentTarget = GamePickUpsAmount.currentLevelPickUps[GamePickUpsAmount.currentCollectingPickUpIndex].transform;
         }
         /// <summary>
         /// 在困难模式下，AI选择下一个要收集的光球的策略
@@ -354,8 +350,7 @@ namespace FlightKit
             //当前没有能看见的光球，飞机保持飞行状态
             if (pickUp_AI_CanReach.Count == 0)
             {
-                m_Target = null;
-                GamePickUpsAmount.aiCurrentTarget = m_Target;
+                GamePickUpsAmount.aiCurrentTarget = null;
                 Debug.Log("No Target!!!");
                 return;
             }
@@ -373,10 +368,9 @@ namespace FlightKit
                 {
                     if (distance[0] == Vector3.Distance(transform.position, pickUp_AI_CanReach[i].transform.position))
                     {
-                        m_Target = pickUp_AI_CanReach[i].transform;
-                        GamePickUpsAmount.aiCurrentTarget = m_Target;
+                        GamePickUpsAmount.aiCurrentTarget = pickUp_AI_CanReach[i].transform;
                         GamePickUpsAmount.currentCollectingPickUpIndex = i;
-                        //GameObject.Find("NextTargetText").GetComponent<Text>().text = "The AI next collecting sphere is: " + m_Target.gameObject.name;
+                        //GameObject.Find("NextTargetText").GetComponent<Text>().text = "The AI next collecting sphere is: " + GamePickUpsAmount.aiCurrentTarget.gameObject.name;
                         break;
                     }
                 }
@@ -388,39 +382,33 @@ namespace FlightKit
         /// <summary>
         public void SetTargetRandom()
         {
-            m_last_Target = m_Target;
+            m_last_Target = GamePickUpsAmount.aiCurrentTarget;
             int direction = Random.Range(1, 7);
             switch (direction)
             {
                 case 1:
                     randomTarget.transform.position = new Vector3(transform.position.x, transform.position.y + 1000, transform.position.z);
-                    m_Target = randomTarget.transform;
-                    GamePickUpsAmount.aiCurrentTarget = m_Target;
+                    GamePickUpsAmount.aiCurrentTarget = randomTarget.transform;
                     break;
                 case 2:
                     randomTarget.transform.position = new Vector3(transform.position.x, transform.position.y - 1000, transform.position.z);
-                    m_Target = randomTarget.transform;
-                    GamePickUpsAmount.aiCurrentTarget = m_Target;
+                    GamePickUpsAmount.aiCurrentTarget = randomTarget.transform;
                     break;
                 case 3:
                     randomTarget.transform.position = new Vector3(transform.position.x - 1000, transform.position.y, transform.position.z);
-                    m_Target = randomTarget.transform;
-                    GamePickUpsAmount.aiCurrentTarget = m_Target;
+                    GamePickUpsAmount.aiCurrentTarget = randomTarget.transform;
                     break;
                 case 4:
                     randomTarget.transform.position = new Vector3(transform.position.x + 1000, transform.position.y, transform.position.z);
-                    m_Target = randomTarget.transform;
-                    GamePickUpsAmount.aiCurrentTarget = m_Target;
+                    GamePickUpsAmount.aiCurrentTarget = randomTarget.transform;
                     break;
                 case 5:
                     randomTarget.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1000);
-                    m_Target = randomTarget.transform;
-                    GamePickUpsAmount.aiCurrentTarget = m_Target;
+                    GamePickUpsAmount.aiCurrentTarget = randomTarget.transform;
                     break;
                 case 6:
                     randomTarget.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1000);
-                    m_Target = randomTarget.transform;
-                    GamePickUpsAmount.aiCurrentTarget = m_Target;
+                    GamePickUpsAmount.aiCurrentTarget = randomTarget.transform;
                     break;
                 default:
                     break;
@@ -435,7 +423,7 @@ namespace FlightKit
         }
         private void ReSetTarget()
         {
-            m_Target = m_last_Target;
+            GamePickUpsAmount.aiCurrentTarget = m_last_Target;
             GamePickUpsAmount.aiCurrentTarget = m_last_Target;
             isRandomTarget = false;
         }

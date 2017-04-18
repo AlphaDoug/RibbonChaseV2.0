@@ -16,10 +16,14 @@ public class Cannon : MonoBehaviour {
         GetComponent<Rigidbody>().AddForce(transform.forward * speed);
         StartCoroutine(this.ExplosionCannon(3.0f));
     }
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter");
-        StartCoroutine(this.ExplosionCannon(0.0f));
+        if (other.tag == "Player" || other.tag == "PlayerAI" || other.tag == "Obstacle")
+        {
+            Debug.Log("OnTriggerEnter");
+            StartCoroutine(this.ExplosionCannon(0.0f));
+        }
+        
     }
     IEnumerator ExplosionCannon(float tm)
     {

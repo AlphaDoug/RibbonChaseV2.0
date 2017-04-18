@@ -33,14 +33,6 @@ namespace FlightKit
         {
             
             gameController = GameObject.Find("GameController").GetComponent<GameController>();
-            if (GameObject.Find("MainCamera").GetComponent<RidParents>())
-            {
-                ridParents = GameObject.Find("MainCamera").GetComponent<RidParents>();
-            }
-            else
-            {
-                Debug.Log("Can not find RidParents.");
-            }
 
             #region If UI text holders not provided, try to find them by names.
             // If UI text holders not provided, try to find them by names.

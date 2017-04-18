@@ -5623,8 +5623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3e64677f6ff9d41b42f9c5c7153198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityBorder: {fileID: 1045534819}
-  joyBorder: {fileID: 1890206290}
   airPlane: {fileID: 1551328903}
   joyStick: {fileID: 822109061}
 --- !u!114 &548589937 stripped
@@ -6615,10 +6613,6 @@ Prefab:
       propertyPath: randomTarget
       value: 
       objectReference: {fileID: 1264780130}
-    - target: {fileID: 1585041917649862, guid: 57accee07a426154e98479f2ddab844f, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57accee07a426154e98479f2ddab844f, type: 2}
   m_IsPrefabParent: 0
@@ -6747,8 +6741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e5371bf1772453ba3d1e0449d7d22e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bypassAdsProvider: 1
-  adsProvider: {fileID: 11439324, guid: 67fdd13f2e7b44d9297e66b636fb7e0f, type: 2}
 --- !u!114 &822109064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6763,7 +6755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showLevelFailMenu: 1
   levelFailMenu: {fileID: 2065930171}
-  selfRotate: {fileID: 0}
+  disActivedUI: []
 --- !u!114 &822109065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6784,7 +6776,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 822109060}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ab6e43dbf88a47e1bffee72ad2791d3, type: 3}
   m_Name: 
@@ -9171,10 +9163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0226c77550a7da742b7cd771b971479a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicToggle: {fileID: 489218226}
-  SoundToggle: {fileID: 874597193}
-  ModelToggle: {fileID: 1348669676}
+  musicToggle: {fileID: 0}
+  soundToggle: {fileID: 0}
+  modelToggle: {fileID: 0}
   gameController: {fileID: 548589935}
+  language: 0
 --- !u!222 &1066047890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10551,12 +10544,12 @@ Prefab:
     - target: {fileID: 224575073253215654, guid: c6d8dc52f543426488d964416d489b58,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224575073253215654, guid: c6d8dc52f543426488d964416d489b58,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6d8dc52f543426488d964416d489b58, type: 2}
@@ -12431,7 +12424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4020811191ab6a8488146453a2c8c52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: {fileID: 519135263}
   levelScripts: {fileID: 822109060}
   GameController: {fileID: 548589935}
   loadingSceneIndex: 0
@@ -12975,7 +12967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4020811191ab6a8488146453a2c8c52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: {fileID: 1748624382}
   levelScripts: {fileID: 822109060}
   GameController: {fileID: 548589935}
   loadingSceneIndex: 3
@@ -15524,6 +15515,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8201792, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63c2449b101e663458c8c6b0bd1376bd, type: 2}
   m_IsPrefabParent: 0
@@ -17180,6 +17175,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8246368, guid: 9cf52fc992e12e14bb04436399001871, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cf52fc992e12e14bb04436399001871, type: 2}
   m_IsPrefabParent: 0
@@ -18563,6 +18562,9 @@ MonoBehaviour:
   retryButton: {fileID: 42732970}
   nextButton: {fileID: 261974841}
   airPlane: {fileID: 1551328903}
+  oneStarTime: 0
+  twoStarTime: 0
+  threeStarTime: 0
 --- !u!224 &2125258829
 RectTransform:
   m_ObjectHideFlags: 0

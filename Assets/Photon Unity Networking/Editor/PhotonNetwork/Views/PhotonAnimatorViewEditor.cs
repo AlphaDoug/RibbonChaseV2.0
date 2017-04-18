@@ -4,7 +4,7 @@
 // </copyright>
 // <summary>
 //   This is a custom editor for the AnimatorView component.
-// </summary>
+// </summary>    private PhotonAnimatorView m_Target;
 // <author>developer@exitgames.com</author>
 // ----------------------------------------------------------------------------
 

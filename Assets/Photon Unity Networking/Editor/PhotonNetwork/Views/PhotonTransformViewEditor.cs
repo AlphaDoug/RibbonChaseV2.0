@@ -20,7 +20,7 @@ using UnityEngine;
 [CustomEditor(typeof (PhotonTransformView))]
 public class PhotonTransformViewEditor : Editor
 {
-    //private PhotonTransformView m_Target;
+    //private PhotonTransformView GamePickUpsAmount.aiCurrentTarget;
 
     private SerializedProperty m_SynchronizePositionProperty;
     private SerializedProperty m_SynchronizeRotationProperty;
@@ -64,7 +64,7 @@ public class PhotonTransformViewEditor : Editor
     {
 		serializedObject.Update ();
 
-        //this.m_Target = (PhotonTransformView) target;
+        //this.GamePickUpsAmount.aiCurrentTarget = (PhotonTransformView) target;
 
         DrawIsPlayingWarning();
         GUI.enabled = !Application.isPlaying;
