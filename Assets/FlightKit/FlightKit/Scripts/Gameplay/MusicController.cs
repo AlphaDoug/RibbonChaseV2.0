@@ -52,7 +52,8 @@ namespace FlightKit
 				UIEventsPublisher1.OnPlayEvent += OnPlayClicked;
 				TakeOffPublisher.OnTakeOffEvent += StartGameplay;
 			}
-            
+            RevivePermissionProvider.OnReviveRequested += HandleReviveRequest;
+            RevivePermissionProvider.OnReviveGranted += HandleRevive;
 
         }
 
@@ -60,6 +61,8 @@ namespace FlightKit
         {
             UIEventsPublisher1.OnPlayEvent -= OnPlayClicked;
             TakeOffPublisher.OnTakeOffEvent -= StartGameplay;
+            RevivePermissionProvider.OnReviveRequested -= HandleReviveRequest;
+            RevivePermissionProvider.OnReviveGranted -= HandleRevive;
         }
 
         public virtual void Pause()

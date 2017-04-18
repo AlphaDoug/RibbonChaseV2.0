@@ -55,14 +55,14 @@ namespace FlightKit
         {
             PickupSphere.OnCollectEvent += HandlePickupCollected;
             TakeOffPublisher.OnTakeOffEvent += HandleTakeOff;
-
+            RevivePermissionProvider.OnReviveGranted += HandleRevive;
         }
 
         void OnDisable()
         {
             PickupSphere.OnCollectEvent -= HandlePickupCollected;
             TakeOffPublisher.OnTakeOffEvent -= HandleTakeOff;
-
+            RevivePermissionProvider.OnReviveGranted -= HandleRevive;
         }
         
         private void HandlePickupCollected()
