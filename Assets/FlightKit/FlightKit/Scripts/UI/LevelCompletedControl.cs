@@ -35,7 +35,8 @@ public class LevelCompletedControl : MonoBehaviour
     public float oneStarTime;
     public float twoStarTime;
     public float threeStarTime;
- 
+
+    private int starNum=0;
     // Use this for initialization
     void Start()
     {
@@ -73,29 +74,42 @@ public class LevelCompletedControl : MonoBehaviour
         //}
         //retryButtonCanvasRenderer.SetAlpha(0);
         
-
-
         //GameObject.Find("RealTime").guiText = successTime;
         if (realTime < threeStarTime)
         {
             Invoke("ShowFirstStar", 1f);
             Invoke("ShowSecondStar", 1.5f);
             Invoke("ShowThirdStar", 2.2f);
+            starNum = 3;      
         }
         else if (realTime < twoStarTime && realTime>threeStarTime)
         {
             Invoke("ShowFirstStar", 1f);
-            Invoke("ShowSecondStar", 1.5f);         
+            Invoke("ShowSecondStar", 1.5f);
+            starNum = 2;
         }
         else
         {
             Invoke("ShowFirstStar", 1f);
+            starNum = 1;
         }
-        
+
+        if (PlayerPrefs.HasKey("LevelStarNum_" + Application.loadedLevel))
+        {
+            if(starNum>PlayerPrefs.GetInt("LevelStarNum_" +  Application.loadedLevel))
+            {
+                PlayerPrefs.SetInt("LevelStarNum_" + Application.loadedLevel, starNum);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("LevelStarNum_" + Application.loadedLevel, starNum);
+        }
+        Debug.Log("starNum" + starNum);
+        Debug.Log("LevelStarNum_" + Application.loadedLevel + PlayerPrefs.GetInt("LevelStarNum_" + Application.loadedLevel));
         Invoke("ShowReturnButton", 2.5f);
         Invoke("ShowRetryButton", 2.7f);
         Invoke("ShowNextButton", 2.9f);
-
     }
 
     // Update is called once per frame

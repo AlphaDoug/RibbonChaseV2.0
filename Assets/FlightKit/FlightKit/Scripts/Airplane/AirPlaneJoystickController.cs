@@ -62,19 +62,32 @@ namespace FlightKit
         }
         void OnEnable()
         {
+            
             EasyJoystick.On_JoystickMove += On_JoystickMove;
             EasyJoystick.On_JoystickMoveEnd += On_JoystickMoveEnd;            
         }
-
+   
         void On_JoystickMove(MovingJoystick move)
         {
-             ClearLRR();
-             pitch = -(ControlsPrefs.IsInversePitch ? -1f : 1f) * move.joystickAxis.y;
-             yaw = move.joystickAxis.x;       
+            
+            ClearLRR();
+            if (PlayerPrefs.GetInt("ReviseDirection") ==0)
+            {
+                pitch = -(ControlsPrefs.IsInversePitch ? -1f : 1f) * move.joystickAxis.y;
+                //正向控制
+            }
+            else
+            {
+                pitch = (ControlsPrefs.IsInversePitch ? -1f : 1f) * move.joystickAxis.y;
+                //反向控制
+            }
+           
+            yaw = move.joystickAxis.x;       
         }
 
         void On_JoystickMoveEnd(MovingJoystick move)
         {
+
             pitch =0;
             yaw = 0;
         }

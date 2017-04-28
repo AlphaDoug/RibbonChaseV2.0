@@ -120,7 +120,7 @@ public class LevelSelectNew : MonoBehaviour
                     if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
                         Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight /2)
                     {
-                        LoadLevel(currentPage);
+                       // LoadLevel(currentPage);
                     }
 
                     #endregion

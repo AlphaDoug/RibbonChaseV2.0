@@ -7,10 +7,12 @@ public class ControlsMenuController : MonoBehaviour
 {
     public GameObject soundToggle;
     public GameObject modelToggle;
+    public GameObject reviseToggle;
     public GameObject gameController;
 
     private Slider soundToggleSlider;
     private Slider modelToggleSlider;
+    private Slider reviseToggleSlider;
     private Dropdown dropDown;
     public int language = 0;
     //语言选择
@@ -27,15 +29,16 @@ public class ControlsMenuController : MonoBehaviour
         //musicToggleSlider = musicToggle.GetComponent<Slider>();
         soundToggleSlider = soundToggle.GetComponent<Slider>();
         modelToggleSlider = modelToggle.GetComponent<Slider>();
+        reviseToggleSlider = reviseToggle.GetComponent<Slider>();
         language = (int)Language.Chinese;
 
-        //初始化时如果有之前存的值就读取之前存的值来初始化
+        //初始化语言
         if (PlayerPrefs.GetInt("language") == null)
         {
             PlayerPrefs.SetInt("language", 0);
         }
-        
-        if (PlayerPrefs.GetInt("AirPlaneController") == 0|| PlayerPrefs.GetInt("AirPlaneController") ==null)
+        //初始化模式控制
+        if (PlayerPrefs.GetInt("AirPlaneController") == 0|| PlayerPrefs.GetInt("AirPlaneController") == null)
         {
             modelToggleSlider.value= 0;
         }
@@ -44,6 +47,15 @@ public class ControlsMenuController : MonoBehaviour
             modelToggleSlider.value = 1;
         }
         soundToggleSlider.value = AudioListener.volume;
+        //初始化方向控制
+        if (PlayerPrefs.GetInt("ReviseDirection") == 0)
+        {
+            reviseToggleSlider.value = 1;
+        }
+        else
+        {
+            reviseToggleSlider.value = 0;
+        }
     }
 
     // Update is called once per frame
@@ -60,6 +72,18 @@ public class ControlsMenuController : MonoBehaviour
             {
                 soundToggleSlider.value = 1;
             }
+
+            if (reviseToggleSlider.value < 0.5f)
+            {
+                reviseToggleSlider.value = 0;
+                ReviseDirection();
+            }
+            else
+            {
+                reviseToggleSlider.value = 1;
+                NormalDirection();
+            }
+
             if (modelToggleSlider.value < 0.5f)
             {
                 modelToggleSlider.value = 0;
@@ -76,6 +100,7 @@ public class ControlsMenuController : MonoBehaviour
             {
                 AudioListener.volume = 1;
             }
+         
             if (modelToggleSlider.value==0)
             {
                 gameController.SendMessage("ChoseJoyStick");
@@ -118,5 +143,13 @@ public class ControlsMenuController : MonoBehaviour
         language = (int)Language.English;
         PlayerPrefs.SetInt("language", language);
         SceneManager.LoadScene(0);
+    }
+    public void NormalDirection()
+    {
+        PlayerPrefs.SetInt("ReviseDirection", 0);
+    }
+    public void ReviseDirection()
+    {
+        PlayerPrefs.SetInt("ReviseDirection", 1);
     }
 }
