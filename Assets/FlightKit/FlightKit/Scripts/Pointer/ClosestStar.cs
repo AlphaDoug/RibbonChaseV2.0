@@ -37,7 +37,7 @@ public class ClosestStar : MonoBehaviour
 
     public void UpdateClosestStar()
     {
-        Debug.Log(airPlane.GetComponent<Pointer>().pickupCollectedNum + ":" + pickupTotalNum);
+     
         if (airPlane.GetComponent<Pointer>().pickupCollectedNum < pickupTotalNum)
         {
             //获取离本星最近的星并放在closestPickUp中

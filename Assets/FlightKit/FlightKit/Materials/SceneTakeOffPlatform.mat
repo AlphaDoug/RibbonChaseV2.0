@@ -7,10 +7,10 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SceneTakeOffPlatform
-  m_Shader: {fileID: 4800000, guid: e205ec5a2dab342e78812532c2f67fd5, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4b748aeef3ebaaa43877cf6f1e30b271, type: 3}
   m_ShaderKeywords: BACK_GRADIENT_ON COLR_1_2 FRONT_GRADIENT_ON LEFT_GRADIENT_ON RIGHT_GRADIENT_ON
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -133,7 +133,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 0}
     - first:
         name: _BackBottomColor
-      second: {r: 0.9725491, g: 0.050980397, b: 0.30588236, a: 0}
+      second: {r: 0.34331748, g: 0.73834586, b: 0.9338235, a: 0}
     - first:
         name: _BackColor
       second: {r: 0.98823535, g: 0.77647066, b: 0.37254903, a: 0}
@@ -142,7 +142,7 @@ Material:
       second: {r: 0.98823535, g: 0.7725491, b: 0.37254903, a: 0}
     - first:
         name: _BottomColor
-      second: {r: 0.78676474, g: 0.31817693, b: 0.36552346, a: 0}
+      second: {r: 0.06704153, g: 0.7369942, b: 0.9117647, a: 0}
     - first:
         name: _Color
       second: {r: 1, g: 1, b: 1, a: 1}
@@ -151,7 +151,7 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _FrontBottomColor
-      second: {r: 0.9558824, g: 0.7801687, b: 0.8287704, a: 0}
+      second: {r: 0.7801687, g: 0.904986, b: 0.9558824, a: 0}
     - first:
         name: _FrontColor
       second: {r: 1, g: 0.43382353, b: 0.75010157, a: 0}
@@ -160,13 +160,13 @@ Material:
       second: {r: 0.9191176, g: 0.9191176, b: 0.9191176, a: 0}
     - first:
         name: _LeftBottomColor
-      second: {r: 0.9725491, g: 0.054901965, b: 0.32156864, a: 0}
+      second: {r: 0.13802983, g: 0.61974794, b: 0.8161765, a: 0}
     - first:
         name: _LeftColor
       second: {r: 1, g: 0.20392159, b: 0.427451, a: 0}
     - first:
         name: _LeftTopColor
-      second: {r: 0.9725491, g: 0.20392159, b: 0.427451, a: 0}
+      second: {r: 0.3553201, g: 0.62147397, b: 0.7794118, a: 0}
     - first:
         name: _LightTint
       second: {r: 1, g: 1, b: 1, a: 0}
@@ -175,16 +175,16 @@ Material:
       second: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 1}
     - first:
         name: _RightBottomColor
-      second: {r: 0.45098042, g: 0.20000002, b: 0.97647065, a: 0}
+      second: {r: 0.9485294, g: 0.8160143, b: 0.84316754, a: 0}
     - first:
         name: _RightColor
       second: {r: 0.6313726, g: 0.42352945, b: 0.97647065, a: 0}
     - first:
         name: _RightTopColor
-      second: {r: 0.6313726, g: 0.42352945, b: 0.97647065, a: 0}
+      second: {r: 0.8569961, g: 0.8873999, b: 0.9632353, a: 0}
     - first:
         name: _ShadowColor
       second: {r: 0, g: 0, b: 0, a: 0}
     - first:
         name: _TopColor
-      second: {r: 0.98823535, g: 0.7568628, b: 0.3647059, a: 0}
+      second: {r: 0.48918685, g: 0.6768465, b: 0.85294116, a: 0}

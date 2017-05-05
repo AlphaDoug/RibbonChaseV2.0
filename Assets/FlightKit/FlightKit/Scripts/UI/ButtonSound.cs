@@ -34,7 +34,6 @@ public class ButtonSound : MonoBehaviour
         if (_audioSource != null)
         {
             _audioSource.PlayOneShot(sound);
-            Debug.Log("Audio");
         }
     }
 
