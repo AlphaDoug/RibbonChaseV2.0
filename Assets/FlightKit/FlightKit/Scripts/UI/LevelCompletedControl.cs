@@ -126,7 +126,7 @@ public class LevelCompletedControl : MonoBehaviour
             //retryButtonCanvasRenderer.SetAlpha(buttonAlpha1);
             retryButton.SetActive(true);
         }
-        if (isShowNext && loadedLevel != 6)
+        if (isShowNext && loadedLevel != 7)
         {
             //buttonAlpha2 = buttonAlpha2 + 0.02f;
             //if (nextButtonCanvasRenderer != null)

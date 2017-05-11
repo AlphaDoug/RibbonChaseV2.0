@@ -67,7 +67,11 @@ namespace FlightKit
         
         private void HandlePickupCollected()
         {
-            fuelAmount += pickupFuelAmount;
+            if (fuelAmount < 1)
+            {
+                fuelAmount += pickupFuelAmount;
+            }
+                   
             if (fuelAmount >= LOW_FUEL_PERCENT)
             {
                 _lowFuelRegistered = false;
