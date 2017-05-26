@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "beffio/ParticleAlphaBlendStroke"
 {
 Properties
@@ -57,7 +59,7 @@ Category
 			v2f vert (appdata_a v)
 			{
 				v2f g;
-				g.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				g.vertex = UnityObjectToClipPos(v.vertex);
 				g.color = v.color;
 				g.texcoord = TRANSFORM_TEX(v.texcoord,_MainTex);
 				g.normal = v.normal;

@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
 //----------------------------------------------
@@ -91,7 +93,7 @@ struct CL_OUT_WPOS_SOFT_FOG {
 CL_OUT_WPOS calculateLighting(CL_IN v,half3 rimColor,half rimPower,half3 f_color,half3 r_color,half3 t_color){
 	
 	CL_OUT_WPOS o;
-	o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos (v.vertex);
 	o.wpos = mul( unity_ObjectToWorld, half4(v.vertex.xyz,1) );
 	half3 normal =  normalize(mul(unity_ObjectToWorld,half4(v.normal,0))).xyz;
 #ifdef USE_DIST_LIGHT
