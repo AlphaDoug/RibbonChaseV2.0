@@ -10,181 +10,87 @@ Material:
   m_Shader: {fileID: 4800000, guid: 4b748aeef3ebaaa43877cf6f1e30b271, type: 3}
   m_ShaderKeywords: BACK_GRADIENT_ON COLR_1_2 FRONT_GRADIENT_ON LEFT_GRADIENT_ON RIGHT_GRADIENT_ON
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _BumpMap
-      second:
+    - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailAlbedoMap
-      second:
+    - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailMask
-      second:
+    - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailNormalMap
-      second:
+    - _DetailNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _EmissionMap
-      second:
+    - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTex
-      second:
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MetallicGlossMap
-      second:
+    - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _OcclusionMap
-      second:
+    - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _ParallaxMap
-      second:
+    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: _AmbientPower
-      second: 0
-    - first:
-        name: _BumpScale
-      second: 1
-    - first:
-        name: _Cutoff
-      second: 0.5
-    - first:
-        name: _DetailNormalMapScale
-      second: 1
-    - first:
-        name: _DstBlend
-      second: 0
-    - first:
-        name: _Glossiness
-      second: 0.5
-    - first:
-        name: _GradientHeight
-      second: 289.63
-    - first:
-        name: _GradientYStartPos
-      second: 24.46
-    - first:
-        name: _IsWorldSpace
-      second: 1
-    - first:
-        name: _LightmapPower
-      second: 1
-    - first:
-        name: _Metallic
-      second: 0
-    - first:
-        name: _Mode
-      second: 0
-    - first:
-        name: _OcclusionStrength
-      second: 1
-    - first:
-        name: _Parallax
-      second: 0.02
-    - first:
-        name: _ShadowPower
-      second: 0.25
-    - first:
-        name: _SrcBlend
-      second: 1
-    - first:
-        name: _UVSec
-      second: 0
-    - first:
-        name: _UseLightMap
-      second: 0
-    - first:
-        name: _ZWrite
-      second: 1
+    - _AmbientPower: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Glossiness: 0.5
+    - _GradientHeight: 289.63
+    - _GradientYStartPos: 24.46
+    - _IsWorldSpace: 1
+    - _LightmapPower: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _ShadowPower: 0.25
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UseLightMap: 0
+    - _ZWrite: 1
     m_Colors:
-    - first:
-        name: _AmbientColor
-      second: {r: 1, g: 1, b: 1, a: 0}
-    - first:
-        name: _BackBottomColor
-      second: {r: 0.34331748, g: 0.73834586, b: 0.9338235, a: 0}
-    - first:
-        name: _BackColor
-      second: {r: 0.98823535, g: 0.77647066, b: 0.37254903, a: 0}
-    - first:
-        name: _BackTopColor
-      second: {r: 0.98823535, g: 0.7725491, b: 0.37254903, a: 0}
-    - first:
-        name: _BottomColor
-      second: {r: 0.06704153, g: 0.7369942, b: 0.9117647, a: 0}
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _FrontBottomColor
-      second: {r: 0.7801687, g: 0.904986, b: 0.9558824, a: 0}
-    - first:
-        name: _FrontColor
-      second: {r: 1, g: 0.43382353, b: 0.75010157, a: 0}
-    - first:
-        name: _FrontTopColor
-      second: {r: 0.9191176, g: 0.9191176, b: 0.9191176, a: 0}
-    - first:
-        name: _LeftBottomColor
-      second: {r: 0.13802983, g: 0.61974794, b: 0.8161765, a: 0}
-    - first:
-        name: _LeftColor
-      second: {r: 1, g: 0.20392159, b: 0.427451, a: 0}
-    - first:
-        name: _LeftTopColor
-      second: {r: 0.3553201, g: 0.62147397, b: 0.7794118, a: 0}
-    - first:
-        name: _LightTint
-      second: {r: 1, g: 1, b: 1, a: 0}
-    - first:
-        name: _LightmapColor
-      second: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 1}
-    - first:
-        name: _RightBottomColor
-      second: {r: 0.9485294, g: 0.8160143, b: 0.84316754, a: 0}
-    - first:
-        name: _RightColor
-      second: {r: 0.6313726, g: 0.42352945, b: 0.97647065, a: 0}
-    - first:
-        name: _RightTopColor
-      second: {r: 0.8569961, g: 0.8873999, b: 0.9632353, a: 0}
-    - first:
-        name: _ShadowColor
-      second: {r: 0, g: 0, b: 0, a: 0}
-    - first:
-        name: _TopColor
-      second: {r: 0.48918685, g: 0.6768465, b: 0.85294116, a: 0}
+    - _AmbientColor: {r: 1, g: 1, b: 1, a: 0}
+    - _BackBottomColor: {r: 0.34331748, g: 0.73834586, b: 0.9338235, a: 0}
+    - _BackColor: {r: 0.98823535, g: 0.77647066, b: 0.37254903, a: 0}
+    - _BackTopColor: {r: 0.98823535, g: 0.7725491, b: 0.37254903, a: 0}
+    - _BottomColor: {r: 0.06704153, g: 0.7369942, b: 0.9117647, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FrontBottomColor: {r: 0.7801687, g: 0.904986, b: 0.9558824, a: 0}
+    - _FrontColor: {r: 1, g: 0.43382353, b: 0.75010157, a: 0}
+    - _FrontTopColor: {r: 0.9191176, g: 0.9191176, b: 0.9191176, a: 0}
+    - _LeftBottomColor: {r: 0.13802983, g: 0.61974794, b: 0.8161765, a: 0}
+    - _LeftColor: {r: 1, g: 0.20392159, b: 0.427451, a: 0}
+    - _LeftTopColor: {r: 0.3553201, g: 0.62147397, b: 0.7794118, a: 0}
+    - _LightTint: {r: 1, g: 1, b: 1, a: 0}
+    - _LightmapColor: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 1}
+    - _RightBottomColor: {r: 0.9485294, g: 0.8160143, b: 0.84316754, a: 0}
+    - _RightColor: {r: 0.6313726, g: 0.42352945, b: 0.97647065, a: 0}
+    - _RightTopColor: {r: 0.8569961, g: 0.8873999, b: 0.9632353, a: 0}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
+    - _TopColor: {r: 0.48918685, g: 0.6768465, b: 0.85294116, a: 0}

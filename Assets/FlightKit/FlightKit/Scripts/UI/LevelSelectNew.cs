@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LevelSelectNew : MonoBehaviour
 {
     public GameObject allLevels;
+    public GameObject levelSel;
     public RectTransform mainPosition;
     public GameObject nextPage;
     public GameObject lastPage;
@@ -94,24 +95,24 @@ public class LevelSelectNew : MonoBehaviour
                 {
                     if (currentPage > 1)
                     {
-                        Move2LastPage();
+                        Move2LastPage();///////////
                     }
                     if (currentPage == 1)
                     {
                         currentPage = 0;
-                        Move2NextPage();
+                        Move2NextPage();//////////
                     }
                 }
                 else if (Input.mousePosition.x - mouseDownPosition_x < -100)
                 {
                     if (currentPage < maxPagesAmount)
                     {
-                        Move2NextPage();
+                        Move2NextPage();/////////////
                     }
                     if (currentPage == maxPagesAmount)
                     {
                         currentPage = maxPagesAmount + 1;
-                        Move2LastPage();
+                        Move2LastPage();/////////////////////
                     }
                 }
                 else//点击某个界面
@@ -120,7 +121,7 @@ public class LevelSelectNew : MonoBehaviour
                     if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
                         Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight /2)
                     {
-                       // LoadLevel(currentPage);
+                        LoadLevel(currentPage);
                     }
 
                     #endregion
@@ -132,24 +133,24 @@ public class LevelSelectNew : MonoBehaviour
                 {
                     if (currentPage > 1)
                     {
-                        Move2LastPage();
+                        Move2LastPage();/////////////
                     }
                     if (currentPage == 1)
                     {
                         currentPage = 0;
-                        Move2NextPage();
+                        Move2NextPage();////////////
                     }
                 }
                 else if(Input.mousePosition.x - mouseDownPosition_x < 0)
                 {
                     if (currentPage < maxPagesAmount)
                     {
-                        Move2NextPage();
+                        Move2NextPage();//////////
                     }
                     if (currentPage == maxPagesAmount)
                     {
                         currentPage = maxPagesAmount + 1;
-                        Move2LastPage();
+                        Move2LastPage();//////////
                     }
                 }
             }
@@ -184,6 +185,7 @@ public class LevelSelectNew : MonoBehaviour
     
     private void LoadLevel(int index)
     {
+        levelSel.SetActive(false);
         loadingScenes[index - 1].SetActive(true);
     }
 

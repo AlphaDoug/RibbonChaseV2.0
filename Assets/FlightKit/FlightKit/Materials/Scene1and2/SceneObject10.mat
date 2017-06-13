@@ -11,70 +11,34 @@ Material:
   m_ShaderKeywords: BACK_GRADIENT_ON COLR_1_2 FRONT_GRADIENT_ON LEFT_GRADIENT_ON LIGHTMAP_COLR_ON
     RIGHT_GRADIENT_ON
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
   m_CustomRenderQueue: 2000
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: _AmbientPower
-      second: 0
-    - first:
-        name: _GradientHeight
-      second: 10
-    - first:
-        name: _GradientYStartPos
-      second: 0
-    - first:
-        name: _LightmapPower
-      second: 0.5
-    - first:
-        name: _ShadowPower
-      second: 0.25
+    - _AmbientPower: 0
+    - _GradientHeight: 10
+    - _GradientYStartPos: 0
+    - _LightmapPower: 0.5
+    - _ShadowPower: 0.25
     m_Colors:
-    - first:
-        name: _AmbientColor
-      second: {r: 0.5, g: 0.5, b: 0.5, a: 0}
-    - first:
-        name: _BackBottomColor
-      second: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
-    - first:
-        name: _BackTopColor
-      second: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
-    - first:
-        name: _BottomColor
-      second: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
-    - first:
-        name: _FrontBottomColor
-      second: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
-    - first:
-        name: _FrontTopColor
-      second: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
-    - first:
-        name: _LeftBottomColor
-      second: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
-    - first:
-        name: _LeftTopColor
-      second: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
-    - first:
-        name: _LightTint
-      second: {r: 1, g: 1, b: 1, a: 0}
-    - first:
-        name: _LightmapColor
-      second: {r: 0.5441177, g: 0.5441177, b: 0.5441177, a: 0}
-    - first:
-        name: _RightBottomColor
-      second: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
-    - first:
-        name: _RightTopColor
-      second: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
-    - first:
-        name: _TopColor
-      second: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
+    - _AmbientColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _BackBottomColor: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
+    - _BackTopColor: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
+    - _BottomColor: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
+    - _FrontBottomColor: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
+    - _FrontTopColor: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
+    - _LeftBottomColor: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
+    - _LeftTopColor: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
+    - _LightTint: {r: 1, g: 1, b: 1, a: 0}
+    - _LightmapColor: {r: 0.5441177, g: 0.5441177, b: 0.5441177, a: 0}
+    - _RightBottomColor: {r: 0.95686275, g: 0.6117647, b: 0.24705882, a: 0}
+    - _RightTopColor: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
+    - _TopColor: {r: 0.9254902, g: 0.80784315, b: 0.41960785, a: 0}
