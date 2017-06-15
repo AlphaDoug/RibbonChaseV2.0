@@ -36,19 +36,19 @@ public class LevelSelectNew : MonoBehaviour
         MoveOnPause();
 
         #region 控制左右按钮可用性
-        if (currentPage >= maxPagesAmount && nextPage.GetActive())
+        if (currentPage >= maxPagesAmount && nextPage.active)
         {
             nextPage.SetActive(false);
         }
-        if (currentPage < maxPagesAmount && !nextPage.GetActive())
+        if (currentPage < maxPagesAmount && !nextPage.active)
         {
             nextPage.SetActive(true);
         }
-        if (currentPage <= 1 && lastPage.GetActive())
+        if (currentPage <= 1 && lastPage.active)
         {
             lastPage.SetActive(false);
         }
-        if (currentPage > 1 && !lastPage.GetActive())
+        if (currentPage > 1 && !lastPage.active)
         {
             lastPage.SetActive(true);
         }

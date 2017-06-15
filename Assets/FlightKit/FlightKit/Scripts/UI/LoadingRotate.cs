@@ -36,7 +36,7 @@ public class LoadingRotate : MonoBehaviour {
         }
         //在这里开启一个异步任务，
         //进入loadScene方法。
-        StartCoroutine(loadScene8());
+       // StartCoroutine(loadScene8());
 	}
 	
 	// Update is called once per frame
