@@ -53,7 +53,7 @@ public class Pointer : MonoBehaviour {
             }                
         
 	}
-    //每次吃球就把光标指向离这个球最近的球
+    //每次吃球就把光标指向离这个球最近的球,并且将除了这个球的景物全部虚化
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("PickUp"))
@@ -61,7 +61,7 @@ public class Pointer : MonoBehaviour {
             collider.gameObject.GetComponent<SphereCollider>().enabled = false;
             collider.gameObject.GetComponent<ClosestStar>().enabled = false;
             dest = collider.gameObject.GetComponent<ClosestStar>().closestPickUp;
-
+            Camera.main.GetComponent<DepthOfField>().focalTransform = dest.transform;
             pickupCollectedNum++;
 
             for (int i = 0; i < closestStar.Count; i++)
