@@ -79,6 +79,7 @@ namespace FlightKit
                 {
                     _soundSource.PlayOneShot(hit);
                 }
+                GameObject.Find("DistanceTest").GetComponent<BrushPastControl>().SetPlaneStateFarAway();
             }          
             if (isAI)
             {

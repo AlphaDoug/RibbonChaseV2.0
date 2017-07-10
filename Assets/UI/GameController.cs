@@ -5,12 +5,12 @@ using FlightKit;
 public class GameController : MonoBehaviour
 {
     //public static int airPlaneController = 1;
+    public GameObject endTheGameBox;
     public bool isGameOver;
     public GameObject []disActive;
     public GameObject[] setActive;
     public GameObject progressTracker;
     FlightKit.GameProgressTracker processTracker;
-    private int escapeCount=0;
     float t1, t2;
     public static int airPlaneController;
     void Awake()
@@ -74,27 +74,10 @@ public class GameController : MonoBehaviour
     }
     void Update()
     {
-        //双击退出游戏
+        //退出游戏提示框
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            escapeCount++;
-            if (escapeCount == 1)
-            {
-                t1 = Time.time;
-            }
-            if (escapeCount == 2)
-            {
-                t2 = Time.time;
-                if (t2 - t1 < 1f)
-                {
-                    Application.Quit();
-                }
-                else
-                {
-                    escapeCount = 0;
-
-                }
-            }
+            endTheGameBox.SetActive(true);
         }
     }
     public void StartLevel_0()

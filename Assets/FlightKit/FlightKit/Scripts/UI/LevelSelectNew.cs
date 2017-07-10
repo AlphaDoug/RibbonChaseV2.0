@@ -59,7 +59,7 @@ public class LevelSelectNew : MonoBehaviour
         {
             if (allLevels.GetComponent<RectTransform>().localPosition.x < -screenWidth * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 5;
+                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
                 isMovingToNextPage = false;
                 isMovingToLastPage = true;
             }
@@ -68,7 +68,7 @@ public class LevelSelectNew : MonoBehaviour
         {
             if (allLevels.GetComponent<RectTransform>().localPosition.x > -screenWidth * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 5;
+                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
                 isMovingToLastPage = false;
                 isMovingToNextPage = true;
             }

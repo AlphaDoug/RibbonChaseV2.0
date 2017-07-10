@@ -61,7 +61,7 @@ public class Pointer : MonoBehaviour {
             collider.gameObject.GetComponent<SphereCollider>().enabled = false;
             collider.gameObject.GetComponent<ClosestStar>().enabled = false;
             dest = collider.gameObject.GetComponent<ClosestStar>().closestPickUp;
-            Camera.main.GetComponent<DepthOfField>().focalTransform = dest.transform;
+            //Camera.main.GetComponent<DepthOfField>().focalTransform = dest.transform;
             pickupCollectedNum++;
 
             for (int i = 0; i < closestStar.Count; i++)
