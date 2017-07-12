@@ -77,4 +77,12 @@ public class BrushPastControl : MonoBehaviour
     {
         planeState = PlaneState.near;
     }
+    public void SetTriggerUnable()
+    {
+        GetComponent<MeshCollider>().enabled = false;
+    }
+    public void SetTriggerable()
+    {
+        GetComponent<MeshCollider>().enabled = true;
+    }
 }

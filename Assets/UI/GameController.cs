@@ -74,10 +74,23 @@ public class GameController : MonoBehaviour
     }
     void Update()
     {
-        //退出游戏提示框
+        //退出游戏提示框，并暂停游戏
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             endTheGameBox.SetActive(true);
+            if (GameObject.FindGameObjectWithTag("Joystick") != null)
+            {
+                GameObject.FindGameObjectWithTag("Joystick").SetActive(false);
+            }
+            if (GameObject.FindGameObjectWithTag("Accelate") != null)
+            {
+                GameObject.FindGameObjectWithTag("Accelate").SetActive(false);
+            }
+            if (Application.loadedLevel == 0)
+            {
+                GameObject.FindObjectOfType<LevelSelectNew>().GetComponent<LevelSelectNew>().enabled = false;
+            }
+            Time.timeScale = 0;
         }
     }
     public void StartLevel_0()
@@ -164,6 +177,7 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
     public void ExitGame()
     {
         Application.Quit();
