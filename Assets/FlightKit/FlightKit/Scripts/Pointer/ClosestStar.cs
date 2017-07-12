@@ -5,7 +5,7 @@ using System;
 public class ClosestStar : MonoBehaviour
 {
     public  GameObject[] pickup;
-    private GameObject airPlane;
+    private GameObject colliders;
     public  float minDistance;
 
     public List<GameObject> pickups = new List<GameObject>();
@@ -19,8 +19,8 @@ public class ClosestStar : MonoBehaviour
         //获取所有Pickup
         pickup = GameObject.FindGameObjectsWithTag("PickUp");
         pickupTotalNum = pickup.Length;
-        airPlane = GameObject.Find("Airplane");
-        if (airPlane == null)
+        colliders = GameObject.Find("Colliders");
+        if (colliders == null)
         {
             throw new Exception("没有找到飞机");
         }
@@ -38,7 +38,7 @@ public class ClosestStar : MonoBehaviour
     public void UpdateClosestStar()
     {
      
-        if (airPlane.GetComponent<Pointer>().pickupCollectedNum < pickupTotalNum)
+        if (colliders.GetComponent<Pointer>().pickupCollectedNum < pickupTotalNum)
         {
             //获取离本星最近的星并放在closestPickUp中
             for (int i = 0; i < pickups.Count; i++)

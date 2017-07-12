@@ -79,6 +79,9 @@ namespace FlightKit
                 {
                     _soundSource.PlayOneShot(hit);
                 }
+                GameObject.Find("DistanceTest").GetComponent<BrushPastControl>().SetPlaneStateFarAway();
+                GameObject.Find("DistanceTest").GetComponent<BrushPastControl>().SetTriggerUnable();
+                Invoke("SetTriggerable", 2.0f);
             }          
             if (isAI)
             {
@@ -124,6 +127,10 @@ namespace FlightKit
                 default:
                     break;
             }
+        }
+        private void SetTriggerable()
+        {
+            GameObject.Find("DistanceTest").GetComponent<BrushPastControl>().SetTriggerable();
         }
     }
 

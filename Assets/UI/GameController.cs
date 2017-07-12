@@ -5,12 +5,12 @@ using FlightKit;
 public class GameController : MonoBehaviour
 {
     //public static int airPlaneController = 1;
+    public GameObject endTheGameBox;
     public bool isGameOver;
     public GameObject []disActive;
     public GameObject[] setActive;
     public GameObject progressTracker;
     FlightKit.GameProgressTracker processTracker;
-    private int escapeCount=0;
     float t1, t2;
     public static int airPlaneController;
     void Awake()
@@ -74,27 +74,23 @@ public class GameController : MonoBehaviour
     }
     void Update()
     {
-        //双击退出游戏
+        //退出游戏提示框，并暂停游戏
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            escapeCount++;
-            if (escapeCount == 1)
+            endTheGameBox.SetActive(true);
+            if (GameObject.FindGameObjectWithTag("Joystick") != null)
             {
-                t1 = Time.time;
+                GameObject.FindGameObjectWithTag("Joystick").SetActive(false);
             }
-            if (escapeCount == 2)
+            if (GameObject.FindGameObjectWithTag("Accelate") != null)
             {
-                t2 = Time.time;
-                if (t2 - t1 < 1f)
-                {
-                    Application.Quit();
-                }
-                else
-                {
-                    escapeCount = 0;
-
-                }
+                GameObject.FindGameObjectWithTag("Accelate").SetActive(false);
             }
+            if (Application.loadedLevel == 0)
+            {
+                GameObject.FindObjectOfType<LevelSelectNew>().GetComponent<LevelSelectNew>().enabled = false;
+            }
+            Time.timeScale = 0;
         }
     }
     public void StartLevel_0()
@@ -181,6 +177,7 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
     public void ExitGame()
     {
         Application.Quit();

@@ -59,7 +59,7 @@ public class LevelSelectNew : MonoBehaviour
         {
             if (allLevels.GetComponent<RectTransform>().localPosition.x < -screenWidth * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 5;
+                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
                 isMovingToNextPage = false;
                 isMovingToLastPage = true;
             }
@@ -68,7 +68,7 @@ public class LevelSelectNew : MonoBehaviour
         {
             if (allLevels.GetComponent<RectTransform>().localPosition.x > -screenWidth * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 5;
+                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
                 isMovingToLastPage = false;
                 isMovingToNextPage = true;
             }
@@ -121,7 +121,18 @@ public class LevelSelectNew : MonoBehaviour
                     if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
                         Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight /2)
                     {
-                        LoadLevel(currentPage);
+                        //if (Application.loadedLevel == 0)//如果是mainmenu
+                        //{
+                        //    if (GameObject.Find("EndTheGameBox") != null)
+                        //    {
+
+                        //    }
+                        //}
+                        //else
+                        //{
+                            LoadLevel(currentPage);
+                        //}
+                        
                     }
 
                     #endregion
