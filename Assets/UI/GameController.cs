@@ -88,7 +88,11 @@ public class GameController : MonoBehaviour
             }
             if (Application.loadedLevel == 0)
             {
-                GameObject.FindObjectOfType<LevelSelectNew>().GetComponent<LevelSelectNew>().enabled = false;
+                if (GameObject.FindObjectOfType<LevelSelectNew>() != null)
+                {
+                    GameObject.FindObjectOfType<LevelSelectNew>().GetComponent<LevelSelectNew>().enabled = false;
+                }
+                
             }
             Time.timeScale = 0;
         }

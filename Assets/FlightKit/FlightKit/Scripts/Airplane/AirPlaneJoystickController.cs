@@ -12,6 +12,7 @@ namespace FlightKit
     [RequireComponent(typeof(AeroplaneController))]
     public class AirPlaneJoystickController : MonoBehaviour
     {
+        public float yaw;
         /// <summary>
 		/// Maximum allowed roll angle on mobile.
 		/// </summary>
@@ -37,7 +38,6 @@ namespace FlightKit
         /// </summary>
         private Vector3 euler;
         private bool isAccelation = true;
-        float yaw = 0;
         float pitch = 0;
         private string lastButtonName;
         private float sysTime;

@@ -41778,7 +41778,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c8916ff76ea82a844a5122790c9c01ec, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
@@ -46192,7 +46192,6 @@ GameObject:
   - component: {fileID: 1909841509}
   - component: {fileID: 1909841508}
   - component: {fileID: 1909841507}
-  - component: {fileID: 1909841506}
   - component: {fileID: 1909841505}
   - component: {fileID: 1909841504}
   - component: {fileID: 1909841503}
@@ -46272,21 +46271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed2b75c93858394daf42fbc06270667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1909841506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11406564, guid: 05cc828b8f0b0b243ac73d68323b410e,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1909841501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478a2083ad114a07d000fbfb8d76c639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: e9ba2083ad114a07d000fbfb8d76c639, type: 3}
-  blurAmount: 0
-  extraBlur: 0
 --- !u!114 &1909841507
 MonoBehaviour:
   m_ObjectHideFlags: 0
