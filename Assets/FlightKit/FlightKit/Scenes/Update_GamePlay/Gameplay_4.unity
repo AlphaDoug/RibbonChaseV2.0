@@ -877,7 +877,7 @@ RectTransform:
   - {fileID: 293820763}
   - {fileID: 979456434}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2235,7 +2235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.25
+  threshold: 1.5
   intensity: 0.25
   blurSize: 1
   blurIterations: 1
@@ -5555,7 +5555,7 @@ RectTransform:
   - {fileID: 97237644}
   - {fileID: 571834840}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -6700,7 +6700,7 @@ Transform:
   - {fileID: 1754844517}
   - {fileID: 817390370}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &602667895
 RectTransform:
@@ -6717,7 +6717,7 @@ RectTransform:
   - {fileID: 518886637}
   - {fileID: 1535489661}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6799,7 +6799,7 @@ RectTransform:
   - {fileID: 560620274}
   - {fileID: 1755080169}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8306,7 +8306,7 @@ Prefab:
     - target: {fileID: 8295794, guid: 25c11ce943c44ed4ba027263abac4f63, type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2e68014c50ce2a747a997589a0ecc346, type: 3}
+      objectReference: {fileID: 8300000, guid: bdb6d1cefa42d9c449c7ffc36f2ce09f, type: 3}
     - target: {fileID: 8295794, guid: 25c11ce943c44ed4ba027263abac4f63, type: 2}
       propertyPath: m_Volume
       value: 1
@@ -9244,6 +9244,7 @@ RectTransform:
   - {fileID: 477285991}
   - {fileID: 1343727572}
   - {fileID: 1156243159}
+  - {fileID: 1235505774}
   - {fileID: 514466267}
   - {fileID: 1385634841}
   - {fileID: 1244212573}
@@ -9254,7 +9255,6 @@ RectTransform:
   - {fileID: 73153696}
   - {fileID: 602667895}
   - {fileID: 602667894}
-  - {fileID: 1235505774}
   - {fileID: 1618880116}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -10760,17 +10760,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1618880115}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 602667884}
         m_MethodName: PlaySound
         m_Mode: 1
@@ -10783,19 +10772,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 393305224}
-        m_MethodName: GoOnGame
+        m_MethodName: EndBoxDisable
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1138511080}
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10804,8 +10782,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 817390369}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 518886638}
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12961,7 +12939,7 @@ RectTransform:
   m_Children:
   - {fileID: 1138511081}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13212,7 +13190,7 @@ RectTransform:
   - {fileID: 564985826}
   - {fileID: 701501506}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 15
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13255,7 +13233,7 @@ RectTransform:
   - {fileID: 1904420028}
   - {fileID: 206868187}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14573,7 +14551,7 @@ RectTransform:
   - {fileID: 117277271}
   - {fileID: 96275569}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -14833,7 +14811,7 @@ RectTransform:
   - {fileID: 1688771683}
   - {fileID: 1252873342}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26034,7 +26012,7 @@ RectTransform:
   - {fileID: 649708563}
   - {fileID: 1988428318}
   m_Father: {fileID: 879866805}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26538,6 +26516,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1148855532}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null

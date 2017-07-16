@@ -53,7 +53,7 @@ public class Pointer : MonoBehaviour {
             }                
         
 	}
-    //每次吃球就把光标指向离这个球最近的球,并且将除了这个球的景物全部虚化
+    //每次吃球就把光标指向离这个球最近的球
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("PickUp"))
