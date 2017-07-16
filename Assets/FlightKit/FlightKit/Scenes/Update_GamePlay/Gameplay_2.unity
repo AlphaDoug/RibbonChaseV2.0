@@ -13635,6 +13635,41 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300038, guid: caced8e57fd874cee858e2af68eeb298, type: 3}
+--- !u!1 &624557279 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1095034178513906, guid: bf1ab989321a7814791d86c97245ad60,
+    type: 2}
+  m_PrefabInternal: {fileID: 1249956929}
+--- !u!114 &624557281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624557279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9e886d425ce5843baa72724ef30f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1249956930}
+  dest: {fileID: 1412497862}
+  arrowUI: {fileID: 81452436}
+  dir: {x: 0, y: 0, z: 0}
+  pickup: []
+  closestStar: []
+  pickupCollectedNum: 0
+--- !u!65 &624557282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624557279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.22, y: 1.56, z: 7.26}
+  m_Center: {x: -0.14, y: 0.97, z: 0.15}
 --- !u!1 &627739221
 GameObject:
   m_ObjectHideFlags: 0
@@ -27755,29 +27790,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1465242601520598, guid: bf1ab989321a7814791d86c97245ad60,
     type: 2}
   m_PrefabInternal: {fileID: 1249956929}
---- !u!1 &1249956931 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1095034178513906, guid: bf1ab989321a7814791d86c97245ad60,
-    type: 2}
-  m_PrefabInternal: {fileID: 1249956929}
---- !u!114 &1249956932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1249956931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac9e886d425ce5843baa72724ef30f4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 1249956930}
-  dest: {fileID: 534367426}
-  arrowUI: {fileID: 81452436}
-  dir: {x: 0, y: 0, z: 0}
-  pickup: []
-  closestStar: []
-  pickupCollectedNum: 0
 --- !u!1 &1254459684 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 170774, guid: 17aa2db88cbc36a438d7f328a47ba0c0, type: 2}
