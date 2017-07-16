@@ -24,10 +24,18 @@ public class LevelSelectNew : MonoBehaviour
     private float allLevelsMove_x = 0;
     private ToggleGroup toggleGroup;
     private float speedPerFrame = 0f;
+    private float a;
     // Use this for initialization
     void Start ()
     {
-
+        if (Application.loadedLevel == 0)
+        {
+            a = 50;
+        }
+        else
+        {
+            a = 5;
+        }
 	}
 	
 	// Update is called once per frame
@@ -53,13 +61,13 @@ public class LevelSelectNew : MonoBehaviour
             lastPage.SetActive(true);
         }
         #endregion
-
+  
         #region 控制移动到指定位置
         if (isMovingToNextPage)//正在向下一页移动
         {
             if (allLevels.GetComponent<RectTransform>().localPosition.x < -screenWidth * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
+                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
                 isMovingToNextPage = false;
                 isMovingToLastPage = true;
             }
@@ -68,7 +76,7 @@ public class LevelSelectNew : MonoBehaviour
         {
             if (allLevels.GetComponent<RectTransform>().localPosition.x > -screenWidth * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
+                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
                 isMovingToLastPage = false;
                 isMovingToNextPage = true;
             }
@@ -178,7 +186,14 @@ public class LevelSelectNew : MonoBehaviour
 
     public void Move2NextPage()
     {
-        speedPerFrame = -300;
+        if (Application.loadedLevel == 0)
+        {
+            speedPerFrame = -300;
+        }
+        else
+        {
+            speedPerFrame = -500;
+        }     
         isMovingToNextPage = true;
         isMovingToLastPage = false;
         currentPage++;
@@ -187,7 +202,14 @@ public class LevelSelectNew : MonoBehaviour
 
     public void Move2LastPage()
     {
-        speedPerFrame = 300;
+        if (Application.loadedLevel == 0)
+        {
+            speedPerFrame = 300;
+        }
+        else
+        {
+            speedPerFrame = 500;
+        }
         isMovingToLastPage = true;
         isMovingToNextPage = false;
         currentPage--;
