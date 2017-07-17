@@ -30,7 +30,7 @@ public class ControlsMenuController : MonoBehaviour
         soundToggleSlider = soundToggle.GetComponent<Slider>();
         modelToggleSlider = modelToggle.GetComponent<Slider>();
         reviseToggleSlider = reviseToggle.GetComponent<Slider>();
-        language = (int)Language.Chinese;
+        language = (int)Language.English;
 
         //初始化语言
         if (PlayerPrefs.GetInt("language") == null)

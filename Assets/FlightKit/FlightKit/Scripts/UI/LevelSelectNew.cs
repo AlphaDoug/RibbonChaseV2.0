@@ -40,11 +40,13 @@ public class LevelSelectNew : MonoBehaviour
         }
         screenWidth = Screen.width;
         screenHeight = Screen.height;
+        mainPosition.sizeDelta = new Vector2(screenWidth / 2, screenHeight / 2);
+
 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         MoveOnPause();
 
@@ -70,18 +72,18 @@ public class LevelSelectNew : MonoBehaviour
         #region 控制移动到指定位置
         if (isMovingToNextPage)//正在向下一页移动
         {
-            if (allLevels.GetComponent<RectTransform>().localPosition.x < -screenWidth * (currentPage - 1))//已经移动过头了
+            if (allLevels.GetComponent<RectTransform>().localPosition.x < -1920 * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
+                speedPerFrame = (-1920 * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
                 isMovingToNextPage = false;
                 isMovingToLastPage = true;
             }
         }
         if (isMovingToLastPage)//正在向上一页移动
         {
-            if (allLevels.GetComponent<RectTransform>().localPosition.x > -screenWidth * (currentPage - 1))//已经移动过头了
+            if (allLevels.GetComponent<RectTransform>().localPosition.x > -1920 * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
+                speedPerFrame = (-1920 * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
                 isMovingToLastPage = false;
                 isMovingToNextPage = true;
             }
