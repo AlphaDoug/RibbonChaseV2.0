@@ -140,7 +140,6 @@ namespace FlightKit
             }
 			if (collider.gameObject.CompareTag(Tags.Player))
 			{
-                Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                 _activated = true;
                 Debug.Log("玩家吃球");
 
