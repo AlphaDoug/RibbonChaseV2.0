@@ -35,7 +35,7 @@ public class ControlsMenuController : MonoBehaviour
         //初始化语言
         if (PlayerPrefs.GetInt("language") == null)
         {
-            PlayerPrefs.SetInt("language", 0);
+            PlayerPrefs.SetInt("language", 1);
         }
         //初始化模式控制
         if (PlayerPrefs.GetInt("AirPlaneController") == 0|| PlayerPrefs.GetInt("AirPlaneController") == null)
