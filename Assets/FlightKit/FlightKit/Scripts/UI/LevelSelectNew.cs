@@ -11,8 +11,10 @@ public class LevelSelectNew : MonoBehaviour
     public GameObject nextPage;
     public GameObject lastPage;
     public int maxPagesAmount = 6;
-    public int screenWidth = 1920;
-    public int screenHeight = 1080;
+    //public int screenWidth = 1920;
+    //public int screenHeight = 1080;
+    public int screenWidth ;
+    public int screenHeight ;
     public List<GameObject> loadingScenes = new List<GameObject>();
     public List<Toggle> toggle = new List<Toggle>();
     private int currentPage = 1;
@@ -36,7 +38,10 @@ public class LevelSelectNew : MonoBehaviour
         {
             a = 5;
         }
-	}
+        screenWidth = Screen.width;
+        screenHeight = Screen.height;
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
