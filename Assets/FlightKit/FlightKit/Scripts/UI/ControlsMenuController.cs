@@ -46,7 +46,18 @@ public class ControlsMenuController : MonoBehaviour
         {
             modelToggleSlider.value = 1;
         }
-        soundToggleSlider.value = AudioListener.volume;
+        if (PlayerPrefs.HasKey("MusicOn"))
+        {
+            soundToggleSlider.value = PlayerPrefs.GetInt("MusicOn");
+            AudioListener.volume = PlayerPrefs.GetInt("MusicOn");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("MusicOn", 1);
+            soundToggleSlider.value = PlayerPrefs.GetInt("MusicOn");
+            AudioListener.volume = PlayerPrefs.GetInt("MusicOn");
+        }
+       
         //初始化方向控制
         if (PlayerPrefs.GetInt("ReviseDirection") == 0)
         {
@@ -95,10 +106,12 @@ public class ControlsMenuController : MonoBehaviour
             if (soundToggleSlider.value == 0)
             {
                 AudioListener.volume = 0;
+                PlayerPrefs.SetInt("MusicOn", 0);
             }
             else
             {
                 AudioListener.volume = 1;
+                PlayerPrefs.SetInt("MusicOn", 1);
             }
          
             if (modelToggleSlider.value==0)
