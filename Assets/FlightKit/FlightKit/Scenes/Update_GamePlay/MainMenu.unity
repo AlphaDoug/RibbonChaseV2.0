@@ -24200,6 +24200,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.5750741
       objectReference: {fileID: 0}
+    - target: {fileID: 11417316, guid: e60223850004cb247b8fc074e7739c1d, type: 2}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: 71d05a82000c9dc43a2466dcf50ecc81, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e60223850004cb247b8fc074e7739c1d, type: 2}
   m_IsPrefabParent: 0
@@ -26028,7 +26032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2853f7d6177e4d4e80642ce68bdf8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 5a383ae71c8a41f418bd039f5ded8519, type: 2}
+  material: {fileID: 2100000, guid: 71d05a82000c9dc43a2466dcf50ecc81, type: 2}
   colorChangeRate: 1.5
 --- !u!1 &1883334164
 GameObject:

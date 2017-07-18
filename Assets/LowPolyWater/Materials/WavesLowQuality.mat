@@ -11,7 +11,6 @@ Material:
   m_ShaderKeywords: _SHADING_FLAT _WAVES_LOWQUALITY
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -58,7 +57,11 @@ Material:
     - __Speed: 0.5
     - __TexSize: 64
     m_Colors:
+<<<<<<< HEAD
     - _Color: {r: 0.5770143, g: 0.49397597, b: 0.60585356, a: 0.3405269}
+=======
+    - _Color: {r: 0.6097759, g: 0.6501972, b: 0.7888125, a: 0.54443884}
+>>>>>>> parent of 59d45c5... add trees and grass texture
     - _Direction_: {r: -1, g: -0.00000008742278, b: -1.65, a: -0.00000014424758}
     - _ShoreColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
