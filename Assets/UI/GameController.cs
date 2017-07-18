@@ -16,10 +16,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {       
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        //if (Application.loadedLevel == 1)
-        //{
-        //    Time.timeScale = 0f;
-        //}
+  
         Time.timeScale = 1f;
     }
     void Start()
@@ -78,15 +75,11 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             endTheGameBox.SetActive(true);
-            if (GameObject.FindGameObjectWithTag("Joystick") != null)
+            for (int i = 0; i < disActive.Length; i++)
             {
-                GameObject.FindGameObjectWithTag("Joystick").SetActive(false);
+                disActive[i].SetActive(false);
             }
-            if (GameObject.FindGameObjectWithTag("Accelate") != null)
-            {
-                GameObject.FindGameObjectWithTag("Accelate").SetActive(false);
-            }
-            if (Application.loadedLevel == 0)
+            if (Application.loadedLevel == 0 || GameObject.Find("TipMenu") != null)
             {
                 if (GameObject.FindObjectOfType<LevelSelectNew>() != null)
                 {
@@ -96,6 +89,24 @@ public class GameController : MonoBehaviour
             }
             Time.timeScale = 0;
         }
+    }
+
+    public void EndBoxDisable()
+    {
+        if (GameObject.Find("PauseMenu") != null)//表示当前界面是游戏暂停界面
+        {
+            endTheGameBox.SetActive(false);
+        }
+        else
+        {
+            endTheGameBox.SetActive(false);
+            for (int i = 0; i < disActive.Length; i++)
+            {
+                disActive[i].SetActive(true);
+            }
+            Time.timeScale = 1;
+        }
+        
     }
     public void StartLevel_0()
     {

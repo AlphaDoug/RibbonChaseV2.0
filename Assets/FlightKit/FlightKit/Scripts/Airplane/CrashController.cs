@@ -130,7 +130,11 @@ namespace FlightKit
         }
         private void SetTriggerable()
         {
-            GameObject.Find("DistanceTest").GetComponent<BrushPastControl>().SetTriggerable();
+            if (GameObject.Find("DistanceTest"))
+            {
+                GameObject.Find("DistanceTest").GetComponent<BrushPastControl>().SetTriggerable();
+            }
+            
         }
     }
 

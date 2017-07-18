@@ -11,8 +11,10 @@ public class LevelSelectNew : MonoBehaviour
     public GameObject nextPage;
     public GameObject lastPage;
     public int maxPagesAmount = 6;
-    public int screenWidth = 1920;
-    public int screenHeight = 1080;
+    //public int screenWidth = 1920;
+    //public int screenHeight = 1080;
+    public int screenWidth ;
+    public int screenHeight ;
     public List<GameObject> loadingScenes = new List<GameObject>();
     public List<Toggle> toggle = new List<Toggle>();
     private int currentPage = 1;
@@ -24,14 +26,27 @@ public class LevelSelectNew : MonoBehaviour
     private float allLevelsMove_x = 0;
     private ToggleGroup toggleGroup;
     private float speedPerFrame = 0f;
+    private float a;
     // Use this for initialization
     void Start ()
     {
+        if (Application.loadedLevel == 0)
+        {
+            a = 50;
+        }
+        else
+        {
+            a = 5;
+        }
+        screenWidth = Screen.width;
+        screenHeight = Screen.height;
+        mainPosition.sizeDelta = new Vector2(screenWidth / 2, screenHeight / 2);
 
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         MoveOnPause();
 
@@ -53,22 +68,22 @@ public class LevelSelectNew : MonoBehaviour
             lastPage.SetActive(true);
         }
         #endregion
-
+  
         #region 控制移动到指定位置
         if (isMovingToNextPage)//正在向下一页移动
         {
-            if (allLevels.GetComponent<RectTransform>().localPosition.x < -screenWidth * (currentPage - 1))//已经移动过头了
+            if (allLevels.GetComponent<RectTransform>().localPosition.x < -1920 * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
+                speedPerFrame = (-1920 * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
                 isMovingToNextPage = false;
                 isMovingToLastPage = true;
             }
         }
         if (isMovingToLastPage)//正在向上一页移动
         {
-            if (allLevels.GetComponent<RectTransform>().localPosition.x > -screenWidth * (currentPage - 1))//已经移动过头了
+            if (allLevels.GetComponent<RectTransform>().localPosition.x > -1920 * (currentPage - 1))//已经移动过头了
             {
-                speedPerFrame = (-screenWidth * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / 50;
+                speedPerFrame = (-1920 * (currentPage - 1) - allLevels.GetComponent<RectTransform>().localPosition.x) / a;
                 isMovingToLastPage = false;
                 isMovingToNextPage = true;
             }
@@ -178,7 +193,14 @@ public class LevelSelectNew : MonoBehaviour
 
     public void Move2NextPage()
     {
-        speedPerFrame = -300;
+        if (Application.loadedLevel == 0)
+        {
+            speedPerFrame = -300;
+        }
+        else
+        {
+            speedPerFrame = -500;
+        }     
         isMovingToNextPage = true;
         isMovingToLastPage = false;
         currentPage++;
@@ -187,7 +209,14 @@ public class LevelSelectNew : MonoBehaviour
 
     public void Move2LastPage()
     {
-        speedPerFrame = 300;
+        if (Application.loadedLevel == 0)
+        {
+            speedPerFrame = 300;
+        }
+        else
+        {
+            speedPerFrame = 500;
+        }
         isMovingToLastPage = true;
         isMovingToNextPage = false;
         currentPage--;
