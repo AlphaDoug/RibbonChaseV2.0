@@ -1174,7 +1174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11700.001, y: -500}
+  m_AnchoredPosition: {x: 11700, y: -500}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116522006
@@ -3052,8 +3052,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207751259}
-        m_MethodName: SoundSliderValueChanged
+      - m_Target: {fileID: 1485461382}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3672,7 +3672,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207751259}
+      - m_Target: {fileID: 0}
         m_MethodName: ModelSliderValueChanged
         m_Mode: 1
         m_Arguments:
@@ -8307,7 +8307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8900.001, y: -500}
+  m_AnchoredPosition: {x: 8900, y: -500}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662022979
@@ -8576,7 +8576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3299.9998, y: -500}
+  m_AnchoredPosition: {x: 3300, y: -500}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688809439
@@ -12257,7 +12257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 682.4, y: 145.85}
+  m_AnchoredPosition: {x: 682.4, y: 116.05}
   m_SizeDelta: {x: 169, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006282619
@@ -12332,7 +12332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207751259}
+      - m_Target: {fileID: 1485461389}
         m_MethodName: SetChinese
         m_Mode: 1
         m_Arguments:
@@ -16233,7 +16233,6 @@ GameObject:
   - component: {fileID: 1207751262}
   - component: {fileID: 1207751261}
   - component: {fileID: 1207751260}
-  - component: {fileID: 1207751259}
   m_Layer: 5
   m_Name: ControlsMenu
   m_TagString: Untagged
@@ -16241,22 +16240,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 0
---- !u!114 &1207751259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1207751258}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0226c77550a7da742b7cd771b971479a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundToggle: {fileID: 258987947}
-  modelToggle: {fileID: 294279791}
-  reviseToggle: {fileID: 1953549208}
-  gameController: {fileID: 484829055}
-  language: 0
 --- !u!225 &1207751260
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18694,7 +18677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10300.001, y: -500}
+  m_AnchoredPosition: {x: 10300, y: -500}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361936407
@@ -19300,15 +19283,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4544628913033924, guid: 0a02e4ac27f5fd840b82fecad081e66a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: -2.98
       objectReference: {fileID: 0}
     - target: {fileID: 4544628913033924, guid: 0a02e4ac27f5fd840b82fecad081e66a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.58
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 4544628913033924, guid: 0a02e4ac27f5fd840b82fecad081e66a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.02
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 4544628913033924, guid: 0a02e4ac27f5fd840b82fecad081e66a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -19338,7 +19321,7 @@ Prefab:
     - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
         type: 2}
       propertyPath: randomSeed
-      value: 145581434
+      value: -234305584
       objectReference: {fileID: 0}
     - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
         type: 2}
@@ -19348,7 +19331,7 @@ Prefab:
     - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
         type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4544628913033924, guid: 0a02e4ac27f5fd840b82fecad081e66a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19362,12 +19345,52 @@ Prefab:
     - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
         type: 2}
       propertyPath: InitialModule.maxNumParticles
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
         type: 2}
       propertyPath: ShapeModule.type
-      value: 2
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: ForceModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: ForceModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: ShapeModule.radius.spread
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: ForceModule.z.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: ForceModule.x.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 198927191882880482, guid: 0a02e4ac27f5fd840b82fecad081e66a,
+        type: 2}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a02e4ac27f5fd840b82fecad081e66a, type: 2}
@@ -22518,7 +22541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1899.9999, y: -500}
+  m_AnchoredPosition: {x: 1900, y: -500}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589887250
@@ -23988,7 +24011,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207751259}
+      - m_Target: {fileID: 1485461389}
         m_MethodName: SetEnglish
         m_Mode: 1
         m_Arguments:
@@ -25599,7 +25622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 499.99997, y: -500}
+  m_AnchoredPosition: {x: 500, y: -500}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836169396
@@ -26178,7 +26201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13100.001, y: -500}
+  m_AnchoredPosition: {x: 13100, y: -500}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887968720
@@ -26897,8 +26920,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207751259}
-        m_MethodName: SoundSliderValueChanged
+      - m_Target: {fileID: 1485461389}
+        m_MethodName: ReviseDirection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

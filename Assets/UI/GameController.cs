@@ -16,10 +16,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {       
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        //if (Application.loadedLevel == 1)
-        //{
-        //    Time.timeScale = 0f;
-        //}
+  
         Time.timeScale = 1f;
     }
     void Start()

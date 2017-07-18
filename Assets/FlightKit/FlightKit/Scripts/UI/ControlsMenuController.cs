@@ -72,6 +72,7 @@ public class ControlsMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(PlayerPrefs.GetInt("language") + "language");
         if (Input.GetMouseButtonUp(0))
         {
             
