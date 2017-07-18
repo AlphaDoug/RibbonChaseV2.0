@@ -65,7 +65,7 @@ namespace FlightKit
         private IEnumerator FadeOutCoroutine()
         {
             // Make a small pause so that user realizes what happened.
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(0.5f);
 
             // If there is a bloom effect in the scene, use it for a nice fade out effect.
             var bloom = GameObject.FindObjectOfType<BloomOptimized>();

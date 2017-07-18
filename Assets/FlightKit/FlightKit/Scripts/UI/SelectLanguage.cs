@@ -9,20 +9,40 @@ public class SelectLanguage : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        if (PlayerPrefs.GetInt("language") == 0)
+        //PlayerPrefs.DeleteKey("language");
+        if (PlayerPrefs.HasKey("language"))
         {
-            //中文
-            for (int i = 0; i < englishUI.Count; i++)
+            if (PlayerPrefs.GetInt("language") == 0)
             {
-                englishUI[i].SetActive(false);
+                //中文
+                for (int i = 0; i < englishUI.Count; i++)
+                {
+                    englishUI[i].SetActive(false);
+                }
+                for (int i = 0; i < chineseUI.Count; i++)
+                {
+                    chineseUI[i].SetActive(true);
+                }
+                Debug.Log(PlayerPrefs.GetInt("language") + "language");
             }
-            for (int i = 0; i < chineseUI.Count; i++)
+            else
             {
-                chineseUI[i].SetActive(true);
+                //英文
+                for (int i = 0; i < englishUI.Count; i++)
+                {
+                    englishUI[i].SetActive(true);
+                }
+                for (int i = 0; i < chineseUI.Count; i++)
+                {
+                    chineseUI[i].SetActive(false);
+                }
             }
+
+
         }
         else
         {
+            PlayerPrefs.SetInt("language", 1);
             //英文
             for (int i = 0; i < englishUI.Count; i++)
             {
@@ -32,7 +52,11 @@ public class SelectLanguage : MonoBehaviour
             {
                 chineseUI[i].SetActive(false);
             }
+
         }
+
+
+
     }
 	
 }

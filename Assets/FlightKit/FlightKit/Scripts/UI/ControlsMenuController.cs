@@ -30,12 +30,12 @@ public class ControlsMenuController : MonoBehaviour
         soundToggleSlider = soundToggle.GetComponent<Slider>();
         modelToggleSlider = modelToggle.GetComponent<Slider>();
         reviseToggleSlider = reviseToggle.GetComponent<Slider>();
-        language = (int)Language.Chinese;
+        language = (int)Language.English;
 
         //初始化语言
         if (PlayerPrefs.GetInt("language") == null)
         {
-            PlayerPrefs.SetInt("language", 0);
+            PlayerPrefs.SetInt("language", 1);
         }
         //初始化模式控制
         if (PlayerPrefs.GetInt("AirPlaneController") == 0|| PlayerPrefs.GetInt("AirPlaneController") == null)
@@ -72,6 +72,7 @@ public class ControlsMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(PlayerPrefs.GetInt("language") + "language");
         if (Input.GetMouseButtonUp(0))
         {
             
