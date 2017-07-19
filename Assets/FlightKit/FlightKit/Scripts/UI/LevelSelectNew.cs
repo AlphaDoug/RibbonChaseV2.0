@@ -11,12 +11,11 @@ public class LevelSelectNew : MonoBehaviour
     public GameObject nextPage;
     public GameObject lastPage;
     public int maxPagesAmount = 6;
-    //public int screenWidth = 1920;
-    //public int screenHeight = 1080;
-    public int screenWidth ;
-    public int screenHeight ;
+
     public List<GameObject> loadingScenes = new List<GameObject>();
     public List<Toggle> toggle = new List<Toggle>();
+    public int screenWidth;
+    public int screenHeight;
     private int currentPage = 1;
     private bool isMovingToNextPage = false;
     private bool isMovingToLastPage = false;
@@ -28,7 +27,7 @@ public class LevelSelectNew : MonoBehaviour
     private float speedPerFrame = 0f;
     private float a;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         if (Application.loadedLevel == 0)
         {
@@ -38,13 +37,16 @@ public class LevelSelectNew : MonoBehaviour
         {
             a = 5;
         }
-        screenWidth = Screen.width;
         screenHeight = Screen.height;
+        screenWidth = Screen.width;
+
         mainPosition.sizeDelta = new Vector2(screenWidth / 2, screenHeight / 2);
     }
 
+
+
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         MoveOnPause();
 
@@ -66,7 +68,7 @@ public class LevelSelectNew : MonoBehaviour
             lastPage.SetActive(true);
         }
         #endregion
-  
+
         #region 控制移动到指定位置
         if (isMovingToNextPage)//正在向下一页移动
         {
@@ -97,7 +99,7 @@ public class LevelSelectNew : MonoBehaviour
                 isMouseDown = true;
                 allLevelsMouseDownPosition = allLevels.GetComponent<RectTransform>().localPosition;
                 mouseDownPosition_x = Input.mousePosition.x;
-            }          
+            }
         }
         if (Input.GetMouseButtonUp(0) && isMouseDown)
         {
@@ -132,7 +134,7 @@ public class LevelSelectNew : MonoBehaviour
                 {
                     #region 鼠标点击事件
                     if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
-                        Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight /2)
+                        Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2)
                     {
                         //if (Application.loadedLevel == 0)//如果是mainmenu
                         //{
@@ -143,9 +145,9 @@ public class LevelSelectNew : MonoBehaviour
                         //}
                         //else
                         //{
-                            LoadLevel(currentPage);
+                        LoadLevel(currentPage);
                         //}
-                        
+
                     }
 
                     #endregion
@@ -165,7 +167,7 @@ public class LevelSelectNew : MonoBehaviour
                         Move2NextPage();////////////
                     }
                 }
-                else if(Input.mousePosition.x - mouseDownPosition_x < 0)
+                else if (Input.mousePosition.x - mouseDownPosition_x < 0)
                 {
                     if (currentPage < maxPagesAmount)
                     {
@@ -186,7 +188,7 @@ public class LevelSelectNew : MonoBehaviour
         }
         #endregion
 
-        
+
     }
 
     public void Move2NextPage()
@@ -198,7 +200,7 @@ public class LevelSelectNew : MonoBehaviour
         else
         {
             speedPerFrame = -500;
-        }     
+        }
         isMovingToNextPage = true;
         isMovingToLastPage = false;
         currentPage++;
@@ -220,7 +222,7 @@ public class LevelSelectNew : MonoBehaviour
         currentPage--;
         toggle[currentPage - 1].isOn = true;
     }
-    
+
     private void LoadLevel(int index)
     {
         if (index < 2)
@@ -233,7 +235,7 @@ public class LevelSelectNew : MonoBehaviour
             levelSel.SetActive(false);
             loadingScenes[index - 1].SetActive(true);
         }
-        
+
     }
 
     private void MoveOnPause()
