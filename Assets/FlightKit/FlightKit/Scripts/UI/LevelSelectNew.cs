@@ -41,8 +41,6 @@ public class LevelSelectNew : MonoBehaviour
         screenWidth = Screen.width;
         screenHeight = Screen.height;
         mainPosition.sizeDelta = new Vector2(screenWidth / 2, screenHeight / 2);
-
-
     }
 
     // Update is called once per frame

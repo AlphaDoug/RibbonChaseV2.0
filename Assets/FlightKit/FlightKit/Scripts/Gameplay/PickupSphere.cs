@@ -142,7 +142,6 @@ namespace FlightKit
 			if (collider.gameObject.CompareTag(Tags.Player))
 			{
                 _activated = true;
-                Debug.Log("玩家吃球");
 
                 if (GameObject.Find("AirplaneAI") != null)
 
