@@ -10,14 +10,17 @@ public class GameController : MonoBehaviour
     public GameObject []disActive;
     public GameObject[] setActive;
     public GameObject progressTracker;
+    public GameObject[] levelLock;
+    private int levelNum = 7;
     FlightKit.GameProgressTracker processTracker;
     float t1, t2;
     public static int airPlaneController;
     void Awake()
     {       
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-  
+        Screen.sleepTimeout = SleepTimeout.NeverSleep; 
         Time.timeScale = 1f;
+        //PlayerPrefs.DeleteAll();
+       
     }
     void Start()
     {
@@ -29,8 +32,32 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("Can not find GameProgessTracker.");
         }
+        if (Application.loadedLevel == 0)
+        {
+            //Initail lock
+            //PlayerPrefs.SetInt("level_" + 0, 1);
+            for (int i = 1; i < levelNum; i++)
+            {
+                if (!PlayerPrefs.HasKey("level_" + i))
+                {
+                    PlayerPrefs.SetInt("level_" + i, 0);
+                    Debug.Log("level_" + i + PlayerPrefs.GetInt("level_" + i));
+                }
+            }
 
-   
+            for (int i = 0; i < levelLock.Length; i++)
+            {
+                if (PlayerPrefs.HasKey("level_" + i))
+                {
+                    if (PlayerPrefs.GetInt("level_" + i) == 1)
+                    {
+                        levelLock[i].SetActive(false);
+                    }
+
+                }
+            }
+        }
+
     }
       
     public void DisActiveButtonOnOver()
@@ -208,7 +235,6 @@ public class GameController : MonoBehaviour
     public void ChoseJoyStick()
     {
         PlayerPrefs.SetInt("AirPlaneController", 0);
-        Debug.Log("JoyStickController");
         airPlaneController = 1;
     }
 

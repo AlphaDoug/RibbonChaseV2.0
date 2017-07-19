@@ -223,8 +223,17 @@ public class LevelSelectNew : MonoBehaviour
     
     private void LoadLevel(int index)
     {
-        levelSel.SetActive(false);
-        loadingScenes[index - 1].SetActive(true);
+        if (index < 2)
+        {
+            levelSel.SetActive(false);
+            loadingScenes[index - 1].SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("level_" + (index - 2)) == 1)
+        {
+            levelSel.SetActive(false);
+            loadingScenes[index - 1].SetActive(true);
+        }
+        
     }
 
     private void MoveOnPause()
