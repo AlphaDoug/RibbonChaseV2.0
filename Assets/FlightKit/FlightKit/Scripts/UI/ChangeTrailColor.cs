@@ -33,6 +33,7 @@ public class ChangeTrailColor : MonoBehaviour
         if (b2w)
         {
             material.color = Color.Lerp(material.color, color, 0.01f);
+            
         }
 
 
