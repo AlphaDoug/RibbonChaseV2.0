@@ -105,8 +105,6 @@ public class LevelCompletedControl : MonoBehaviour
         {
             PlayerPrefs.SetInt("LevelStarNum_" + Application.loadedLevel, starNum);
         }
-        Debug.Log("starNum" + starNum);
-        Debug.Log("LevelStarNum_" + Application.loadedLevel + PlayerPrefs.GetInt("LevelStarNum_" + Application.loadedLevel));
         Invoke("ShowReturnButton", 2.5f);
         Invoke("ShowRetryButton", 2.7f);
         Invoke("ShowNextButton", 2.9f);

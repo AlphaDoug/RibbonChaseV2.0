@@ -187,10 +187,19 @@ namespace FlightKit
             if (fc != null) {
                 fc.enabled = false;
             }
-            
+            //Open next level
+            OpenNextLevel();
             StartCoroutine(FadeOutCoroutine());
         }
-
+        public void OpenNextLevel()
+        {
+            if (Application.loadedLevel < 7)
+            {
+                PlayerPrefs.SetInt("level_" + (Application.loadedLevel-1), 1);
+                Debug.Log(PlayerPrefs.GetInt("level_" + Application.loadedLevel) + "Open");
+            }
+            
+        }
         private IEnumerator FadeOutCoroutine()
         {
             var bloom = GameObject.FindObjectOfType<BloomOptimized>();
