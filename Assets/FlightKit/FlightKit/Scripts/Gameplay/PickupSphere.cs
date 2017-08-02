@@ -53,16 +53,16 @@ namespace FlightKit
 		private bool _isDestroyed = false;
         private GameObject halo;
         private bool isAndroid = false;
-        private AndroidJavaClass jc;
-        private AndroidJavaObject jo;
+        //private AndroidJavaClass jc;
+        //private AndroidJavaObject jo;
         private GameObject airPlaneAI;
 
         void Start()
 		{
             if (Application.platform == RuntimePlatform.Android)
             {
-                jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-                jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
+            //    jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            //    jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
                 isAndroid = true;
             }
             airPlaneAI = GameObject.Find("AirplaneAI");
@@ -116,7 +116,7 @@ namespace FlightKit
 
             if (collider.gameObject.CompareTag(Tags.PlayerAI))
             {
-                Debug.Log("sssssssssssssssssssss"); 
+              
                 _activated = true;
                 if (OnCollectEventAI != null)
                 {
@@ -158,10 +158,11 @@ namespace FlightKit
                 }
                 if (isAndroid)
                 {
-                    jo.Call("StartShock", new long[] { 100, 100 }, -1);
+                    //jo.Call("StartShock", new long[] { 100, 100 }, -1);
+                    Handheld.Vibrate();
                 }
 
-				var sound = GetComponentInParent<AudioSource>();
+                var sound = GetComponentInParent<AudioSource>();
                 if (sound != null) 
                 {
 				    sound.Play();
