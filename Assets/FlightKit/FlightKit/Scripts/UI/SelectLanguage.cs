@@ -52,11 +52,7 @@ public class SelectLanguage : MonoBehaviour
             {
                 chineseUI[i].SetActive(false);
             }
-
         }
-
-
-
     }
 	
 }
