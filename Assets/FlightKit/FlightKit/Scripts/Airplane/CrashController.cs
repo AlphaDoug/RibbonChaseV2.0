@@ -30,7 +30,10 @@ namespace FlightKit
 		/// The sound of airplane hitting something, not hard enough for a crash. Doesn't lead to respawning.
 		/// </summary>
         public AudioClip hit;
-
+        /// <summary>
+        /// avoid twice crash
+        /// </summary>
+        public bool isCrash=true;
         private AudioSource _soundSource;
 
         void Start()
@@ -74,6 +77,19 @@ namespace FlightKit
         {
             if (!isAI)
             {
+                //lifenum--
+                //if (LifeCtrl.curLifeNum > 0&&isCrash)
+                //{
+                //    LifeCtrl.curLifeNum--;
+                //    isCrash = false;
+                //    Invoke("setIsCrash", 0.5f);
+                //}
+                if (LifeNumCtrl.lifeNum > 0 && isCrash)
+                {
+                    LifeNumCtrl.lifeNum--;
+                    isCrash = false;
+                    Invoke("setIsCrash", 0.5f);
+                }
                 // Play hit sound fx.
                 if (_soundSource != null)
                 {
@@ -87,6 +103,7 @@ namespace FlightKit
             {
                 Invoke("ChooseNextTarget", 1.0f);
             }
+         
             //Handheld.Vibrate();
             // Clear trails of the plane.
             var trails = GetComponent<AirplaneTrails>();
@@ -100,7 +117,10 @@ namespace FlightKit
                 reset.DelayedReset(0.4f);
             }
         }
-
+        private void setIsCrash()
+        {
+            isCrash = true;
+        }
         private IEnumerator CollisionCameraAnimation()
         {
             // Enable glitch component for short time.

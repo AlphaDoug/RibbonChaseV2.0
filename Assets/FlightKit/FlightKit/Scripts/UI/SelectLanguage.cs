@@ -6,10 +6,13 @@ public class SelectLanguage : MonoBehaviour
 {
     public List<GameObject> englishUI;
     public List<GameObject> chineseUI;
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+     void Awake()
     {
-        //PlayerPrefs.DeleteKey("language");
+        //PlayerPrefs.DeleteAll();
+    }
+    void Start ()
+    {
         if (PlayerPrefs.HasKey("language"))
         {
             if (PlayerPrefs.GetInt("language") == 0)
@@ -23,7 +26,6 @@ public class SelectLanguage : MonoBehaviour
                 {
                     chineseUI[i].SetActive(true);
                 }
-                Debug.Log(PlayerPrefs.GetInt("language") + "language");
             }
             else
             {
@@ -37,22 +39,38 @@ public class SelectLanguage : MonoBehaviour
                     chineseUI[i].SetActive(false);
                 }
             }
-
-
         }
         else
         {
-            PlayerPrefs.SetInt("language", 1);
-            //英文
-            for (int i = 0; i < englishUI.Count; i++)
+            if (Application.systemLanguage == SystemLanguage.ChineseSimplified)
             {
-                englishUI[i].SetActive(true);
+            
+                PlayerPrefs.SetInt("language", 0);
+                //中文
+                for (int i = 0; i < englishUI.Count; i++)
+                {
+                    englishUI[i].SetActive(false);
+                }
+                for (int i = 0; i < chineseUI.Count; i++)
+                {
+                    chineseUI[i].SetActive(true);
+                }
             }
-            for (int i = 0; i < chineseUI.Count; i++)
+            else
             {
-                chineseUI[i].SetActive(false);
+            
+                PlayerPrefs.SetInt("language", 1);
+                //英文
+                for (int i = 0; i < englishUI.Count; i++)
+                {
+                    englishUI[i].SetActive(true);
+                }
+                for (int i = 0; i < chineseUI.Count; i++)
+                {
+                    chineseUI[i].SetActive(false);
+                }
             }
-        }
     }
+}
 	
 }

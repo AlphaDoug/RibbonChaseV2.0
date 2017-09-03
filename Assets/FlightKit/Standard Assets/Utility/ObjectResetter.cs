@@ -50,6 +50,7 @@ namespace UnityStandardAssets.Utility
                 Rigidbody.velocity = Vector3.zero;
                 Rigidbody.angularVelocity = Vector3.zero;
             }
+        
 
             SendMessage("Reset");
         }

@@ -41,7 +41,6 @@ public class GameController : MonoBehaviour
                 if (!PlayerPrefs.HasKey("level_" + i))
                 {
                     PlayerPrefs.SetInt("level_" + i, 0);
-                    Debug.Log("level_" + i + PlayerPrefs.GetInt("level_" + i));
                 }
             }
 
