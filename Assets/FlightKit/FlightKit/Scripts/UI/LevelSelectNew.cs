@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelSelectNew : MonoBehaviour
 {
+    public GameObject adsUI;
     public GameObject allLevels;
     public GameObject levelSel;
     public RectTransform mainPosition;
@@ -225,17 +226,23 @@ public class LevelSelectNew : MonoBehaviour
 
     private void LoadLevel(int index)
     {
-        if (index < 2)
+        if (LifeNumCtrl.lifeNum <= 0)
         {
-            levelSel.SetActive(false);
-            loadingScenes[index - 1].SetActive(true);
+            adsUI.SetActive(true);
         }
-        else if (PlayerPrefs.GetInt("level_" + (index - 2)) == 1)
+        else
         {
-            levelSel.SetActive(false);
-            loadingScenes[index - 1].SetActive(true);
+            if (index < 2)
+            {
+                levelSel.SetActive(false);
+                loadingScenes[index - 1].SetActive(true);
+            }
+            else if (PlayerPrefs.GetInt("level_" + (index - 2)) == 1)
+            {
+                levelSel.SetActive(false);
+                loadingScenes[index - 1].SetActive(true);
+            }
         }
-
     }
 
     private void MoveOnPause()

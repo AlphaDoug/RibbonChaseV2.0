@@ -58,7 +58,13 @@ public class GameController : MonoBehaviour
         }
 
     }
-      
+    public void DisActiveUI()
+    {
+        for (int i = 0; i < disActive.Length; i++)
+        {
+            disActive[i].SetActive(false);
+        }
+    }
     public void DisActiveButtonOnOver()
     {
         if (processTracker)
