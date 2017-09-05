@@ -31,6 +31,7 @@ public class LifeNumCtrl : MonoBehaviour {
     public Text LoadingTimeText;
     public GameObject gameController;
     public GameObject adsUI;
+    public Image loadingUI;
     GameController controller;
     // Use this for initialization
     void Start () {
@@ -70,7 +71,7 @@ public class LifeNumCtrl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        loadingUI.fillAmount = loading;
         for(int i = 0; i < lifeNumText.Length; i++)
         {
             lifeNumText[i].text = lifeNum.ToString();
@@ -83,6 +84,8 @@ public class LifeNumCtrl : MonoBehaviour {
         else
         {
             LoadingTimeText.enabled = false;
+            loading = 0;
+            loadingTimeSeconds = (int)(loading * loadingTime.TotalSeconds);
         }
        
         //当生命数=0才开启loading,=10则关闭loading
