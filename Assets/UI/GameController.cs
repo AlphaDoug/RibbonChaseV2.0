@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using FlightKit;
-
+using Together;
 public class GameController : MonoBehaviour
 {
     //public static int airPlaneController = 1;
@@ -20,10 +20,13 @@ public class GameController : MonoBehaviour
         Screen.sleepTimeout = SleepTimeout.NeverSleep; 
         Time.timeScale = 1f;
         //PlayerPrefs.DeleteAll();
-       
+
     }
     void Start()
     {
+		//预加载广告
+		TGSDK.Initialize("469604ox8m553x9LJrLa");
+		TGSDK.PreloadAd();
         if (progressTracker&&progressTracker.GetComponent<GameProgressTracker>())
         {
             processTracker = progressTracker.GetComponent<GameProgressTracker>();

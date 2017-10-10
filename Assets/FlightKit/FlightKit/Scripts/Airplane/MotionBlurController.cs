@@ -21,7 +21,7 @@ public class MotionBlurController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        motionBlur.blurAmount = (aeroPlaneController.MaxSpeed - 100) * 0.007f;
+        motionBlur.blurAmount = (aeroPlaneController.MaxSpeed - 100) * 0.005f;
         if (motionBlur == null)
         {
             Debug.LogError("no plane");
