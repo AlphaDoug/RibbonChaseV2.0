@@ -41,7 +41,7 @@ public class LevelSelectNew : MonoBehaviour
         screenHeight = Screen.height;
         screenWidth = Screen.width;
 
-        mainPosition.sizeDelta = new Vector2((screenWidth / 1920) * 1280, (screenHeight / 1080) * 1280);
+        mainPosition.sizeDelta = new Vector2((screenWidth / 1920) * 750, (screenHeight / 1080) * 460);
     }
 
 
@@ -94,8 +94,8 @@ public class LevelSelectNew : MonoBehaviour
         #region 控制页面随手指滑动
         if (Input.GetMouseButtonDown(0))//鼠标左键按下
         {
-            if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
-                       Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2)
+            if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 + mainPosition.localPosition.x && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 + +mainPosition.localPosition.x &&
+                Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y&& Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y)
             {
                 isMouseDown = true;
                 allLevelsMouseDownPosition = allLevels.GetComponent<RectTransform>().localPosition;
@@ -134,8 +134,8 @@ public class LevelSelectNew : MonoBehaviour
                 else//点击某个界面
                 {
                     #region 鼠标点击事件
-                    if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
-                        Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2)
+                    if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 + mainPosition.localPosition.x && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 + +mainPosition.localPosition.x &&
+                Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y)
                     {
                         //if (Application.loadedLevel == 0)//如果是mainmenu
                         //{
