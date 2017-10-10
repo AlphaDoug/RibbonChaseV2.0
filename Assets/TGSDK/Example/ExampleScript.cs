@@ -16,9 +16,9 @@ public class ExampleScript : MonoBehaviour {
 #if UNITY_IOS && !UNITY_EDITOR
 		TGSDK.Initialize ("hP7287256x5z1572E5n7");
 #elif UNITY_ANDROID && !UNITY_EDITOR
-		TGSDK.Initialize ("a4AIA3319q2AdoW2M014");
+		TGSDK.Initialize ("59t5rJH783hEQ3Jd7Zqr");
 #endif
-    }
+	}
 
     public void Log(string message)
     {
@@ -37,11 +37,11 @@ public class ExampleScript : MonoBehaviour {
     {
 		TGSDK.PreloadAdSuccessCallback = (string msg) => {
 			Log ("PreloadAdSuccessCallback : " + msg);
-            string[] scenes = Regex.Split(msg, ",", RegexOptions.IgnoreCase);
+            string[] scenes = Regex.Split(msg, ",", RegexOptions.IgnoreCase);            
 #if UNITY_IOS && !UNITY_EDITOR
 			username.text = "qfJDzBR0aMUaVIWF2Q7";
 #elif UNITY_ANDROID && !UNITY_EDITOR
-			username.text = "IJ1I5rAxiMEXPMH4AZL";
+			username.text = "hiRZYZxDI7c2LaOgrE7";
 #endif
             foreach (string scene in scenes) {
                 Log (string.Format("TGSDK Scene [{0}] Parameter [intParam] = {1}",
