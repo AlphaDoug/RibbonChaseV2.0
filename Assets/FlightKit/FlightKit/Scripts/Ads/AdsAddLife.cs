@@ -59,6 +59,7 @@ public class AdsAddLife : MonoBehaviour
 
     public void OnAdComplete(string ret)
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<LifeNumCtrl>().AdsAddLife(5);
         DebugConsole.Log("广告播放结束" + ret);
     }
 
@@ -74,7 +75,7 @@ public class AdsAddLife : MonoBehaviour
 
     public void OnAdRewardSuccess(string ret)
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<LifeNumCtrl>().AdsAddLife(5);
+        
         DebugConsole.Log("奖励类广告达成领奖条件" + ret);
     }
 

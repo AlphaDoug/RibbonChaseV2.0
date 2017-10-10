@@ -5422,6 +5422,7 @@ MonoBehaviour:
   LoadingTimeText: {fileID: 902490159}
   gameController: {fileID: 484829055}
   adsUI: {fileID: 1124674855}
+  loadingUI: {fileID: 1522364359}
 --- !u!114 &484829057 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11487630, guid: a30ee247fbc3b2f4689f614c7e0d5515,
@@ -15678,7 +15679,7 @@ Prefab:
       objectReference: {fileID: 1559784020}
     - target: {fileID: 1974921196748750, guid: 3b615da141561844389fb0018556aa14, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114946287029279088, guid: 3b615da141561844389fb0018556aa14,
         type: 2}
@@ -15944,6 +15945,36 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114740645696745152, guid: 3b615da141561844389fb0018556aa14,
+        type: 2}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224125721528868460, guid: 3b615da141561844389fb0018556aa14,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224125721528868460, guid: 3b615da141561844389fb0018556aa14,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224125721528868460, guid: 3b615da141561844389fb0018556aa14,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224125721528868460, guid: 3b615da141561844389fb0018556aa14,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 612
+      objectReference: {fileID: 0}
+    - target: {fileID: 224125721528868460, guid: 3b615da141561844389fb0018556aa14,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 547
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b615da141561844389fb0018556aa14, type: 2}
@@ -18451,6 +18482,12 @@ RectTransform:
   m_AnchoredPosition: {x: 108, y: -41.300003}
   m_SizeDelta: {x: 100.83, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1522364359 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114740645696745152, guid: 3b615da141561844389fb0018556aa14,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358015078}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1528050416
 GameObject:
   m_ObjectHideFlags: 0
