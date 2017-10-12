@@ -13,6 +13,7 @@ public class LevelCompletedControl : MonoBehaviour
     public GameObject retryButton;
     public GameObject nextButton;
     public GameObject airPlane;
+	public GameObject aboutGame;
 
     private CanvasRenderer successCanvasRenderer;
     private CanvasRenderer theFirstStarCanvasRenderer;
@@ -108,6 +109,8 @@ public class LevelCompletedControl : MonoBehaviour
         Invoke("ShowReturnButton", 2.5f);
         Invoke("ShowRetryButton", 2.7f);
         Invoke("ShowNextButton", 2.9f);
+		Invoke("ShowAboutGame", 2.7f);
+
     }
 
     // Update is called once per frame
@@ -141,6 +144,14 @@ public class LevelCompletedControl : MonoBehaviour
         }
 
     }
+	private void ShowAboutGame()
+	{
+		if (Application.loadedLevel == 7)
+		{
+			aboutGame.SetActive (true);
+
+		}
+	}
     private void ShowFirstStar()
     {
         theFirstStar.GetComponent<AudioSource>().Play();

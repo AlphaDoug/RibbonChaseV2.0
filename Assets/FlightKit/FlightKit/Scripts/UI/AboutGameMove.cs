@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AboutGameMove : MonoBehaviour
 {
-    public GameObject content;
+    public GameObject contentCN;
+	public GameObject contentEN;
 
     private bool isMouseDown = false;
     private Vector3 mouseDownPosition;
@@ -23,7 +24,15 @@ public class AboutGameMove : MonoBehaviour
         {
             isMouseDown = true;
             mouseDownPosition = Input.mousePosition;
-            mouseDownContentPosition = content.transform.localPosition;
+			if (contentCN.activeSelf) 
+			{
+				mouseDownContentPosition = contentCN.transform.localPosition;
+			} 
+			else
+			{
+				mouseDownContentPosition = contentEN.transform.localPosition;
+			}
+
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -32,23 +41,52 @@ public class AboutGameMove : MonoBehaviour
 
         if (isMouseDown)//鼠标OR手指按下,停止自动滑动,跟随手指移动
         {
-            if (content.transform.localPosition.y < 900 && content.transform.localPosition.y > -1500)
+			if (contentCN.transform.localPosition.y < 900 && contentCN.transform.localPosition.y > -1500)
             {
-                content.transform.localPosition = new Vector3(0, Input.mousePosition.y - mouseDownPosition.y + mouseDownContentPosition.y, 0);
+				contentCN.transform.localPosition = new Vector3(0, Input.mousePosition.y - mouseDownPosition.y + mouseDownContentPosition.y, 0);
             }
+			if (contentEN.transform.localPosition.y < 900 && contentEN.transform.localPosition.y > -1500)
+			{
+				contentEN.transform.localPosition = new Vector3(0, Input.mousePosition.y - mouseDownPosition.y + mouseDownContentPosition.y, 0);
+			}
         }
         else//自动滑动
         {
-            if (content.transform.localPosition.y < 900)
+			if (contentCN.transform.localPosition.y < 900)
             {
-                content.transform.Translate(new Vector3(0, 0.12f, 0));
+				//增关卡必改
+				if (Application.loadedLevel == 7)
+				{
+					contentCN.transform.Translate (new Vector3 (0, 1f, 0));
+				} 
+				else
+				{
+					contentCN.transform.Translate(new Vector3(0, 0.12f, 0));
+				}
+                
             }
+			if (contentEN.transform.localPosition.y < 900)
+			{
+				//增关卡必改
+				if (Application.loadedLevel == 7)
+				{
+					contentEN.transform.Translate (new Vector3 (0, 1f, 0));
+				} 
+				else
+				{
+					contentEN.transform.Translate(new Vector3(0, 0.12f, 0));
+				}
+
+			}
+
+
         }
         
 	}
     private void OnDisable()
     {
-        content.transform.localPosition = new Vector3(0, -1300, 0);
+		contentCN.transform.localPosition = new Vector3(0, -1300, 0);
+		contentEN.transform.localPosition = new Vector3(0, -1300, 0);
     }
 
 }
