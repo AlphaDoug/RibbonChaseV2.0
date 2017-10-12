@@ -10,6 +10,7 @@ namespace FlightKit
 	/// </summary>
     public class GameProgressTracker : MonoBehaviour
     {
+		public GameObject airplane;
         public Text pickupsCurrentText;
         public Text pickupsTotalText;
         public Image pickupIconImage;
@@ -24,7 +25,7 @@ namespace FlightKit
         private int _numPickupsCollected = 0;
         private int _numPickupsCollectedAI = 0;
         private int _numPickupsTotal;
-        private GameObject airplane;
+
         private RidParents ridParents;
         private bool levelFinished;
         public GameObject levelCompletedMenu;
@@ -202,6 +203,12 @@ namespace FlightKit
         }
         private IEnumerator FadeOutCoroutine()
         {
+			GameObject airPlaneCollider= GameObject.Find("Colliders");
+			BoxCollider []boxCollider = airPlaneCollider.GetComponentsInChildren<BoxCollider>();
+			for (int i = 0; i < boxCollider.Length; i++) 
+			{
+				boxCollider [i].enabled = false;
+			}
             var bloom = GameObject.FindObjectOfType<BloomOptimized>();
             float targetIntensity = 2.3f;
             float targetThreshold = 0.4f;
