@@ -6,8 +6,8 @@ public class CalculatePosition : MonoBehaviour
 {
     public Transform image;
     public Transform targetTransform;
-    public GameObject pickUps;
     public float edgeDistance = 20.0f;
+
     public float angle;
     public Vector3 targetCamarePo;
 

@@ -71,7 +71,7 @@ public class Pointer : MonoBehaviour {
                 closestStar[i].UpdateClosestStar();
             }
             closestStar.Remove(collider.gameObject.GetComponent<ClosestStar>());
-            //Camera.main.gameObject.GetComponent<CalculatePosition>().SetNextTarget();
+            Camera.main.gameObject.GetComponent<CalculatePosition>().SetNextTarget();
         }
     }
 

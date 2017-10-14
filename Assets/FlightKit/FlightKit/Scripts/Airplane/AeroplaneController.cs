@@ -101,6 +101,8 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
         private void Start()
         {
+            m_PitchEffect = PlayerPrefs.GetFloat("SensitivityOn");
+            m_YawEffect = m_PitchEffect;
             m_Rigidbody = GetComponent<Rigidbody>();
             // Store original drag settings, these are modified during flight.
             m_OriginalDrag = m_Rigidbody.drag;

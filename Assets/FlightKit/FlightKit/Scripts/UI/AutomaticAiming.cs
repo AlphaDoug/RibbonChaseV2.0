@@ -7,6 +7,7 @@ public class AutomaticAiming : MonoBehaviour
     public GameObject post;
     public Transform centerPoint;
     public List<GameObject> pickUp = new List<GameObject>();
+
     private List<Vector3> pickUpOnScrennVector3 = new List<Vector3>();
     private List<float> distance = new List<float>();
     private CanvasRenderer postCanvasRenderer;

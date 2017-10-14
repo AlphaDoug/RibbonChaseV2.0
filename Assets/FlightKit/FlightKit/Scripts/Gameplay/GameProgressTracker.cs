@@ -30,6 +30,7 @@ namespace FlightKit
         private bool levelFinished;
         public GameObject levelCompletedMenu;
         private GameController gameController;
+
         void Start()
         {
             
@@ -268,6 +269,7 @@ namespace FlightKit
             //    Invoke("ShowOverMenu", 8f);
             //}
             levelCompletedMenu.SetActive(true);
+
             
             Invoke("ShowOverMenu",3f);
         }

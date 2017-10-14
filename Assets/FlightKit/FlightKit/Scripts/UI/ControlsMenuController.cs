@@ -8,11 +8,19 @@ public class ControlsMenuController : MonoBehaviour
     public GameObject soundToggle;
     public GameObject modelToggle;
     public GameObject reviseToggle;
+    public GameObject vibrationToggle;
+    public GameObject sensitivityToggle;
     public GameObject gameController;
+    public GameObject sliderBar;
 
+    private Vector3 mouseDownPosition;
+    private Vector3 mouseDownContentPosition;
+    private bool isMouseDown = false;
     private Slider soundToggleSlider;
     private Slider modelToggleSlider;
     private Slider reviseToggleSlider;
+    private Slider vibrationToggleSlider;
+    private Slider sensitivityToggleSlider;
     private Dropdown dropDown;
     public int language = 0;
     //语言选择
@@ -30,6 +38,8 @@ public class ControlsMenuController : MonoBehaviour
         soundToggleSlider = soundToggle.GetComponent<Slider>();
         modelToggleSlider = modelToggle.GetComponent<Slider>();
         reviseToggleSlider = reviseToggle.GetComponent<Slider>();
+        vibrationToggleSlider = vibrationToggle.GetComponent<Slider>();
+        sensitivityToggleSlider = sensitivityToggle.GetComponent<Slider>();
         language = (int)Language.English;
 
         //初始化语言
@@ -46,6 +56,7 @@ public class ControlsMenuController : MonoBehaviour
         {
             modelToggleSlider.value = 1;
         }
+        //初始化音乐开关
         if (PlayerPrefs.HasKey("MusicOn"))
         {
             soundToggleSlider.value = PlayerPrefs.GetInt("MusicOn");
@@ -57,7 +68,30 @@ public class ControlsMenuController : MonoBehaviour
             soundToggleSlider.value = PlayerPrefs.GetInt("MusicOn");
             AudioListener.volume = PlayerPrefs.GetInt("MusicOn");
         }
-       
+        //初始化震动设置
+        if (PlayerPrefs.HasKey("VibrationOn"))
+        {
+            vibrationToggleSlider.value = PlayerPrefs.GetInt("VibrationOn");
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("VibrationOn", 1);
+            vibrationToggleSlider.value = PlayerPrefs.GetInt("VibrationOn");
+
+        }
+        //初始化灵敏度,范围是1-5
+        if (PlayerPrefs.HasKey("SensitivityOn"))
+        {
+            sensitivityToggleSlider.value = (PlayerPrefs.GetFloat("SensitivityOn") - 1) / 4;
+
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("SensitivityOn", 3.0f);
+            sensitivityToggleSlider.value = (PlayerPrefs.GetFloat("SensitivityOn") - 1) / 4;
+
+        }
         //初始化方向控制
         if (PlayerPrefs.GetInt("ReviseDirection") == 0)
         {
@@ -72,6 +106,24 @@ public class ControlsMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            isMouseDown = true;
+            mouseDownPosition = Input.mousePosition;
+            mouseDownContentPosition = sliderBar.transform.localPosition;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            isMouseDown = false;
+        }
+
+        if (isMouseDown)//鼠标OR手指按下,停止自动滑动,跟随手指移动
+        {
+            sliderBar.transform.localPosition = new Vector3(
+                0,
+                Mathf.Clamp(Input.mousePosition.y - mouseDownPosition.y + mouseDownContentPosition.y, -140, 400),
+                0);
+        }
         //Debug.Log(PlayerPrefs.GetInt("language") + "language");
         if (Input.GetMouseButtonUp(0))
         {
@@ -83,6 +135,18 @@ public class ControlsMenuController : MonoBehaviour
             else
             {
                 soundToggleSlider.value = 1;
+            }
+
+
+            if (vibrationToggleSlider.value < 0.5f)
+            {
+                vibrationToggleSlider.value = 0;
+                PlayerPrefs.SetInt("VibrationOn", 0);
+            }
+            else
+            {
+                vibrationToggleSlider.value = 1;
+                PlayerPrefs.SetInt("VibrationOn", 1);
             }
 
             if (reviseToggleSlider.value < 0.5f)
@@ -165,5 +229,9 @@ public class ControlsMenuController : MonoBehaviour
     public void ReviseDirection()
     {
         PlayerPrefs.SetInt("ReviseDirection", 1);
+    }
+    public void OnSensitivityValueChanged()
+    {
+        PlayerPrefs.SetFloat("SensitivityOn", sensitivityToggleSlider.value * 4 + 1);
     }
 }

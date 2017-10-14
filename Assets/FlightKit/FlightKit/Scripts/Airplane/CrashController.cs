@@ -109,7 +109,10 @@ namespace FlightKit
             var trails = GetComponent<AirplaneTrails>();
             trails.DeactivateTrails();
             trails.ClearTrails();
-            Handheld.Vibrate();
+            if (PlayerPrefs.GetInt("VibrationOn") == 1)
+            {
+                Handheld.Vibrate();
+            }
             // Reset the plane.
             var reset = GetComponent<ObjectResetter>();
             if (reset != null)
