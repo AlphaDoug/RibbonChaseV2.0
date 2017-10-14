@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelSelectNew : MonoBehaviour
 {
+    public GameObject adsUI;
     public GameObject allLevels;
     public GameObject levelSel;
     public RectTransform mainPosition;
@@ -40,7 +41,7 @@ public class LevelSelectNew : MonoBehaviour
         screenHeight = Screen.height;
         screenWidth = Screen.width;
 
-        mainPosition.sizeDelta = new Vector2((screenWidth / 1920) * 1280, (screenHeight / 1080) * 1280);
+        mainPosition.sizeDelta = new Vector2((screenWidth / 1920) * 750, (screenHeight / 1080) * 460);
     }
 
 
@@ -93,8 +94,8 @@ public class LevelSelectNew : MonoBehaviour
         #region 控制页面随手指滑动
         if (Input.GetMouseButtonDown(0))//鼠标左键按下
         {
-            if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
-                       Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2)
+            if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 + mainPosition.localPosition.x && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 + +mainPosition.localPosition.x &&
+                Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y&& Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y)
             {
                 isMouseDown = true;
                 allLevelsMouseDownPosition = allLevels.GetComponent<RectTransform>().localPosition;
@@ -133,8 +134,8 @@ public class LevelSelectNew : MonoBehaviour
                 else//点击某个界面
                 {
                     #region 鼠标点击事件
-                    if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 &&
-                        Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2)
+                    if (Input.mousePosition.x > -mainPosition.sizeDelta.x / 2 + screenWidth / 2 + mainPosition.localPosition.x && Input.mousePosition.x < mainPosition.sizeDelta.x / 2 + screenWidth / 2 + +mainPosition.localPosition.x &&
+                Input.mousePosition.y > -mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y && Input.mousePosition.y < mainPosition.sizeDelta.y / 2 + screenHeight / 2 + mainPosition.localPosition.y)
                     {
                         //if (Application.loadedLevel == 0)//如果是mainmenu
                         //{
@@ -225,17 +226,23 @@ public class LevelSelectNew : MonoBehaviour
 
     private void LoadLevel(int index)
     {
-        if (index < 2)
+        if (LifeNumCtrl.lifeNum <= 0)
         {
-            levelSel.SetActive(false);
-            loadingScenes[index - 1].SetActive(true);
+            adsUI.SetActive(true);
         }
-        else if (PlayerPrefs.GetInt("level_" + (index - 2)) == 1)
+        else
         {
-            levelSel.SetActive(false);
-            loadingScenes[index - 1].SetActive(true);
+            if (index < 2)
+            {
+                levelSel.SetActive(false);
+                loadingScenes[index - 1].SetActive(true);
+            }
+            else if (PlayerPrefs.GetInt("level_" + (index - 2)) == 1)
+            {
+                levelSel.SetActive(false);
+                loadingScenes[index - 1].SetActive(true);
+            }
         }
-
     }
 
     private void MoveOnPause()

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using FlightKit;
-
+using Together;
 public class GameController : MonoBehaviour
 {
     //public static int airPlaneController = 1;
@@ -20,10 +20,13 @@ public class GameController : MonoBehaviour
         Screen.sleepTimeout = SleepTimeout.NeverSleep; 
         Time.timeScale = 1f;
         //PlayerPrefs.DeleteAll();
-       
+
     }
     void Start()
     {
+		//预加载广告
+		TGSDK.Initialize("469604ox8m553x9LJrLa");
+		TGSDK.PreloadAd();
         if (progressTracker&&progressTracker.GetComponent<GameProgressTracker>())
         {
             processTracker = progressTracker.GetComponent<GameProgressTracker>();
@@ -41,7 +44,6 @@ public class GameController : MonoBehaviour
                 if (!PlayerPrefs.HasKey("level_" + i))
                 {
                     PlayerPrefs.SetInt("level_" + i, 0);
-                    Debug.Log("level_" + i + PlayerPrefs.GetInt("level_" + i));
                 }
             }
 
@@ -59,7 +61,13 @@ public class GameController : MonoBehaviour
         }
 
     }
-      
+    public void DisActiveUI()
+    {
+        for (int i = 0; i < disActive.Length; i++)
+        {
+            disActive[i].SetActive(false);
+        }
+    }
     public void DisActiveButtonOnOver()
     {
         if (processTracker)

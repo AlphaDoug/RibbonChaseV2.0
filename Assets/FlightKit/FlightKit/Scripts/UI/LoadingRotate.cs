@@ -24,7 +24,6 @@ public class LoadingRotate : MonoBehaviour {
     {
        
         gameProgressTracker = levelScripts.GetComponent<GameProgressTracker>();
-       
         gameController = GameController.GetComponent<GameControllerVR>();
         if (loadingSceneIndex!=0)
         {

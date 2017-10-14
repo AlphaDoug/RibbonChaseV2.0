@@ -45,14 +45,14 @@ public class LowPolyWater : MonoBehaviour {
 
     public static void Scale(Material material, float scale) {
         if (material == null || !material.HasProperty("_Scale_")) return;
-        material.SetFloat("_Scale_", scale);
-        material.SetFloat("_RHeight_", material.GetFloat("_RHeight")* scale);
-        material.SetFloat("_RSpeed_", material.GetFloat("_RSpeed")* scale);
-        material.SetFloat("_Height_", material.GetFloat("_Height")* scale);
-        material.SetFloat("_Speed_", material.GetFloat("_Speed")* scale);
-        var noiseTex = material.GetTexture("_NoiseTex");
-        if (noiseTex != null)
-            material.SetFloat("_TexSize_", noiseTex.height * scale);
+        //material.SetFloat("_Scale_", scale);
+        //material.SetFloat("_RHeight_", material.GetFloat("_RHeight")* scale);
+        //material.SetFloat("_RSpeed_", material.GetFloat("_RSpeed")* scale);
+        //material.SetFloat("_Height_", material.GetFloat("_Height")* scale);
+        //material.SetFloat("_Speed_", material.GetFloat("_Speed")* scale);
+        //var noiseTex = material.GetTexture("_NoiseTex");
+        //if (noiseTex != null)
+        //    material.SetFloat("_TexSize_", noiseTex.height * scale);
         var steepness = material.GetFloat("_Steepness") * material.GetFloat("_Length");
         var angle = Mathf.Deg2Rad * material.GetFloat("_Direction");
         var cos = Mathf.Cos(angle);
