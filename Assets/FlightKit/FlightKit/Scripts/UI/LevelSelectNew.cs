@@ -41,7 +41,7 @@ public class LevelSelectNew : MonoBehaviour
         screenHeight = Screen.height;
         screenWidth = Screen.width;
 
-        mainPosition.sizeDelta = new Vector2((screenWidth / 1920) * 750, (screenHeight / 1080) * 460);
+        mainPosition.sizeDelta = new Vector2(((float)screenWidth / 1920) * 750, ((float)screenHeight / 1080) * 460);
     }
 
 

@@ -159,7 +159,11 @@ namespace FlightKit
                 if (isAndroid)
                 {
                     //jo.Call("StartShock", new long[] { 100, 100 }, -1);
-                    Handheld.Vibrate();
+                    if (PlayerPrefs.GetInt("VibrationOn") == 1)
+                    {
+                        Handheld.Vibrate();
+                    }
+                   
                 }
 
                 var sound = GetComponentInParent<AudioSource>();

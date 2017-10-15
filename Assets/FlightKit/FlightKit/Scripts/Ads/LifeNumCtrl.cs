@@ -11,7 +11,7 @@ public class LifeNumCtrl : MonoBehaviour {
     /// <summary>
     /// 多长时间加载一条命
     /// </summary>
-    const int TIMEFORALIFE = 60;
+    const int TIMEFORALIFE = 120;
     TimeSpan loadingTime = new TimeSpan(0, 0, TIMEFORALIFE);
     /// <summary>
     /// 目前加载秒数

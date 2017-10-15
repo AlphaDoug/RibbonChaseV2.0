@@ -68,75 +68,77 @@ namespace FlightKit
             yield return new WaitForSeconds(0f);
 
             // If there is a bloom effect in the scene, use it for a nice fade out effect.
-         /*   var bloom = GameObject.FindObjectOfType<BloomOptimized>();
-            if (bloom == null)
-            {
-                // Pause game.
-                Time.timeScale = 0;
+            /*   var bloom = GameObject.FindObjectOfType<BloomOptimized>();
+               if (bloom == null)
+               {
+                   // Pause game.
+                   Time.timeScale = 0;
 
-                if (levelFailMenu != null)
-                {
-                    levelFailMenu.gameObject.SetActive(true);
-                }
-                yield break;
-            }
+                   if (levelFailMenu != null)
+                   {
+                       levelFailMenu.gameObject.SetActive(true);
+                   }
+                   yield break;
+               }
 
-            // Tween out.
-            float targetIntensity = 2.2f;
-            float targetThreshold = 0.3f;
-            var wait = new WaitForEndOfFrame();
-            float tween = 1f;
+               // Tween out.
+               float targetIntensity = 2.2f;
+               float targetThreshold = 0.3f;
+               var wait = new WaitForEndOfFrame();
+               float tween = 1f;
 
-            if (levelFailMenu != null)
-            {
-                levelFailMenu.alpha = 0;
-                levelFailMenu.gameObject.SetActive(true);
-            }
+               if (levelFailMenu != null)
+               {
+                   levelFailMenu.alpha = 0;
+                   levelFailMenu.gameObject.SetActive(true);
+               }
 
-            float prevTime = Time.realtimeSinceStartup;
-            float deltaTime = 0;
+               float prevTime = Time.realtimeSinceStartup;
+               float deltaTime = 0;
 
-            while (tween > 0.1)
-            {
-                deltaTime = Time.realtimeSinceStartup - prevTime;
-                prevTime = Time.realtimeSinceStartup;
+               while (tween > 0.1)
+               {
+                   deltaTime = Time.realtimeSinceStartup - prevTime;
+                   prevTime = Time.realtimeSinceStartup;
 
-                bloom.intensity = Mathf.Lerp(bloom.intensity, targetIntensity, 1.5f * deltaTime);
-                bloom.threshold = Mathf.Lerp(bloom.threshold, targetThreshold, 1.5f * deltaTime);
+                   bloom.intensity = Mathf.Lerp(bloom.intensity, targetIntensity, 1.5f * deltaTime);
+                   bloom.threshold = Mathf.Lerp(bloom.threshold, targetThreshold, 1.5f * deltaTime);
 
-                tween = Mathf.Lerp(tween, 0f, 1.5f * deltaTime);
+                   tween = Mathf.Lerp(tween, 0f, 1.5f * deltaTime);
 
-                Time.timeScale = tween;
-                Time.fixedDeltaTime = tween * 0.02f;
+                   Time.timeScale = tween;
+                   Time.fixedDeltaTime = tween * 0.02f;
 
-                if (levelFailMenu != null)
-                {
-                    levelFailMenu.alpha = 1 - tween;
-                }
+                   if (levelFailMenu != null)
+                   {
+                       levelFailMenu.alpha = 1 - tween;
+                   }
 
-                yield return wait;
-                //}
+                   yield return wait;
+                   //}
 
-                if (levelFailMenu != null)
-                {
-                    levelFailMenu.alpha = 1;
-                }
+                   if (levelFailMenu != null)
+                   {
+                       levelFailMenu.alpha = 1;
+                   }
 
-                for (int i = 0; i < disActivedUI.Length; i++)
-                {
-                    disActivedUI[i].SetActive(false);
-                }
-                // Pause game.
-                Time.timeScale = 0;
-                Time.fixedDeltaTime = 0.02f;
-            }
-            */
-
-			for (int i = 0; i < disActivedUI.Length; i++)
+                   for (int i = 0; i < disActivedUI.Length; i++)
+                   {
+                       disActivedUI[i].SetActive(false);
+                   }
+                   // Pause game.
+                   Time.timeScale = 0;
+                   Time.fixedDeltaTime = 0.02f;
+               }
+               */
+           
+            for (int i = 0; i < disActivedUI.Length; i++)
 			{
 				disActivedUI[i].SetActive(false);
 			}
 			levelFailMenu.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            Time.fixedDeltaTime = 0.02f;
         }
         
         private void HandleReviveGranted()

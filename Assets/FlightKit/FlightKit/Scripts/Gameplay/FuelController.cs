@@ -98,6 +98,7 @@ namespace FlightKit
         
         void Update()
         {
+            //Debug.Log("fuelAmount" + fuelAmount+ "_isConsuming"+ _isConsuming);
             if (_isConsuming)
             {
                 fuelAmount -= consumptionRate * Time.deltaTime * 0.01f;
@@ -110,8 +111,9 @@ namespace FlightKit
                     }
                 }
             }
-            if (fuelAmount <= 0 && _isConsuming)
+            if (fuelAmount <= 0.1 && _isConsuming)
             {
+                Debug.Log("fuelAmount"+ fuelAmount);
                 if (OnFuelEmptyEvent != null)
                 {
                     _isConsuming = false;
