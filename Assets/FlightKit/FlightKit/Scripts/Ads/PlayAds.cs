@@ -4,15 +4,28 @@ using UnityEngine;
 using Together;
 public class PlayAds : MonoBehaviour {
     public GameObject gameController;
-	// Use this for initialization
-	void Start () {
+    public GameObject addAnim;
+    private AnimatorStateInfo animatorInfo;
+
+    // Use this for initialization
+    void Start () {
         TGSDK.AdCloseCallback = OnAdClose;
         TGSDK.VideoAdLoadedCallback = OnVideoAdLoaded;
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        if (addAnim.activeSelf)
+        {
+            addAnim.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
+            animatorInfo = addAnim.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+            if ((animatorInfo.normalizedTime > 1.0f) && (animatorInfo.IsName("AddAnim")))//normalizedTime: 范围0 -- 1,  0是动作开始，1是动作结束  
+            {
+                addAnim.SetActive(false);
+                gameController.GetComponent<LifeNumCtrl>().AdsAddLife(5);
+            }
+        }
 	}
     public void Ads()
     {
@@ -23,7 +36,8 @@ public class PlayAds : MonoBehaviour {
     }
     public void OnAdClose(string ret)
     {
-		gameController.GetComponent<LifeNumCtrl> ().AdsAddLife (5);
+        
+        addAnim.SetActive(true);	
     }
 
     public void OnVideoAdLoaded(string ret)
