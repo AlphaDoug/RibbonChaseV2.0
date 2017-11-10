@@ -18,7 +18,7 @@ public class AboutGameMove : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -87,6 +87,7 @@ public class AboutGameMove : MonoBehaviour
     {
 		contentCN.transform.localPosition = new Vector3(0, -1300, 0);
 		contentEN.transform.localPosition = new Vector3(0, -1300, 0);
+        isMouseDown = false;
     }
 
 }

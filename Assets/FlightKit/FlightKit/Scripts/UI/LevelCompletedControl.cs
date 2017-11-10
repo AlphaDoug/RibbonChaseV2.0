@@ -109,7 +109,7 @@ public class LevelCompletedControl : MonoBehaviour
         Invoke("ShowReturnButton", 2.5f);
         Invoke("ShowRetryButton", 2.7f);
         Invoke("ShowNextButton", 2.9f);
-		Invoke("ShowAboutGame", 2.7f);
+		//Invoke("ShowAboutGame", 2.7f);
 
     }
 
@@ -146,7 +146,7 @@ public class LevelCompletedControl : MonoBehaviour
     }
 	private void ShowAboutGame()
 	{
-		if (Application.loadedLevel == 7)
+		if (Application.loadedLevel == (Application.levelCount-1))
 		{
 			aboutGame.SetActive (true);
 

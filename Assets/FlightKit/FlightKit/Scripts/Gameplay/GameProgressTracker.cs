@@ -10,6 +10,7 @@ namespace FlightKit
 	/// </summary>
     public class GameProgressTracker : MonoBehaviour
     {
+		public GameObject endMusic;
 		public GameObject airplane;
         public Text pickupsCurrentText;
         public Text pickupsTotalText;
@@ -21,6 +22,8 @@ namespace FlightKit
 
         public static int pickupsCollected;
         public static int pickupsCollectedAI;
+        public GameObject levelCompletedMenu;
+        public GameObject drama;
 
         private int _numPickupsCollected = 0;
         private int _numPickupsCollectedAI = 0;
@@ -28,8 +31,9 @@ namespace FlightKit
 
         private RidParents ridParents;
         private bool levelFinished;
-        public GameObject levelCompletedMenu;
+
         private GameController gameController;
+
 
         void Start()
         {
@@ -250,7 +254,11 @@ namespace FlightKit
 
                 yield return wait;
             }
-
+			if(Application.loadedLevel==(Application.levelCount-1))
+			{
+				musicController.gameplay.volume = 0;
+				endMusic.GetComponent<AudioSource> ().enabled = true;
+			}
             // Speed up again.
             Time.timeScale = 1f;
             Time.fixedDeltaTime = fixedDeltaTime;
@@ -268,10 +276,27 @@ namespace FlightKit
             //{
             //    Invoke("ShowOverMenu", 8f);
             //}
-            levelCompletedMenu.SetActive(true);
 
+            if (drama)
+            {
+                drama.SetActive(true);
+               // GameObject.Find("ButtonPause").SetActive(false);
+                GameObject.Find("PickupIcon").SetActive(false);
+                GameObject.Find("FuelUIRect").SetActive(false);
+                //GameObject.Find("Joystick").SetActive(false);
+                //GameObject.Find("Acce").SetActive(false);
+                GameObject.Find("LifeIcon").SetActive(false);
+            }
+            else
+            {
+                levelCompletedMenu.SetActive(true);
+            }
+			if(Application.loadedLevel!=(Application.levelCount-1))
+			{
+				Invoke("ShowOverMenu",3f);
+				
+			}
             
-            Invoke("ShowOverMenu",3f);
         }
 
         public void LevelCompleted()

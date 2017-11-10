@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System.IO;
 
 public class Share : MonoBehaviour {
+	public int shareAddLifeNum=3;
 	public GameObject warningText;
 	public GameObject UICanvas;
 	public GUISkin demoSkin;
@@ -29,15 +30,6 @@ public class Share : MonoBehaviour {
 
     public void OnShareButtonDown()
 	{
-		GameObject warnText = Instantiate (warningText)as GameObject;
-		warnText.transform.SetParent (UICanvas.transform);
-		warnText.GetComponent<RectTransform>().localPosition = new Vector3 (-23, 864.9999f, 0);
-		warnText.GetComponent<RectTransform>().localScale = new Vector3 (1, 1, 1);
-		warnText.GetComponent<RectTransform>().localRotation = new Quaternion (0, 0, 0,0);
-		warnText.GetComponent<Animator> ().updateMode = AnimatorUpdateMode.UnscaledTime;
-
-
-
         Application.CaptureScreenshot("Icon.png");
         ShareContent content = new ShareContent();
 
@@ -65,7 +57,7 @@ public class Share : MonoBehaviour {
 		{
 			if(gameController!=null)
 			{
-				gameController.GetComponent<LifeNumCtrl> ().AdsAddLife (10);
+				gameController.GetComponent<LifeNumCtrl> ().AdsAddLife (shareAddLifeNum);
 			}
 			else
 			{
@@ -74,12 +66,16 @@ public class Share : MonoBehaviour {
 
             print ("share successfully - share result :");
 			print (MiniJSON.jsonEncode(result));
-			GameObject warnText = Instantiate (warningText)as GameObject;
-			warnText.transform.SetParent (UICanvas.transform);
-			warnText.GetComponent<RectTransform>().localPosition = new Vector3 (-23, 864.9999f, 0);
-			warnText.GetComponent<RectTransform>().localScale = new Vector3 (1, 1, 1);
-			warnText.GetComponent<RectTransform>().localRotation = new Quaternion (0, 0, 0,0);
-			warnText.GetComponent<Animator> ().updateMode = AnimatorUpdateMode.UnscaledTime;
+			if(LifeNumCtrl.lifeNum<LifeNumCtrl.MAXLIFENUM)
+			{
+				GameObject warnText = Instantiate (warningText)as GameObject;
+				warnText.transform.SetParent (UICanvas.transform);
+				warnText.GetComponent<RectTransform>().localPosition = new Vector3 (-23, 864.9999f, 0);
+				warnText.GetComponent<RectTransform>().localScale = new Vector3 (1, 1, 1);
+				warnText.GetComponent<RectTransform>().localRotation = new Quaternion (0, 0, 0,0);
+				warnText.GetComponent<Animator> ().updateMode = AnimatorUpdateMode.UnscaledTime;
+			}
+
 		}
 		else if (state == ResponseState.Fail)
 		{

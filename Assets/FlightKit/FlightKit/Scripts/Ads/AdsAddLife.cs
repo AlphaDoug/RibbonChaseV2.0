@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Together;
 
 public class AdsAddLife : MonoBehaviour
 {
     void Awake()
     {
+		/*
         TGSDK.SetDebugModel(true);
 #if UNITY_IOS && !UNITY_EDITOR
 		        TGSDK.Initialize ("hP7287256x5z1572E5n7");
@@ -15,11 +15,12 @@ public class AdsAddLife : MonoBehaviour
                 //a4AIA3319q2AdoW2M014
                 TGSDK.Initialize ("a4AIA3319q2AdoW2M014");
 #endif
+*/
     }
 
     // Use this for initialization
     void Start()
-    {
+	{/*
         TGSDK.PreloadAd();
         TGSDK.AdShowSuccessCallback = OnAdShowSuccess;
         TGSDK.AdShowFailedCallback = OnAdShowFailed;
@@ -27,7 +28,7 @@ public class AdsAddLife : MonoBehaviour
         TGSDK.AdCloseCallback = OnAdClose;
         TGSDK.AdClickCallback = OnAdClick;
         TGSDK.AdRewardSuccessCallback = OnAdRewardSuccess;
-        TGSDK.AdRewardFailedCallback = OnAdRewardFailed;
+        TGSDK.AdRewardFailedCallback = OnAdRewardFailed;*/
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class AdsAddLife : MonoBehaviour
     }
     public void ShowAds()
     {
-        if (TGSDK.CouldShowAd("Ig8T0upxRDjV3JznCgo"))
+		/*  if (TGSDK.CouldShowAd("Ig8T0upxRDjV3JznCgo"))
         {
             DebugConsole.Log("广告准备好了");
             TGSDK.ShowAd("Ig8T0upxRDjV3JznCgo");
@@ -45,7 +46,7 @@ public class AdsAddLife : MonoBehaviour
         else
         {
             DebugConsole.Log("广告未准备好");
-        }
+        }*/
     }
     public void OnAdShowSuccess(string ret)
     {

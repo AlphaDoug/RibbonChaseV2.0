@@ -76,7 +76,7 @@ public class ControlsMenuController : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetInt("VibrationOn", 1);
+            PlayerPrefs.SetInt("VibrationOn", 0);
             vibrationToggleSlider.value = PlayerPrefs.GetInt("VibrationOn");
 
         }

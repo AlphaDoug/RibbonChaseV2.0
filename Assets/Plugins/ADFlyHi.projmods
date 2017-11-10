@@ -1,0 +1,30 @@
+{
+    "group":"TGSDK",
+    "libs": ["libsqlite3.tbd","libz.tbd","libz.1.2.5.tbd","libc++.tbd","libxml2.tbd"],
+    "frameworks":[],
+    "headerpaths": [],
+    "files": ["iOS/frameworks/AppcoachsSDK.framework",
+        "iOS/frameworks/GoogleMobileAds.framework",
+        "iOS/frameworks/InMobiSDK.framework",
+        "iOS/frameworks/MVSDK.framework",
+        "iOS/frameworks/MVSDKAppWall.framework",
+        "iOS/frameworks/MVSDKInterstitial.framework",
+        "iOS/frameworks/MVSDKOfferWall.framework",
+        "iOS/frameworks/MVSDKReward.framework",
+	"iOS/frameworks/UnityAds.framework",
+	"iOS/frameworks/VungleSDK.framework",
+        "iOS/resources/appcoachsSDK.bundle",
+        "iOS/resources/ChanceAdRes.bundle",
+        "iOS/resources/mz_noVoice@2x.png",
+        "iOS/resources/mz_voice_normal@2x.png"],
+    "folders": [],
+    "excludes": [],
+    "compiler_flags": [],
+    "linker_flags": [],
+    "embed_binaries": [],
+    "plist": {
+        "NSAppTransportSecurity" : {
+            "NSAllowsArbitraryLoads":true
+        }
+    }
+}

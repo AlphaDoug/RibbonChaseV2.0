@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using FlightKit;
-using Together;
 public class GameController : MonoBehaviour
 {
+	public int adsAddLifeNum = 1;
+    public GameObject dramaPages;
+    public GameObject warningAdsAddLife;
+	public GameObject UICanvas;
     //public static int airPlaneController = 1;
     public GameObject endTheGameBox;
     public bool isGameOver;
@@ -16,25 +19,11 @@ public class GameController : MonoBehaviour
     float t1, t2;
     public static int airPlaneController;
     void Awake()
-    {       
+    {
+        //PlayerPrefs.DeleteAll();
         Screen.sleepTimeout = SleepTimeout.NeverSleep; 
         Time.timeScale = 1f;
         //PlayerPrefs.DeleteAll();
-
-    }
-    void Start()
-    {
-		//预加载广告
-		TGSDK.Initialize("469604ox8m553x9LJrLa");
-		TGSDK.PreloadAd();
-        if (progressTracker&&progressTracker.GetComponent<GameProgressTracker>())
-        {
-            processTracker = progressTracker.GetComponent<GameProgressTracker>();
-        }
-        else
-        {
-            Debug.Log("Can not find GameProgessTracker.");
-        }
         if (Application.loadedLevel == 0)
         {
             //Initail lock
@@ -59,8 +48,52 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+        if (progressTracker && progressTracker.GetComponent<GameProgressTracker>())
+        {
+            processTracker = progressTracker.GetComponent<GameProgressTracker>();
+        }
+        else
+        {
+            Debug.Log("Can not find GameProgessTracker.");
+        }
 
     }
+    private void Start()
+    {
+        //预加载广告
+        //TGSDK.Initialize("469604ox8m553x9LJrLa");
+        //TGSDK.PreloadAd();
+        ADFlyHiSDK.OnAdShowSuccess = OnAdShowSuccess;
+        ADFlyHiSDK.OnAdShowFail = OnAdShowFail;
+
+        ADFlyHiSDK.init("a100170000", "a100170001", ADFlyHiSDK.Oritation.Landscape, false);
+        ADFlyHiSDK.PreloadVideo();
+
+    }
+    private void OnAdShowSuccess()
+	{
+		Debug.Log("广告播放成功");
+		GetComponent<LifeNumCtrl> ().AdsAddLife (adsAddLifeNum);
+        //if (LifeNumCtrl.lifeNum<  LifeNumCtrl.MAXLIFENUM)
+		if(LifeNumCtrl.lifeNum<LifeNumCtrl.MAXLIFENUM)
+		{
+			GameObject warning = Instantiate(warningAdsAddLife) as GameObject;
+			warning.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
+			warning.transform.SetParent(UICanvas.transform);
+			warning.GetComponent<RectTransform>().localPosition = new Vector3(-23, 864.9999f, 0);
+			warning.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+			warning.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 0);
+		}
+           
+        
+        
+	}
+
+	private void OnAdShowFail(string s)
+	{
+		Debug.Log("广告播放失败，失败描述：" + s);
+
+	}
     public void DisActiveUI()
     {
         for (int i = 0; i < disActive.Length; i++)
@@ -107,7 +140,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         //退出游戏提示框，并暂停游戏
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && (dramaPages != null && !dramaPages.activeSelf || dramaPages == null))
         {
             endTheGameBox.SetActive(true);
             for (int i = 0; i < disActive.Length; i++)
