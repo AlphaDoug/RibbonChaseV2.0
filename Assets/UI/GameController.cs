@@ -4,8 +4,7 @@ using FlightKit;
 public class GameController : MonoBehaviour
 {
 	public int adsAddLifeNum = 1;
-    public GameObject dramaPages;
-    public GameObject warningAdsAddLife;
+    public GameObject warningText;
 	public GameObject UICanvas;
     //public static int airPlaneController = 1;
     public GameObject endTheGameBox;
@@ -77,7 +76,7 @@ public class GameController : MonoBehaviour
         //if (LifeNumCtrl.lifeNum<  LifeNumCtrl.MAXLIFENUM)
 		if(LifeNumCtrl.lifeNum<LifeNumCtrl.MAXLIFENUM)
 		{
-			GameObject warning = Instantiate(warningAdsAddLife) as GameObject;
+			GameObject warning = Instantiate(warningText) as GameObject;
 			warning.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
 			warning.transform.SetParent(UICanvas.transform);
 			warning.GetComponent<RectTransform>().localPosition = new Vector3(-23, 864.9999f, 0);
@@ -140,22 +139,26 @@ public class GameController : MonoBehaviour
     void Update()
     {
         //退出游戏提示框，并暂停游戏
-        if (Input.GetKeyDown(KeyCode.Escape) && (dramaPages != null && !dramaPages.activeSelf || dramaPages == null))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            endTheGameBox.SetActive(true);
-            for (int i = 0; i < disActive.Length; i++)
+            if (!(GameObject.Find("DramaALL") || GameObject.Find("DramaFRONT") || GameObject.Find("DramaEND")))
             {
-                disActive[i].SetActive(false);
-            }
-            if (Application.loadedLevel == 0 || GameObject.Find("TipMenu") != null)
-            {
-                if (GameObject.FindObjectOfType<LevelSelectNew>() != null)
+                endTheGameBox.SetActive(true);
+                for (int i = 0; i < disActive.Length; i++)
                 {
-                    GameObject.FindObjectOfType<LevelSelectNew>().GetComponent<LevelSelectNew>().enabled = false;
+                    disActive[i].SetActive(false);
                 }
-                
+                if (Application.loadedLevel == 0 || GameObject.Find("TipMenu") != null)
+                {
+                    if (GameObject.FindObjectOfType<LevelSelectNew>() != null)
+                    {
+                        GameObject.FindObjectOfType<LevelSelectNew>().GetComponent<LevelSelectNew>().enabled = false;
+                    }
+
+                }
+                Time.timeScale = 0;
             }
-            Time.timeScale = 0;
+            
         }
     }
 

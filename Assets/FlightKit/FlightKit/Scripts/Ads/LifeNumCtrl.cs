@@ -28,7 +28,7 @@ public class LifeNumCtrl : MonoBehaviour {
     private DateTime oriTime=new DateTime(0,0,0,0,0,0);
     private int startLoading = 0;
     public GameObject warningFullHP;
-    public GameObject warningAds;
+    public GameObject warningText;
     public GameObject UICanvas;
     public Text []lifeNumText;
     public Text LoadingTimeText;
@@ -161,7 +161,7 @@ public class LifeNumCtrl : MonoBehaviour {
     }
     public void ShowWarningText()
     {
-        GameObject warning = Instantiate(warningAds) as GameObject;
+        GameObject warning = Instantiate(warningText) as GameObject;
         warning.transform.SetParent(UICanvas.transform);
         warning.GetComponent<RectTransform>().localPosition = new Vector3(-23, 864.9999f, 0);
         warning.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
