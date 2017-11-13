@@ -4,27 +4,34 @@ using UnityStandardAssets.ImageEffects;
 
 namespace FlightKit
 {
-	/// <summary>
-	/// Listens to the take-off events and tweens saturation on the ColorCorrectionCurves 
-	/// effect if one is found on the camera.
-	/// </summary>
-	public class SaturationController : MonoBehaviour
+    /// <summary>
+    /// Listens to the take-off events and tweens saturation on the ColorCorrectionCurves 
+    /// effect if one is found on the camera.
+    /// </summary>
+    public class SaturationController : MonoBehaviour
     {
         private ColorCorrectionCurves _colorCorrectionFx;
+        private ImageEffect_Mosaic _imageEffect_Mosaic;
         private float _saturationTweenStartTime;
 
         void Start()
         {
-            _colorCorrectionFx = GameObject.FindObjectOfType<ColorCorrectionCurves>();
-            if (_colorCorrectionFx)
+            //_colorCorrectionFx = GameObject.FindObjectOfType<ColorCorrectionCurves>();
+            _imageEffect_Mosaic = GameObject.FindObjectOfType<ImageEffect_Mosaic>();
+            //if (_colorCorrectionFx)
+            //{
+            //    TakeOffPublisher.OnTakeOffEvent += OnTakeOff;
+            //}
+            if (_imageEffect_Mosaic)
             {
-                TakeOffPublisher.OnTakeOffEvent += OnTakeOff;
+                // TakeOffPublisher.OnTakeOffEvent += OnTakeOff;
+                OnTakeOff();
             }
         }
 
         void OnDisable()
         {
-            TakeOffPublisher.OnTakeOffEvent -= OnTakeOff;
+            //TakeOffPublisher.OnTakeOffEvent -= OnTakeOff;
         }
 
         private void OnTakeOff()
@@ -40,14 +47,15 @@ namespace FlightKit
             // Play camera saturation animation.
             _saturationTweenStartTime = Time.time;
             var wait = new WaitForEndOfFrame();
-            while (_colorCorrectionFx.saturation < 0.99f)
+            while (_imageEffect_Mosaic.MosaicSize > 1)
             {
-	            float deltaTime = Time.time - _saturationTweenStartTime;
-				_colorCorrectionFx.saturation = Mathf.SmoothStep(0f, 1f, deltaTime * 1.2f);
+                float deltaTime = Time.time - _saturationTweenStartTime;
+                _imageEffect_Mosaic.MosaicSize -= 1;
+                yield return new WaitForSeconds(0.05f);
                 yield return wait;
             }
 
-            _colorCorrectionFx.saturation = 1f;
+            _imageEffect_Mosaic.MosaicSize = 0;
         }
     }
 

@@ -17242,6 +17242,7 @@ GameObject:
   - component: {fileID: 1158309064}
   - component: {fileID: 1158309065}
   - component: {fileID: 1158309066}
+  - component: {fileID: 1158309067}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -17618,6 +17619,19 @@ MonoBehaviour:
   shakeLevel: 10
   setShakeTime: 0.7
   shakeFps: 60
+--- !u!114 &1158309067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158309052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45d6d4db2df4c0428970d906255994d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MosaicShader: {fileID: 4800000, guid: f99c89430ae04c84281cc6874f1af6fc, type: 3}
+  MosaicSize: 35
 --- !u!1 &1186089016
 GameObject:
   m_ObjectHideFlags: 0
@@ -21792,9 +21806,8 @@ Transform:
   m_PrefabParentObject: {fileID: 420864, guid: 9cf52fc992e12e14bb04436399001871, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1509397523}
-  m_LocalRotation: {x: -0.000000033251823, y: -0.21542872, z: -0.000000024856677,
-    w: -0.97651964}
-  m_LocalPosition: {x: 1264, y: 3.3, z: 480.1}
+  m_LocalRotation: {x: 0.0010800677, y: 0.7712364, z: 0.003094921, w: -0.6365405}
+  m_LocalPosition: {x: 1271.4, y: 11, z: 468.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2097309718}
@@ -21803,7 +21816,7 @@ Transform:
   - {fileID: 915526717}
   m_Father: {fileID: 1951898069}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.35200003, y: -100.93001, z: -0.13000001}
 --- !u!114 &1509397525
 MonoBehaviour:
   m_ObjectHideFlags: 0

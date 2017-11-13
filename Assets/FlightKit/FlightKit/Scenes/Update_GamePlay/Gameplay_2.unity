@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.75735295, g: 0.438124, b: 0.42322665, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.001
+  m_FogDensity: 0.0006
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 2.25, g: 2.25, b: 2.25, a: 2.25}
@@ -4137,9 +4137,8 @@ Transform:
   m_PrefabParentObject: {fileID: 432034, guid: 05cc828b8f0b0b243ac73d68323b410e, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 449768440}
-  m_LocalRotation: {x: -0.000000033251823, y: -0.21542872, z: -0.000000024856677,
-    w: -0.97651964}
-  m_LocalPosition: {x: 1264, y: 3.3, z: 480.1}
+  m_LocalRotation: {x: 0.0000000060152603, y: 0.75598145, z: -0.00000004107748, w: -0.65459305}
+  m_LocalPosition: {x: 1262.4, y: 3.3, z: 468.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 259376612}
@@ -4150,7 +4149,7 @@ Transform:
   - {fileID: 1813462398}
   m_Father: {fileID: 1773621650}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -98.22201, z: 0}
 --- !u!114 &449768442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24147,6 +24146,7 @@ GameObject:
   - component: {fileID: 1909841503}
   - component: {fileID: 1909841506}
   - component: {fileID: 1909841515}
+  - component: {fileID: 1909841516}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -24523,6 +24523,19 @@ MonoBehaviour:
   shakeLevel: 10
   setShakeTime: 0.7
   shakeFps: 60
+--- !u!114 &1909841516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909841501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45d6d4db2df4c0428970d906255994d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MosaicShader: {fileID: 4800000, guid: f99c89430ae04c84281cc6874f1af6fc, type: 3}
+  MosaicSize: 35
 --- !u!1 &1916203475
 GameObject:
   m_ObjectHideFlags: 0
