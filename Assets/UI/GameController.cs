@@ -5,12 +5,15 @@ using Together;
 public class GameController : MonoBehaviour
 {
     //public static int airPlaneController = 1;
+    public GameObject dramaPages;
     public GameObject endTheGameBox;
     public bool isGameOver;
     public GameObject []disActive;
     public GameObject[] setActive;
     public GameObject progressTracker;
     public GameObject[] levelLock;
+
+
     private int levelNum = 7;
     FlightKit.GameProgressTracker processTracker;
     float t1, t2;
@@ -107,7 +110,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         //退出游戏提示框，并暂停游戏
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && (dramaPages != null && !dramaPages.activeSelf || dramaPages == null))
         {
             endTheGameBox.SetActive(true);
             for (int i = 0; i < disActive.Length; i++)

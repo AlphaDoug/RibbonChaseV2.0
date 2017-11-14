@@ -121,8 +121,8 @@ public class LifeNumCtrl : MonoBehaviour {
             }
             
         }
-        Debug.Log("loadingTimeSeconds" + loadingTimeSeconds);
-        Debug.Log("生命数" + lifeNum);
+        //Debug.Log("loadingTimeSeconds" + loadingTimeSeconds);
+       // Debug.Log("生命数" + lifeNum);
     }
     //注意每个关卡暂停界面的重新开始都要挂上这个脚本的函数
     public void OnApplicationQuit()
