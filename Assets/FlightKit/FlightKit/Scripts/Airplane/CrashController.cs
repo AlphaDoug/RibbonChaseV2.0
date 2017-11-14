@@ -127,12 +127,25 @@ namespace FlightKit
         private IEnumerator CollisionCameraAnimation()
         {
             // Enable glitch component for short time.
-            var cameraFx = GameObject.FindObjectOfType<NoiseAndScratches>();
-            cameraFx.enabled = true;
+            var cameraShake = GameObject.FindObjectOfType<ShakeCamera>();
+            //var cameraColor = GameObject.FindObjectOfType<ColorCorrectionCurves>();
+            //NoiseAndScratches
+            //ColorCorrectionCurves
+            //cameraFx.enabled = true;
+            cameraShake.isshakeCamera = true;
+            //while (cameraColor.saturation >= 0.1f)
+            //{
+            //    cameraColor.saturation -= 0.1f;
+            //    yield return new WaitForSeconds(0.05f);
+            //}
+            yield return new WaitForSeconds(0.2f);
+            //while (cameraColor.saturation < 1f)
+            //{
+            //    cameraColor.saturation += 0.1f;
+            //    yield return new WaitForSeconds(0.05f);
+            //}
 
-            yield return new WaitForSeconds(1.0f);
-
-            cameraFx.enabled = false;
+            //cameraFx.enabled = false;
         }
         private void ChooseNextTarget()
         {

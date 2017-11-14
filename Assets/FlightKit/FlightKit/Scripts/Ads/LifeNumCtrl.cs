@@ -7,11 +7,11 @@ public class LifeNumCtrl : MonoBehaviour {
     /// <summary>
     /// 最大的生命数
     /// </summary>
-    const int MAXLIFENUM = 10;
+    public static int MAXLIFENUM = 3;
     /// <summary>
     /// 多长时间加载一条命
     /// </summary>
-    const int TIMEFORALIFE = 120;
+    const int TIMEFORALIFE = 300;
     TimeSpan loadingTime = new TimeSpan(0, 0, TIMEFORALIFE);
     /// <summary>
     /// 目前加载秒数
@@ -27,12 +27,16 @@ public class LifeNumCtrl : MonoBehaviour {
     private float loading;
     private DateTime oriTime=new DateTime(0,0,0,0,0,0);
     private int startLoading = 0;
+    public GameObject warningFullHP;
+    public GameObject warningText;
+    public GameObject UICanvas;
     public Text []lifeNumText;
     public Text LoadingTimeText;
     public GameObject gameController;
     public GameObject adsUI;
     public Image loadingUI;
     GameController controller;
+    private bool isWarningShow=false;
     // Use this for initialization
     void Start () {
         controller = new GameController();
@@ -44,12 +48,12 @@ public class LifeNumCtrl : MonoBehaviour {
             DateTime preTime = DateTime.Parse(PlayerPrefs.GetString("PreTime"));
             Debug.Log("上次时间" + preTime);
             Debug.Log("目前时间" + DateTime.Now);
-            if (lifeNum < 10 && startLoading == 1)
+            if (lifeNum < MAXLIFENUM && startLoading == 1)
             {
                 lifeNum += (int)((DateTime.Now - preTime).TotalSeconds / loadingTime.TotalSeconds);
-                if (lifeNum >= 10)
+                if (lifeNum >= MAXLIFENUM)
                 {
-                    lifeNum = 10;
+                    lifeNum = MAXLIFENUM;
                 }
             }
             if (loading <= 1&& startLoading == 1)
@@ -97,7 +101,7 @@ public class LifeNumCtrl : MonoBehaviour {
             }
             startLoading = 1;
         }
-        if(lifeNum>=10)
+        if(lifeNum>= MAXLIFENUM)
         {
             startLoading = 0;
         }
@@ -113,7 +117,7 @@ public class LifeNumCtrl : MonoBehaviour {
                 {
                     loadingTimeSeconds = (int)loadingTime.TotalSeconds;
                     loading = 0;
-                    if (lifeNum < 10)
+                    if (lifeNum < MAXLIFENUM)
                     {
                         lifeNum++;
                     }
@@ -137,11 +141,40 @@ public class LifeNumCtrl : MonoBehaviour {
     public void AdsAddLife(int addLifeNum)
     {
         lifeNum += addLifeNum;
+        if (lifeNum >= MAXLIFENUM)
+        {
+            lifeNum = MAXLIFENUM;
+            ShowFullHPText();
+        }
     }
     public void NoLifeShowAdsMenu()
     {
+        if (!isWarningShow)
+        {
+            ShowWarningText();
+            isWarningShow = true;
+        }
+       
         controller.PauseGame();
         controller.DisActiveUI();
         adsUI.SetActive(true);
+    }
+    public void ShowWarningText()
+    {
+        GameObject warning = Instantiate(warningText) as GameObject;
+        warning.transform.SetParent(UICanvas.transform);
+        warning.GetComponent<RectTransform>().localPosition = new Vector3(-23, 864.9999f, 0);
+        warning.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        warning.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 0);
+        warning.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
+    }
+    public void ShowFullHPText()
+    {
+        GameObject warning = Instantiate(warningFullHP) as GameObject;
+        warning.transform.SetParent(UICanvas.transform);
+        warning.GetComponent<RectTransform>().localPosition = new Vector3(-23, 864.9999f, 0);
+        warning.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        warning.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 0);
+        warning.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 }

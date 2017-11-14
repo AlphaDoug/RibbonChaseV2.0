@@ -69,7 +69,7 @@ namespace FlightKit
    
         void On_JoystickMove(MovingJoystick move)
         {
-            
+			Debug.Log ("Move");
             ClearLRR();
             if (PlayerPrefs.GetInt("ReviseDirection") ==0)
             {

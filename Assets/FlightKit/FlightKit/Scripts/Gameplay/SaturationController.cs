@@ -4,11 +4,11 @@ using UnityStandardAssets.ImageEffects;
 
 namespace FlightKit
 {
-	/// <summary>
-	/// Listens to the take-off events and tweens saturation on the ColorCorrectionCurves 
-	/// effect if one is found on the camera.
-	/// </summary>
-	public class SaturationController : MonoBehaviour
+    /// <summary>
+    /// Listens to the take-off events and tweens saturation on the ColorCorrectionCurves 
+    /// effect if one is found on the camera.
+    /// </summary>
+    public class SaturationController : MonoBehaviour
     {
         private ColorCorrectionCurves _colorCorrectionFx;
         private ImageEffect_Mosaic _imageEffect_Mosaic;
@@ -24,13 +24,14 @@ namespace FlightKit
             //}
             if (_imageEffect_Mosaic)
             {
-                TakeOffPublisher.OnTakeOffEvent += OnTakeOff;
+                // TakeOffPublisher.OnTakeOffEvent += OnTakeOff;
+                OnTakeOff();
             }
         }
 
         void OnDisable()
         {
-            TakeOffPublisher.OnTakeOffEvent -= OnTakeOff;
+            //TakeOffPublisher.OnTakeOffEvent -= OnTakeOff;
         }
 
         private void OnTakeOff()
@@ -48,7 +49,7 @@ namespace FlightKit
             var wait = new WaitForEndOfFrame();
             while (_imageEffect_Mosaic.MosaicSize > 1)
             {
-	            float deltaTime = Time.time - _saturationTweenStartTime;
+                float deltaTime = Time.time - _saturationTweenStartTime;
                 _imageEffect_Mosaic.MosaicSize -= 1;
                 yield return new WaitForSeconds(0.05f);
                 yield return wait;

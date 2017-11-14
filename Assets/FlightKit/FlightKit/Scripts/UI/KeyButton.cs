@@ -22,10 +22,10 @@ namespace FlightKit
 
 		void Update()
 		{
-			if (!button.interactable)
-			{
-				return;
-			}
+			//if (!button.interactable)
+			//{
+			//	return;
+			//}
 
 			bool keyDown = false;
 
@@ -47,10 +47,10 @@ namespace FlightKit
 				}
 			}
 
-			if (keyDown)
-			{
-				button.onClick.Invoke();
-			}
+			//if (keyDown)
+			//{
+			//	button.onClick.Invoke();
+			//}
 		}
 	}
 }

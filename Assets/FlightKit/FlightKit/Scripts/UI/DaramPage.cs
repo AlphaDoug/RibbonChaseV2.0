@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DaramPage : MonoBehaviour
 {
     public GameObject nextPage;
-    public GameObject mainMenu;
     public bool isChangeAlpha = false;
     public bool isFirstPage = false;
     public float alphaSpeed = 0.02f;
@@ -21,18 +20,14 @@ public class DaramPage : MonoBehaviour
         }
     }
 	
-	void FixedUpdate ()
+	void Update ()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape) && transform.parent.gameObject.activeSelf)
-        //{
-        //    transform.parent.gameObject.SetActive(false);
-        //}
-
         if (childSprite[0].color.a == 1)
         {
             //this.GetComponent<CanvasRenderer>().SetAlpha(GetComponent<CanvasRenderer>().GetAlpha() - alphaSpeed);
             if (isChangeAlpha)
             {
+                GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
                 GetComponent<Animator>().Play(gameObject.name);
                 StartCoroutine(ChangeAlpha());
                 isChangeAlpha = false;
@@ -44,7 +39,7 @@ public class DaramPage : MonoBehaviour
             //透明度变为0之后开始下一张图的动态变化
             if (nextPage == null)
             {
-                mainMenu.SetActive(true);
+
             }
             else
             {

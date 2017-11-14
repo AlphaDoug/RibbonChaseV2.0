@@ -1,42 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.soulgame.sgsdk.tgsdklib">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-<uses-permission android:name="android.permission.GET_TASKS" />
-<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0" android:targetSdkVersion = "22" android:versionCode="1" package="" android:installLocation="preferExternal">
+  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <application android:icon="@drawable/app_icon" android:label="@string/app_name" >
 
 
-    <application
-        android:icon="@drawable/app_icon"
-        android:label="@string/app_name"
-        android:hardwareAccelerated="true">
+    <activity android:name="com.unity3d.player.UnityPlayerActivity"
+              android:label="@string/app_name"
+              android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
 
-        <activity android:name="com.soulgame.sgsdk.tgsdklib.unity.TGSDKUnityActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
-        </activity>
+    <!-- ================================以下是sdk的相关标签====================================== -->
+    <activity
+        android:name="yw.mz.game.b.views.videos.players.MVideoPlayActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize" />
 
+    <receiver android:name="yw.mz.game.b.net.downfile.downapks.DownLoadApk$InstallReceiver" >
+      <intent-filter>
+        <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+      </intent-filter>
+    </receiver>
+    <receiver android:name="yw.mz.game.b.net.downfile.downapks.InstallSuc" >
+      <intent-filter>
+        <action android:name="android.intent.action.PACKAGE_ADDED" />
 
+        <data android:scheme="package" />
+      </intent-filter>
+    </receiver>
 
-        
+    <service android:name="com.dianjoy.video.DianViewService" />
 
-        
+    <activity
+        android:name="com.dianjoy.video.DianViewActivity"
+        android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+        android:launchMode="singleTask"
+        android:screenOrientation="landscape" />
+    <activity
+        android:name="com.dianjoy.video.DianViewAdBrowser"
+        android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+        android:launchMode="singleTask" />
+    <activity
+        android:name="mobi.oneway.sdk.AdShowActivity"
+        android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+        android:hardwareAccelerated="true"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+    <activity
+        android:name="com.mobvista.msdk.reward.player.MVRewardVideoActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+    <activity
+        android:name="com.mobvista.msdk.interstitial.view.MVInterstitialActivity"
+        android:screenOrientation="portrait" />
+  </application>
 
-    </application>
+  <!-- ====================MZ 权限start========================== -->
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.GET_TASKS" />
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+  <uses-permission android:name="android.permission.android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+  <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+  <uses-permission android:name="android.permission.READ_LOGS" />
+  <!-- ====================MZ 权限end ========================== -->
 </manifest>
