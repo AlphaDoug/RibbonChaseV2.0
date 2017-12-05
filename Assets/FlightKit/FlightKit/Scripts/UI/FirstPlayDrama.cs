@@ -2,12 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// 控制剧情动画播放
+/// </summary>
 public class FirstPlayDrama : MonoBehaviour
 {
+    /// <summary>
+    /// 所有剧情
+    /// </summary>
     public GameObject dramaALL;
+    /// <summary>
+    /// 前半剧情
+    /// </summary>
     public GameObject dramaFRONT;
+    /// <summary>
+    /// 后半剧情
+    /// </summary>
     public GameObject dramaEND;
+    /// <summary>
+    /// 剧情显示完之后显示的界面
+    /// </summary>
     public GameObject mainMenu;
     public AudioSource bgm;
 
@@ -18,6 +32,7 @@ public class FirstPlayDrama : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        //若不是主场景,那么不播放开场动画并且直接返回
         if (Application.loadedLevel != 0)
         {
             return;

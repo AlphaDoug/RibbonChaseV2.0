@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 控制右边擦肩而过文字的显示
+/// </summary>
 public class BrushPastControl : MonoBehaviour
 {
     public enum PlaneState

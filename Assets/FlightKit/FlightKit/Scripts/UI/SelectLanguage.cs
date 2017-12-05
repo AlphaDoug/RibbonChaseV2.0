@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 语言切换控制
+/// </summary>
 public class SelectLanguage : MonoBehaviour
 {
     public List<GameObject> englishUI;

@@ -2,15 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// 控制选择关卡的脚本
+/// </summary>
 public class LevelSelectNew : MonoBehaviour
 {
+    /// <summary>
+    /// 广告UI界面
+    /// </summary>
     public GameObject adsUI;
+    /// <summary>
+    /// 所有关卡
+    /// </summary>
     public GameObject allLevels;
+
     public GameObject levelSel;
+    /// <summary>
+    /// 第一关的默认位置
+    /// </summary>
     public RectTransform mainPosition;
+    /// <summary>
+    /// 右箭头按钮
+    /// </summary>
     public GameObject nextPage;
+    /// <summary>
+    /// 左箭头按钮
+    /// </summary>
     public GameObject lastPage;
+    /// <summary>
+    /// 关卡数目
+    /// </summary>
     public int maxPagesAmount = 6;
 
     public List<GameObject> loadingScenes = new List<GameObject>();

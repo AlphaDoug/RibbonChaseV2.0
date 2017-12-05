@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+/// <summary>
+/// 控制摄像机抖动
+/// </summary>
 public class ShakeCamera : MonoBehaviour
 {
     // 震动标志位

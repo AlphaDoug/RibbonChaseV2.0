@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 控制屏幕四周指示光标位置和转向
+/// </summary>
 public class CalculatePosition : MonoBehaviour
 {
     public Transform image;

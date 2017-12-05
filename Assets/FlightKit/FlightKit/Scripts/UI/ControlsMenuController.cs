@@ -210,22 +210,34 @@ public class ControlsMenuController : MonoBehaviour
         }
         
     }
+    /// <summary>
+    /// 设置中文
+    /// </summary>
     public void SetChinese()
     {
         language = (int)Language.Chinese;
         PlayerPrefs.SetInt("language", language);
         SceneManager.LoadScene(0);
     }
+    /// <summary>
+    /// 设置英文
+    /// </summary>
     public void SetEnglish()
     {
         language = (int)Language.English;
         PlayerPrefs.SetInt("language", language);
         SceneManager.LoadScene(0);
     }
+    /// <summary>
+    /// 设置正常操作模式
+    /// </summary>
     public void NormalDirection()
     {
         PlayerPrefs.SetInt("ReviseDirection", 0);
     }
+    /// <summary>
+    /// 设置反转操作模式
+    /// </summary>
     public void ReviseDirection()
     {
         PlayerPrefs.SetInt("ReviseDirection", 1);

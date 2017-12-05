@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GameTeaching : MonoBehaviour {
+/// <summary>
+/// 教学控制脚本
+/// </summary>
+public class GameTeaching : MonoBehaviour
+{
     public GameObject controllTeaching_Joystick;
     public GameObject controllTeaching_Gravity;
     public GameObject speedUpTeaching;
@@ -11,6 +14,7 @@ public class GameTeaching : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        //五秒之后显示教学
         Invoke("ControllTeachingAble", 5.0f);
 	}
 	

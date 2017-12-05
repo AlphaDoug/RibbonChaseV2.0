@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// (弃用)控制动画播放
+/// </summary>
 public class DaramPage : MonoBehaviour
 {
     public GameObject nextPage;

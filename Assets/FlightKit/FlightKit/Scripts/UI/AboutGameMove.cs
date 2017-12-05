@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 控制制作人员界面的运动
+/// </summary>
 public class AboutGameMove : MonoBehaviour
 {
     public GameObject contentCN;
@@ -54,27 +56,31 @@ public class AboutGameMove : MonoBehaviour
         {
 			if (contentCN.transform.localPosition.y < 900)
             {
-				//增关卡必改
+				//!!!!!!!!!!!!!!!!!!!!!!增关卡必改!!!!!!!!!!!!!!
 				if (Application.loadedLevel == 7)
 				{
+                    //最后一关的剧情移动
 					contentCN.transform.Translate (new Vector3 (0, 1f, 0));
 				} 
 				else
 				{
+                    //首界面的剧情移动
 					contentCN.transform.Translate(new Vector3(0, 0.12f, 0));
 				}
                 
             }
 			if (contentEN.transform.localPosition.y < 900)
 			{
-				//增关卡必改
+				//!!!!!!!!!!!!!!!!!11增关卡必改!!!!!!!!!!!!!!!!!!!
 				if (Application.loadedLevel == 7)
 				{
-					contentEN.transform.Translate (new Vector3 (0, 1f, 0));
+                    //最后一关的剧情移动
+                    contentEN.transform.Translate (new Vector3 (0, 1f, 0));
 				} 
 				else
 				{
-					contentEN.transform.Translate(new Vector3(0, 0.12f, 0));
+                    //首界面的剧情移动
+                    contentEN.transform.Translate(new Vector3(0, 0.12f, 0));
 				}
 
 			}
@@ -83,6 +89,9 @@ public class AboutGameMove : MonoBehaviour
         }
         
 	}
+    /// <summary>
+    /// 界面不可用时重置位置
+    /// </summary>
     private void OnDisable()
     {
 		contentCN.transform.localPosition = new Vector3(0, -1300, 0);

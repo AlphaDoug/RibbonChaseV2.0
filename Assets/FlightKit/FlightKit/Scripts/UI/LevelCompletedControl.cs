@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+/// <summary>
+/// 控制关卡结束之后通关界面
+/// </summary>
 public class LevelCompletedControl : MonoBehaviour
 {
 

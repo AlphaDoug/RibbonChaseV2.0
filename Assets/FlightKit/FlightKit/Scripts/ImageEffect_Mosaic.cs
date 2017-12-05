@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-
+/// <summary>
+/// 控制开始飞行时候的马赛克效果
+/// </summary>
 [ExecuteInEditMode]
 [AddComponentMenu("PengLu/ImageEffect/Mosaic")]
+
 public class ImageEffect_Mosaic : MonoBehaviour
 {
     #region Variables  

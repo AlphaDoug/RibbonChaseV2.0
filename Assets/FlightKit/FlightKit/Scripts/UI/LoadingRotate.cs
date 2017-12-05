@@ -3,7 +3,9 @@ using System.Collections;
 using FlightKit;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/// <summary>
+/// 异步加载场景控制
+/// </summary>
 public class LoadingRotate : MonoBehaviour {
     public GameObject levelScripts;
     //public GameObject ButtonDown;
