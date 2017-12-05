@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: House
+  m_Shader: {fileID: 4800000, guid: e205ec5a2dab342e78812532c2f67fd5, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AmbientPower: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.635
+    - _GlossyReflections: 1
+    - _GradientHeight: 10
+    - _GradientYStartPos: 0
+    - _LightmapPower: 0.5
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _AmbientColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _BackBottomColor: {r: 0.7794118, g: 0.27247792, b: 0.08596452, a: 0}
+    - _BackTopColor: {r: 0.6764706, g: 0.25727835, b: 0.029844278, a: 0}
+    - _BottomColor: {r: 0, g: 0.5, b: 0.5, a: 0}
+    - _Color: {r: 0.5661765, g: 0.16744125, b: 0.04995676, a: 1}
+    - _EmissionColor: {r: 0.25735295, g: 0.23842993, b: 0.23842993, a: 1}
+    - _FrontBottomColor: {r: 0.31617647, g: 0.21917507, b: 0.19993512, a: 0}
+    - _FrontTopColor: {r: 0.5588235, g: 0.22585313, b: 0.045198973, a: 0}
+    - _LeftBottomColor: {r: 0.14705884, g: 0.049740493, b: 0.14705884, a: 0}
+    - _LeftTopColor: {r: 0.060553633, g: 0.06175877, b: 0.2352941, a: 0}
+    - _LightTint: {r: 1, g: 1, b: 1, a: 0}
+    - _LightmapColor: {r: 0, g: 0, b: 0, a: 0}
+    - _RightBottomColor: {r: 0.20588237, g: 0.042805158, b: 0.039359864, a: 0}
+    - _RightTopColor: {r: 0.9044118, g: 0.134, b: 0, a: 0}
+    - _SpecColor: {r: 0.7205882, g: 0.598724, b: 0.598724, a: 1}
+    - _TopColor: {r: 0.9852941, g: 0.5059375, b: 0.1376514, a: 0}
