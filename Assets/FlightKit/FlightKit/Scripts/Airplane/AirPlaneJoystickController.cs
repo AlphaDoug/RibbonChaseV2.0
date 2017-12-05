@@ -45,6 +45,7 @@ namespace FlightKit
         private int buttonPressedCount=0;
         private void Awake()
         {
+			
             // Set up the reference to the aeroplane controller.
             _airplane = GetComponent<AeroplaneController>();
         }
@@ -124,6 +125,7 @@ namespace FlightKit
             rotateClamp = rightRotateClamp != 0 ? rightRotateClamp : leftRotateClamp;
             float roll = ControlsPrefs.IsRollEnabled ? rotateClamp : 0;
 #endif
+
             bool airBrakes = CrossPlatformInputManager.GetButton("Brakes");
             // auto throttle up, or down if braking.
             float throttle = airBrakes ? -1 : 1;
