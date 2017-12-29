@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace FlightKit
 {
@@ -7,6 +8,8 @@ namespace FlightKit
 	/// </summary>
 	public class BoidMaster : MonoBehaviour
 	{
+        public Transform ui;
+
 		/// <summary>
 		/// What should we instantiate as a single boid.
 		/// </summary>
@@ -47,6 +50,8 @@ namespace FlightKit
 		/// </summary>
 		public LayerMask searchLayer;
 
+        private List<GameObject> boids = new List<GameObject>();
+
 		void Start()
 		{
 			for (var i = 0; i < spawnCount; i++)
@@ -66,14 +71,24 @@ namespace FlightKit
 			var rotation = Quaternion.Slerp(transform.rotation, Random.rotation, 0.25f);
 			var boid = Instantiate(boidPrefab, position, rotation) as GameObject;
 			boid.GetComponent<BoidUnit>().master = this;
-
+            boid.GetComponent<BoidUnit>().UI = ui;
+            boids.Add(boid);
 			// If possible, place the boid as a neighbour of the controller in the hierarchy.
 			if (this.transform.parent != null)
 			{
-				boid.transform.parent = this.transform.parent;
+				boid.transform.parent = this.transform;
 			}
 
 			return boid;
 		}
+
+        public void CollectSphere()
+        {
+            for (int i = 0; i < boids.Count; i++)
+            {
+                boids[i].GetComponent<BoidUnit>().isCollected = true;
+
+            }
+        }
 	}
 }

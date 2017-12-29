@@ -27,7 +27,7 @@ namespace Kirnu
 		private Vector3[] normals;
 		private Color[] speeds;
 		private Vector3[] newVertices;
-		[HideInInspector]
+		//[HideInInspector]
 		public Mesh mesh;
 		Mesh newMesh;
 		private List<FloatingObject> internalFloatingObjects = new List<FloatingObject>();

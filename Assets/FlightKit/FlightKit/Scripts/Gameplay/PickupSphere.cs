@@ -13,7 +13,6 @@ namespace FlightKit
         [SerializeField]
         public GameObject[] purpleElectricTrail;
         public GameObject[] pickUp;
-        
         public delegate void OnCollectAction();
         public delegate void OnCollectActionAI();
         /// <summary>
@@ -193,7 +192,7 @@ namespace FlightKit
                 {
                     Invoke("ChooseNextTarget", 0.5f);
                 }
-              
+                particle.SetActive(true);
 
             }
 		}
@@ -275,7 +274,7 @@ namespace FlightKit
             DestroyObject(sphere);
 			DestroyObject(ring1);
 			DestroyObject(ring2);
-            DestroyObject(particle);
+           // DestroyObject(particle);
 			_isDestroyed = true;
 		}
         private void DestroyNowAI()

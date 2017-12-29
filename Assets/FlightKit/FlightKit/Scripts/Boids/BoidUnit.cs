@@ -11,9 +11,22 @@ namespace FlightKit
 		/// Reference to the boid controller.
 		/// </summary>
 		public BoidMaster master;
+        public Transform UI;
+        public int moveSpeed = 10;
+        public bool isCollected = false;
 
 		void Update()
 		{
+            if (isCollected)
+            {
+                var moveDirection = Vector3.Normalize(UI.position - transform.position);
+                transform.Translate(moveDirection * moveSpeed);
+                if (Vector3.Distance(transform.position , UI.position) < 10)
+                {
+                    Destroy(gameObject);
+                }
+                return;
+            }
 			var currentPosition = transform.position;
 			var currentRotation = transform.rotation;
 
